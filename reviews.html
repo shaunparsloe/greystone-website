@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Reviews · Greystone Guesthouse · Jeffreys Bay</title>
+  <meta name="description" content="Guest reviews for Greystone Guesthouse in Jeffreys Bay. Rated 8.4 on Booking.com and 4.5/5 on TripAdvisor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:         #080808;
+      --surface:     #111111;
+      --surface-2:   #181818;
+      --gold:        #C9A96E;
+      --gold-light:  #E8D5B0;
+      --gold-dim:    rgba(201,169,110,0.15);
+      --cream:       #F5F0E8;
+      --muted:       #7A7567;
+      --border:      rgba(201,169,110,0.12);
+      --border-faint:rgba(255,255,255,0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .display {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      line-height: 1.08;
+    }
+    .display em { font-style: italic; font-weight: 300; }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ─── NAV ──────────────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 1.6rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.5s, backdrop-filter 0.5s, padding 0.4s, border-color 0.5s;
+      border-bottom: 1px solid transparent;
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-color: var(--border-faint);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.55);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-book {
+      font-size: 0.7rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.18em !important;
+      color: var(--ink) !important;
+      background: var(--gold);
+      padding: 0.6rem 1.5rem;
+      transition: background 0.25s, transform 0.25s !important;
+    }
+    .nav-book:hover { background: var(--gold-light) !important; transform: translateY(-1px) !important; }
+
+    /* ─── PAGE HEADER ──────────────────────────────────────────── */
+    .page-header {
+      padding: 10rem 3.5rem 4rem;
+      text-align: center;
+    }
+    .page-header h1 { font-size: clamp(2.6rem, 5vw, 4.2rem); margin-bottom: 1rem; }
+    .page-header p { color: var(--muted); font-size: 0.9rem; max-width: 480px; margin: 0 auto; }
+
+    /* ─── REVIEW PLATFORMS ─────────────────────────────────────── */
+    .platforms {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 3.5rem 5rem;
+    }
+
+    .platform-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 3rem;
+    }
+
+    .platform-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .platform-score {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.6rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .platform-meta h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
+
+    .platform-meta .rating-label {
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .platform-meta .review-count {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 0.2rem;
+    }
+
+    /* ─── CATEGORY BARS ────────────────────────────────────────── */
+    .categories { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .category {
+      display: grid;
+      grid-template-columns: 120px 1fr 40px;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .category-name {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: rgba(245,240,232,0.7);
+      letter-spacing: 0.04em;
+    }
+
+    .category-bar {
+      height: 6px;
+      background: var(--surface-2);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .category-bar-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 3px;
+      transition: width 1s cubic-bezier(.22,.6,.36,1);
+    }
+
+    .category-score {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--cream);
+      text-align: right;
+    }
+
+    /* ─── LINKS ────────────────────────────────────────────────── */
+    .review-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0 3.5rem 6rem;
+    }
+
+    .review-link {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 0.25s, background 0.25s, border-color 0.25s;
+      cursor: pointer;
+    }
+    .review-link:hover { transform: translateY(-2px); }
+
+    .review-link--booking {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .review-link--booking:hover { background: var(--gold-light); }
+
+    .review-link--tripadvisor {
+      border: 1px solid rgba(245,240,232,0.28);
+      color: var(--cream);
+    }
+    .review-link--tripadvisor:hover { border-color: var(--cream); }
+
+    /* ─── FOOTER ───────────────────────────────────────────────── */
+    footer { border-top: 1px solid var(--border); }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 4rem;
+      padding: 5rem 3.5rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-brand .nav-logo { display: block; margin-bottom: 1.2rem; }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.7;
+      max-width: 28ch;
+    }
+
+    .footer-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-top: 1.4rem;
+      font-size: 0.78rem;
+      color: var(--cream);
+    }
+
+    .footer-heading {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: color 0.25s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+
+    address {
+      font-style: normal;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.4rem 3.5rem;
+      border-top: 1px solid var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom p {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      #nav { padding: 1.4rem 2rem; }
+      .page-header { padding: 9rem 2rem 3rem; }
+      .platforms { grid-template-columns: 1fr; padding: 0 2rem 4rem; }
+      .platform-card { padding: 2.2rem; }
+      .review-links { flex-direction: column; align-items: center; padding: 0 2rem 5rem; }
+      .footer-main { padding: 4rem 2rem; gap: 3rem; }
+      .footer-bottom { padding: 1.4rem 2rem; }
+    }
+
+    @media (max-width: 600px) {
+      #nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      .page-header { padding: 8rem 1.5rem 2.5rem; }
+      .platforms { padding: 0 1.5rem 3.5rem; }
+      .platform-card { padding: 1.8rem; }
+      .category { grid-template-columns: 100px 1fr 36px; gap: 0.7rem; }
+      .review-links { padding: 0 1.5rem 4rem; }
+      .footer-main { grid-template-columns: 1fr; padding: 3.5rem 1.5rem; gap: 2.5rem; }
+      .footer-bottom { padding: 1.4rem 1.5rem; flex-direction: column; gap: 0.4rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────────────────── -->
+  <nav id="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html#rooms">Rooms</a></li>
+      <li><a href="index.html#breakfast">Breakfast</a></li>
+      <li><a href="index.html#location">J&#8209;Bay</a></li>
+      <li><a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="nav-book" style="background:#25D366;color:#fff">WhatsApp</a></li>
+      <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="nav-book">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── PAGE HEADER ─────────────────────────────────────────────── -->
+  <header class="page-header">
+    <p class="eyebrow">What Our Guests Say</p>
+    <h1 class="display">Guest <em>Reviews</em></h1>
+    <p>Rated across the world's most trusted travel platforms</p>
+  </header>
+
+  <!-- ── REVIEW PLATFORMS ────────────────────────────────────────── -->
+  <div class="platforms">
+
+    <!-- Booking.com -->
+    <div class="platform-card">
+      <div class="platform-header">
+        <span class="platform-score">8.4</span>
+        <div class="platform-meta">
+          <h2>Booking.com</h2>
+          <span class="rating-label">Very Good</span>
+          <p class="review-count">499 reviews</p>
+        </div>
+      </div>
+      <div class="categories">
+        <div class="category">
+          <span class="category-name">Staff</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="91" style="width:0%"></div></div>
+          <span class="category-score">9.1</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Facilities</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="85" style="width:0%"></div></div>
+          <span class="category-score">8.5</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Cleanliness</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="90" style="width:0%"></div></div>
+          <span class="category-score">9.0</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Comfort</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="90" style="width:0%"></div></div>
+          <span class="category-score">9.0</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Value for Money</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="89" style="width:0%"></div></div>
+          <span class="category-score">8.9</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Location</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="89" style="width:0%"></div></div>
+          <span class="category-score">8.9</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Free WiFi</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="90" style="width:0%"></div></div>
+          <span class="category-score">9.0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TripAdvisor -->
+    <div class="platform-card">
+      <div class="platform-header">
+        <span class="platform-score">4.5</span>
+        <div class="platform-meta">
+          <h2>TripAdvisor</h2>
+          <span class="rating-label">Very Good</span>
+          <p class="review-count">134 reviews · #6 of 15 B&amp;Bs in Jeffreys Bay</p>
+        </div>
+      </div>
+      <div class="categories">
+        <div class="category">
+          <span class="category-name">Location</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="92" style="width:0%"></div></div>
+          <span class="category-score">4.6</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Rooms</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="92" style="width:0%"></div></div>
+          <span class="category-score">4.6</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Value</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="94" style="width:0%"></div></div>
+          <span class="category-score">4.7</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Cleanliness</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="96" style="width:0%"></div></div>
+          <span class="category-score">4.8</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Service</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="94" style="width:0%"></div></div>
+          <span class="category-score">4.7</span>
+        </div>
+        <div class="category">
+          <span class="category-name">Sleep Quality</span>
+          <div class="category-bar"><div class="category-bar-fill" data-width="92" style="width:0%"></div></div>
+          <span class="category-score">4.6</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── READ MORE LINKS ─────────────────────────────────────────── -->
+  <div class="review-links">
+    <a href="https://www.booking.com/hotel/za/greystone-guesthouse-jeffreys-bay.en-gb.html#tab-reviews"
+       target="_blank" rel="noopener"
+       class="review-link review-link--booking">Read Booking.com Reviews</a>
+    <a href="https://www.tripadvisor.co.uk/Hotel_Review-g469383-d1342566-Reviews-Greystone_Guest_House-Jeffreys_Bay_Eastern_Cape.html"
+       target="_blank" rel="noopener"
+       class="review-link review-link--tripadvisor">Read TripAdvisor Reviews</a>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" aria-label="Greystone Guesthouse">Greystone</a>
+        <p>A boutique guesthouse in the heart of Jeffreys Bay, where every stay feels like coming home to the coast.</p>
+        <div class="footer-rating" aria-label="Rated 8.4 Very Good on Booking.com">
+          <span>8.4</span>
+          <span style="color:var(--muted)">·</span>
+          <span>Very Good · 499 Reviews</span>
+        </div>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <p class="footer-heading">Navigate</p>
+        <ul class="footer-links" role="list">
+          <li><a href="index.html#rooms">Rooms &amp; Rates</a></li>
+          <li><a href="index.html#breakfast">Breakfast</a></li>
+          <li><a href="index.html#location">J-Bay &amp; Activities</a></li>
+          <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">Book Now</a></li>
+          <li><a href="reviews.html">Guest Reviews</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="footer-heading">Find Us</p>
+        <address>
+          11 Mimosa Street<br>
+          Wavecrest, Jeffreys Bay<br>
+          Eastern Cape, 6330<br>
+          South Africa<br>
+          <br>
+          Check-in: 14:00 – 20:00<br>
+          Check-out: by 10:00<br>
+          <br>
+          Languages: Afrikaans &amp; English
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Greystone Guesthouse. All rights reserved.</p>
+      <p>Jeffreys Bay &nbsp;·&nbsp; Eastern Cape &nbsp;·&nbsp; South Africa</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animate bars on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.width + '%';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.category-bar-fill').forEach(bar => observer.observe(bar));
+  </script>
+
+</body>
+</html>
