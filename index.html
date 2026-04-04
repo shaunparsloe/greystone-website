@@ -795,6 +795,143 @@
     }
     .room-card:hover .room-hover-cta { opacity: 1; transform: translateY(0); }
 
+    /* ─── REVIEWS SNIPPET ──────────────────────────────────────── */
+    .reviews-snippet {
+      padding: 7rem 3.5rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .reviews-snippet-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .reviews-snippet-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .reviews-snippet-header .display {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-top: 0.7rem;
+    }
+
+    .reviews-snippet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .review-quote {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .review-quote:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-dim);
+    }
+
+    .review-quote-icon {
+      color: var(--gold);
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .review-stars svg {
+      color: var(--gold);
+    }
+
+    .review-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.12rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .review-quote footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .review-source {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .review-origin {
+      color: var(--muted);
+    }
+
+    .reviews-snippet-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .reviews-snippet-scores {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .reviews-snippet-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .snippet-score {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .snippet-label {
+      font-size: 0.78rem;
+      color: var(--cream);
+      line-height: 1.4;
+    }
+
+    .snippet-label small {
+      color: var(--muted);
+      font-size: 0.68rem;
+    }
+
+    @media (max-width: 768px) {
+      .reviews-snippet { padding: 4.5rem 1.5rem; }
+      .reviews-snippet-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .reviews-snippet-footer { flex-direction: column; gap: 2rem; text-align: center; }
+      .reviews-snippet-scores { justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .review-quote { transition: none; }
+    }
+
     /* ─── BREAKFAST ─────────────────────────────────────────────── */
     .breakfast-section {
       display: grid;
@@ -1432,6 +1569,76 @@
              class="room-hover-cta"
              aria-label="Book Budget Annex room">Book this room →</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GUEST REVIEWS SNIPPET ──────────────────────────────────────── -->
+  <section class="reviews-snippet" aria-labelledby="reviews-heading">
+    <div class="reviews-snippet-inner">
+      <div class="reviews-snippet-header reveal">
+        <p class="eyebrow">Guest Reviews</p>
+        <h2 class="display" id="reviews-heading">Don't take our<br>word for <em>it</em></h2>
+      </div>
+      <div class="reviews-snippet-grid">
+        <blockquote class="review-quote reveal d1">
+          <svg class="review-quote-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p>"I extended my stay 3 times! The location is just perfect and the owner with her team always super helpful and friendly."</p>
+          <footer>
+            <span class="review-source">TripAdvisor</span>
+            <span class="review-origin">Georgia</span>
+          </footer>
+        </blockquote>
+        <blockquote class="review-quote reveal d2">
+          <svg class="review-quote-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+          <div class="review-stars" aria-label="9 out of 10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p>"Just a quick one-night stay, but I was very happy with the room. Friendly staff. Great WiFi. Comfy bed. Great location."</p>
+          <footer>
+            <span class="review-source">Booking.com &middot; 9.0</span>
+            <span class="review-origin">Canada</span>
+          </footer>
+        </blockquote>
+        <blockquote class="review-quote reveal d3">
+          <svg class="review-quote-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p>"I was warmly greeted when I arrived and felt right at home right away — the view is glorious and the setting is quiet and calm."</p>
+          <footer>
+            <span class="review-source">TripAdvisor</span>
+            <span class="review-origin">United Kingdom</span>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="reviews-snippet-footer reveal">
+        <div class="reviews-snippet-scores">
+          <div class="reviews-snippet-badge">
+            <span class="snippet-score">8.4</span>
+            <span class="snippet-label">Booking.com<br><small>499 reviews</small></span>
+          </div>
+          <div class="reviews-snippet-badge">
+            <span class="snippet-score">4.5</span>
+            <span class="snippet-label">TripAdvisor<br><small>134 reviews</small></span>
+          </div>
+        </div>
+        <a href="reviews.html" class="btn-outline">Read All Reviews</a>
       </div>
     </div>
   </section>
