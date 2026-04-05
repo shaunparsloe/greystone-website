@@ -45,7 +45,7 @@
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     "name": "Greystone Guesthouse",
-    "alternateName": ["Greystone Guest House", "Greystone B&B Jeffreys Bay"],
+    "alternateName": ["Greystone B&B Jeffreys Bay"],
     "description": "Boutique bed and breakfast accommodation in Jeffreys Bay, South Africa. Located 260 metres from Supertubes beach, Greystone Guesthouse offers 8 en-suite rooms with sea views, full South African breakfast, free WiFi, and free parking. Ideal for surfers, couples, and travellers exploring the Eastern Cape and Garden Route.",
     "url": "https://greystoneguesthouse.co.za",
     "telephone": "+27829537641",
@@ -92,7 +92,8 @@
       { "@type": "LocationFeatureSpecification", "name": "Games Room", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Breakfast Available", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Safety Deposit Box", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Shuttle Service", "value": true }
+      { "@type": "LocationFeatureSpecification", "name": "Shuttle Service", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Solar Power with Battery Backup", "value": true }
     ],
     "makesOffer": [
       {
@@ -171,7 +172,7 @@
         "name": "Is breakfast included at Greystone Guesthouse?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A full cooked South African breakfast is available to order each morning, featuring eggs, bacon, sausages, toast, fresh coffee and tea. Breakfast can be enjoyed in the dining room or on the balcony with sea views."
+          "text": "Cost sensitive guests have requested that we price for rooms only. A full cooked South African breakfast is available as an optional extra to order each morning, featuring eggs, bacon, sausages, toast, fresh coffee and tea. Breakfast can be enjoyed in the dining room or on the balcony with sea views."
         }
       },
       {
@@ -180,6 +181,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes, Greystone Guesthouse offers free private on-site parking (no reservation needed) and free WiFi throughout the property, including in all guest rooms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens during load shedding at Greystone Guesthouse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nothing changes for our guests. Greystone Guesthouse has a full solar power system with inverter and battery backup, so your lights, WiFi, and hot water stay on through Eskom power outages. You can continue working, streaming and using your devices without interruption."
         }
       },
       {
@@ -1137,6 +1146,54 @@
       color: var(--gold);
     }
 
+    /* ─── TRUST STRIP ────────────────────────────────────────────── */
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem 4.5rem;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid var(--border-faint);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .trust-icon {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .trust-label {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .trust-label strong {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+    }
+
+    @media (max-width: 768px) {
+      .trust-strip { gap: 2rem 3rem; padding: 3rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-strip { flex-direction: column; align-items: center; gap: 1.8rem; }
+    }
+
     /* ─── CTA BANNER ────────────────────────────────────────────── */
     .cta-section {
       position: relative;
@@ -1765,6 +1822,34 @@
     </div>
   </section>
 
+  <!-- ── TRUST STRIP ───────────────────────────────────────────────── -->
+  <div class="trust-strip reveal" role="region" aria-label="Guest assurances">
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.09 4.26L19 7.27l-3.5 3.41.82 4.82L12 13.4l-4.32 2.1.82-4.82L5 7.27l4.91-1.01L12 2z"/></svg>
+      <span class="trust-label"><strong>3-Star Graded</strong>Tourism Grading Council of SA</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <span class="trust-label"><strong>Solar Powered</strong>Battery backup through loadshedding</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+      <span class="trust-label"><strong>Free WiFi</strong>In all rooms &amp; common areas</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><path d="M16 8h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/></svg>
+      <span class="trust-label"><strong>Free Parking</strong>Private on-site, no booking needed</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="trust-label"><strong>Quiet Neighbourhood</strong>Relaxed residential Wavecrest area</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span class="trust-label"><strong>Walk to Everything</strong>Shops &amp; restaurants within 100m</span>
+    </div>
+  </div>
+
   <!-- ── CTA BANNER ────────────────────────────────────────────────── -->
   <section class="cta-section" aria-label="Book your stay">
     <div class="cta-bg" role="img" aria-label="Breakfast on a Greystone balcony with sea view"></div>
@@ -1799,11 +1884,15 @@
         </details>
         <details class="faq-item">
           <summary class="faq-question">Is breakfast included at Greystone Guesthouse?</summary>
-          <p class="faq-answer">A full cooked South African breakfast is available to order each morning — eggs, bacon, sausages, toast, fresh coffee and tea. Enjoy it in the dining room or on the balcony with sea views.</p>
+          <p class="faq-answer">Cost sensitive guests have requested that we price for rooms only. A full cooked South African breakfast is available as an optional extra to order each morning — eggs, bacon, sausages, toast, fresh coffee and tea. Enjoy it in the dining room or on the balcony with sea views.</p>
         </details>
         <details class="faq-item">
           <summary class="faq-question">Do you have free parking and WiFi?</summary>
           <p class="faq-answer">Yes — Greystone Guesthouse offers free private on-site parking (no reservation needed) and free WiFi throughout the property, including in all guest rooms.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What happens during load shedding?</summary>
+          <p class="faq-answer">Nothing changes for our guests. Greystone Guesthouse has a full solar power system with inverter and battery backup, so your lights, WiFi, and hot water stay on through Eskom power outages. You can continue working, streaming and using your devices without interruption.</p>
         </details>
         <details class="faq-item">
           <summary class="faq-question">What are the check-in and check-out times?</summary>
@@ -1862,7 +1951,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 Greystone Guesthouse. All rights reserved.</p>
+      <p>&copy; 2026 Greystone Guesthouse. All rights reserved.</p>
       <p>Jeffreys Bay &nbsp;·&nbsp; Eastern Cape &nbsp;·&nbsp; South Africa</p>
     </div>
   </footer>
