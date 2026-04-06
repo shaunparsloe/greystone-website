@@ -52,6 +52,81 @@
   }
   </script>
 
+  <!-- LodgingBusiness + AggregateRating Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Greystone Guesthouse",
+    "description": "A 3-star rated bed and breakfast in Jeffreys Bay, 260m from the beach and 300m from Supertubes.",
+    "url": "https://greystoneguesthouse.co.za/",
+    "image": "https://greystoneguesthouse.co.za/images/553368676.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "11 Mimosa Street",
+      "addressLocality": "Jeffreys Bay",
+      "addressRegion": "Eastern Cape",
+      "postalCode": "6330",
+      "addressCountry": "ZA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -33.9308,
+      "longitude": 24.9355
+    },
+    "telephone": "+27829537641",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "3"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "8.4",
+      "bestRating": "10",
+      "reviewCount": "499",
+      "ratingCount": "499"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "reviewBody": "The friendliest, nicest people made us feel right at home. They served breakfasts that seemed to have no end and when they found out that it was my partner's birthday they laid on a BBQ for us and treated us to some local SA dishes.",
+        "author": { "@type": "Person", "name": "Guest" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "The service at Greystone was really good, the people working there goes out of their way to assist you. The breakfast was prepared well, and tasted great and more than enough to fill you. Greystone guesthouse was located very close to the beach and had a great view.",
+        "author": { "@type": "Person", "name": "Fred" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "Nice clean and comfortable room, at a reasonable price. Well located close to shops and restaurants. I will stay there again if I visit Jeffreys Bay again.",
+        "author": { "@type": "Person", "name": "Leon" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "My husband and I stayed 2 nights at Greystone Guest House and honestly had a lovely time. We had breakfast included and it was delicious! Our host was welcoming and helped with any questions, directions and suggestions.",
+        "author": { "@type": "Person", "name": "Guest" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "The room was clean, lovely sea view. Sitting out on the balcony and looking at the ocean was good for my soul.",
+        "author": { "@type": "Person", "name": "Guest" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "reviewBody": "We were treated with so much care from arrival to departure. All the staff are friendly and make you feel at home. Will definitely stay over again and recommend to others.",
+        "author": { "@type": "Person", "name": "Guest" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -253,6 +328,80 @@
       text-align: right;
     }
 
+    /* ─── GUEST QUOTES ─────────────────────────────────────────── */
+    .quotes-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 3.5rem 5rem;
+    }
+
+    .quotes-heading {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .quotes-heading h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 0.8rem; }
+    .quotes-heading p { color: var(--muted); font-size: 0.85rem; }
+
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    .quote-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .quote-icon {
+      color: var(--gold-dim);
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+
+    .quote-card p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(245,240,232,0.85);
+      flex: 1;
+    }
+
+    .quote-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+    }
+
+    .quote-source {
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .quote-origin {
+      color: var(--muted);
+    }
+
+    .quote-theme {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-dim);
+      padding: 0.3rem 0.7rem;
+      margin-bottom: 1rem;
+    }
+
     /* ─── LINKS ────────────────────────────────────────────────── */
     .review-links {
       display: flex;
@@ -369,6 +518,8 @@
       .platforms { grid-template-columns: 1fr; padding: 0 2rem 4rem; }
       .platform-card { padding: 2.2rem; }
       .review-links { flex-direction: column; align-items: center; padding: 0 2rem 5rem; }
+      .quotes-section { padding: 0 2rem 4rem; }
+      .quotes-grid { gap: 1.5rem; }
       .footer-main { padding: 4rem 2rem; gap: 3rem; }
       .footer-bottom { padding: 1.4rem 2rem; }
     }
@@ -381,6 +532,9 @@
       .platform-card { padding: 1.8rem; }
       .category { grid-template-columns: 100px 1fr 36px; gap: 0.7rem; }
       .review-links { padding: 0 1.5rem 4rem; }
+      .quotes-section { padding: 0 1.5rem 3.5rem; }
+      .quotes-grid { grid-template-columns: 1fr; }
+      .quote-card { padding: 1.8rem; }
       .footer-main { grid-template-columns: 1fr; padding: 3.5rem 1.5rem; gap: 2.5rem; }
       .footer-bottom { padding: 1.4rem 1.5rem; flex-direction: column; gap: 0.4rem; text-align: center; }
     }
@@ -504,6 +658,111 @@
     </div>
 
   </div>
+
+  <!-- ── GUEST QUOTES ────────────────────────────────────────────── -->
+  <section class="quotes-section" aria-labelledby="quotes-heading">
+    <div class="quotes-heading">
+      <p class="eyebrow">In Their Own Words</p>
+      <h2 class="display" id="quotes-heading">What guests <em>love</em></h2>
+      <p>Real reviews from real guests across Booking.com and TripAdvisor</p>
+    </div>
+
+    <div class="quotes-grid">
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Hospitality</span>
+        <p>"The friendliest, nicest people made us feel right at home. They served breakfasts that seemed to have no end and when they found out that it was my partner's birthday they laid on a BBQ for us and treated us to some local SA dishes."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">TripAdvisor</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Breakfast &amp; Location</span>
+        <p>"The service at Greystone was really good, the people working there goes out of their way to assist you. The breakfast was prepared well, and tasted great and more than enough to fill you. Greystone guesthouse was located very close to the beach and had a great view."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">TripAdvisor</span>
+          <span class="quote-origin">South Africa</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Sea View</span>
+        <p>"The room was clean, lovely sea view. Sitting out on the balcony and looking at the ocean was good for my soul."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">Booking.com</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Couples</span>
+        <p>"My husband and I stayed 2 nights at Greystone Guest House and honestly had a lovely time. We had breakfast included and it was delicious! Our host was welcoming and helped with any questions, directions and suggestions."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">TripAdvisor</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Value &amp; Comfort</span>
+        <p>"Nice clean and comfortable room, at a reasonable price. Well located close to shops and restaurants. I will stay there again if I visit Jeffreys Bay again."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">TripAdvisor</span>
+          <span class="quote-origin">South Africa</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Privacy &amp; Rooms</span>
+        <p>"Greystone Guest House provided me the privacy I seek in a guesthouse. The room and amenities were perfect; I especially loved the bathroom and sea view my room offered."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">Booking.com</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Cleanliness</span>
+        <p>"The hosts are nice and friendly and the guest house was clean, every day there was someone to clean the room."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">Booking.com</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Personal Touch</span>
+        <p>"There was a very homey feel to the guesthouse. The staff went out of their way to make me feel at home."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">Booking.com</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Beach Access</span>
+        <p>"Although the sea-view is partial, it is beautiful and the guest house is walking distance to the beach. To the beach it just takes about 4 mins."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">TripAdvisor</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="quote-card">
+        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+        <span class="quote-theme">Recommend</span>
+        <p>"We were treated with so much care from arrival to departure. All the staff are friendly and make you feel at home. Will definitely stay over again and recommend to others."</p>
+        <footer class="quote-footer">
+          <span class="quote-source">TripAdvisor</span>
+        </footer>
+      </blockquote>
+
+    </div>
+  </section>
 
   <!-- ── READ MORE LINKS ─────────────────────────────────────────── -->
   <div class="review-links">
