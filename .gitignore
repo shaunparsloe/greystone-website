@@ -2,3 +2,4 @@ analytics-data/
 __pycache__/
 business-data/
 .claude/settings.local.json
+SEO/

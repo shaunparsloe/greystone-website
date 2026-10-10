@@ -11,7 +11,7 @@
 - **Airport:** Port Elizabeth Airport (now Gqeberha) — 64 km away
 - **Nearby:** Supermarket and restaurant within 100 metres
 
-## Data Feeds (see `data-feeds-setup.md`)
+## Data Feeds (see `SEO/data-feeds-setup.md`)
 - **Search Console:** domain property `sc-domain:greystoneguesthouse.co.za`
 - **Google Analytics 4:** property ID `530830177`, measurement ID `G-LHN8DCK50B`
 - **Microsoft Clarity:** project ID `yvgn1ghg23`; daily pull to `analytics-data/clarity/` (git-ignored) via `scripts/clarity_pull.py`
