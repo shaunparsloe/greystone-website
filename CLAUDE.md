@@ -11,6 +11,14 @@
 - **Airport:** Port Elizabeth Airport (now Gqeberha) — 64 km away
 - **Nearby:** Supermarket and restaurant within 100 metres
 
+## Data Feeds (see `data-feeds-setup.md`)
+- **Search Console:** domain property `sc-domain:greystoneguesthouse.co.za`
+- **Google Analytics 4:** property ID `530830177`, measurement ID `G-LHN8DCK50B`
+- **Microsoft Clarity:** project ID `yvgn1ghg23`; daily pull to `analytics-data/clarity/` (git-ignored) via `scripts/clarity_pull.py`
+- **Google Cloud:** project `greystone-seo`, service account `claude-seo@greystone-seo.iam.gserviceaccount.com`
+- **Credentials:** `~/.config/greystone-seo/secrets.env` + `google-service-account.json` (outside repo; never commit or paste into chat)
+- MCP servers (`gsc`, `analytics`, `clarity`, `firecrawl`, `dataforseo`) launch via `~/.config/greystone-seo/run.sh`
+
 ## Booking & Ratings
 - **Primary booking channel:** Booking.com
 - **Booking.com score:** 8.4 / 10 (Very Good) — 462 reviews (checked 10 Oct 2026)
