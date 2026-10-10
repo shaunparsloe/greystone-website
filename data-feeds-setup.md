@@ -91,9 +91,11 @@ Notes: free plan is **1,000 credits per month** (1,000 pages scraped *or* 500 se
 
 ## 4. DataForSEO: keyword rankings, search volumes, competitor SEO
 
-- [ ] Sign up at <https://app.dataforseo.com>. It's **pay-as-you-go with an upfront deposit**, so decide your budget first.
-- [ ] Go to the **API Access** page and copy the **API login** and **API password**. These are **not** your account email or password.
-- [ ] In the keys file:
+Status: **keys added** (10 Oct 2026). Restart Claude Code to connect it. Used only as a paid add-on to Search Console; see "SEO data rules" in `CLAUDE.md`.
+
+- [x] Sign up at <https://app.dataforseo.com>. It's **pay-as-you-go with an upfront deposit**, so decide your budget first.
+- [x] Go to the **API Access** page and copy the **API login** and **API password**. These are **not** your account email or password.
+- [x] In the keys file:
   ```
   DATAFORSEO_USERNAME=your-api-login
   DATAFORSEO_PASSWORD=your-api-password

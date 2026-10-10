@@ -19,6 +19,15 @@
 - **Credentials:** `~/.config/greystone-seo/secrets.env` + `google-service-account.json` (outside repo; never commit or paste into chat)
 - MCP servers (`gsc`, `analytics`, `clarity`, `firecrawl`, `dataforseo`) launch via `~/.config/greystone-seo/run.sh`
 
+### SEO data rules (DataForSEO is pay-per-call — keep costs low)
+- **Search Console first.** Answer from GSC whenever it can; DataForSEO is only an enrichment layer on top.
+- **Cache GSC results** as JSON in `analytics-data/gsc/` (git-ignored), named `<start>_<end>_<dimensions>[_<filter>].json`. Check the cache before querying; never re-fetch an identical closed date range (ranges ending within the last 3 days may be refreshed, as GSC data is still settling).
+- **Call DataForSEO only** for: external keyword metrics (volume, CPC, difficulty), competitor data, detailed backlink information, or independent ranking checks.
+- **Batch** keywords and domains into one request wherever the endpoint supports it.
+- **Limit result counts** (set `limit`; default ≤100 rows). Don't request thousands of backlinks unless explicitly needed — use summary endpoints first.
+- Cache DataForSEO responses too, in `analytics-data/dataforseo/<YYYY-MM-DD>_<endpoint>_<slug>.json`, and reuse them rather than paying twice for the same query.
+- **Every report states its data source(s) and retrieval date** (e.g. "Source: Google Search Console, retrieved 10 Oct 2026").
+
 ## Booking & Ratings
 - **Primary booking channel:** Booking.com
 - **Booking.com score:** 8.4 / 10 (Very Good) — 462 reviews (checked 10 Oct 2026)
