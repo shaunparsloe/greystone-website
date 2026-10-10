@@ -13,9 +13,9 @@
 
 ## Booking & Ratings
 - **Primary booking channel:** Booking.com
-- **Booking.com score:** 8.4 / 10 (Very Good) — 487 reviews
+- **Booking.com score:** 8.4 / 10 (Very Good) — 462 reviews (checked 10 Oct 2026)
 - **Couples rating:** 8.7 for two-person trips
-- **TripAdvisor:** #13 of 50 B&Bs, 4/5, 134 reviews (https://www.tripadvisor.co.uk/Hotel_Review-g469383-d1342566-Reviews-Greystone_Guest_House-Jeffreys_Bay_Eastern_Cape.html)
+- **TripAdvisor:** #14 of 50 B&Bs, 4.5/5, 135 reviews (checked 10 Oct 2026) (https://www.tripadvisor.co.uk/Hotel_Review-g469383-d1342566-Reviews-Greystone_Guest_House-Jeffreys_Bay_Eastern_Cape.html)
 - **Google:** 4.2 stars, 185 reviews
 - **SafariNow:** 4.5 / 5 (13 reviews)
 - **Tourism grading:** 3-star (Tourism Grading Council of South Africa)
