@@ -11,10 +11,12 @@
 - **Airport:** Port Elizabeth Airport (now Gqeberha) — 64 km away
 - **Nearby:** Supermarket and restaurant within 100 metres
 
-## Data Feeds (see `SEO/data-feeds-setup.md`)
+## Data Feeds (see `analytics-data/SEO/data-feeds-setup.md`)
 - **Search Console:** domain property `sc-domain:greystoneguesthouse.co.za`
 - **Google Analytics 4:** property ID `530830177`, measurement ID `G-LHN8DCK50B`
-- **Microsoft Clarity:** project ID `yvgn1ghg23`; daily pull to `analytics-data/clarity/` (git-ignored) via `scripts/clarity_pull.py`
+- **Microsoft Clarity:** project ID `yvgn1ghg23`; pulled daily at 04:17 UTC by GitHub Actions in the private repo `shaunparsloe/greystone-analytics-data` (script `analytics-data/scripts/clarity_pull.py`, secret `CLARITY_API_TOKEN`)
+- **Data repo:** `analytics-data/` is a clone of that private repo (git-ignored by this public one). It holds all cached data and `SEO/` docs and reports. `git pull` before using it; commit and push what you add. Weekly GSC + GA4 pull also runs there (workflow "Weekly GSC + GA4 pull", Wednesdays 05:07 UTC, `analytics-data/scripts/weekly_pull.py`, secret `GOOGLE_SERVICE_ACCOUNT_JSON`), then Claude writes the weekly report (`analytics-data/.claude/skills/seo-weekly/`, secret `CLAUDE_CODE_OAUTH_TOKEN`) and it's emailed as a GitHub issue. Monthly SEO review runs there on the 10th (workflow "Monthly SEO review", skill `analytics-data/.claude/skills/seo-monthly/`, config `analytics-data/SEO/monthly-config.json`; secrets `DATAFORSEO_USERNAME`, `DATAFORSEO_PASSWORD`, `FIRECRAWL_API_KEY`). Booking data: save the monthly NightsBridge Bookings Report (`Booking Summary YYYY MM DD.xlsx`) and Free Upgrades sheet to `business-data/`, then `python3 analytics-data/scripts/bookings_extract.py` (only anonymised monthly stats go to the repo)
+- **Business data repo:** `business-data/` is its own private repo, `shaunparsloe/greystone-business-data` (git-ignored by this public one). It holds raw NightsBridge exports, P&L, marketing/occupancy reports and `Staff/` documents. Commit and push new files there; never copy its contents into the public or analytics repos
 - **Google Cloud:** project `greystone-seo`, service account `claude-seo@greystone-seo.iam.gserviceaccount.com`
 - **Credentials:** `~/.config/greystone-seo/secrets.env` + `google-service-account.json` (outside repo; never commit or paste into chat)
 - MCP servers (`gsc`, `analytics`, `clarity`, `firecrawl`, `dataforseo`) launch via `~/.config/greystone-seo/run.sh`
