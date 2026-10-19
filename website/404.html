@@ -6,7 +6,7 @@
   <title>Page Not Found | Greystone Guesthouse Jeffreys Bay</title>
   <meta name="robots" content="noindex, follow">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on -->
+  <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
   <script>
     (function(){
       var m = location.search.match(/[?&]notrack=([01])(&|$)/), off = !!m && m[1] === '1';
@@ -14,6 +14,15 @@
         if (m) { if (off) localStorage.setItem('notrack', '1'); else localStorage.removeItem('notrack'); }
         else off = localStorage.getItem('notrack') === '1';
       } catch (e) {}
+      // Bot filter (19 Oct 2026): a bot wave logged as Singapore/China loads the home page with fake Google
+      // click parameters (?sa=X&ved=...) and no referrer. Skip GA4 + Clarity for these; ?notrack=0 overrides.
+      var bot = false;
+      try {
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (/^Asia\/(Singapore|Shanghai|Chongqing|Harbin|Urumqi)$/.test(tz)) bot = true;
+      } catch (e) {}
+      if (/[?&]sa=X(&|$)/.test(location.search) && /[?&]ved=/.test(location.search) && !document.referrer) bot = true;
+      if (bot && !(m && m[1] === '0')) { off = true; console.info('Tracking skipped (bot filter)'); }
       window.ggNoTrack = off;
       if (off) { window['ga-disable-G-LHN8DCK50B'] = true; console.info('Tracking off on this device'); }
     })();
