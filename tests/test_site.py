@@ -97,6 +97,15 @@ PAGES = {
         "help_topics": ["surf", "restaurants", "shuttle"],
         "hreflang": {},
     },
+    "/restaurants-jeffreys-bay/": {
+        "file": "restaurants-jeffreys-bay/index.html",
+        "title": "Restaurants in Jeffreys Bay Near Supertubes | Greystone",
+        "h1": "Where to eat in Jeffreys Bay",
+        "lang": "en-ZA",
+        "schema_types": {"Article", "ItemList", "Restaurant", "BreadcrumbList"},
+        "help_topics": ["restaurants"],
+        "hreflang": {},
+    },
 }
 # Pages that existed before the restructure. New pages must reference the lodging,
 # never redefine it; these two keep their own schema.
@@ -477,6 +486,18 @@ class SiteTests(unittest.TestCase):
         hrefs = [a.get("href") for a in parse(path).anchors]
         self.assertIn("/restaurants-jeffreys-bay/", hrefs)
         self.assertIn("/surf-accommodation-supertubes/", hrefs)
+
+
+    def test_restaurants_named(self):
+        path = "/restaurants-jeffreys-bay/"
+        main = re.sub(r"<script.*?</script>", " ", load(path).split("<main", 1)[1].split("</main>", 1)[0], flags=re.S)
+        text = " ".join(re.sub(r"<[^>]+>", " ", main).split()).replace("&#x27;", "'").replace("&amp;", "&")
+        walking = text.split("Within walking distance", 1)[1]
+        positions = [walking.find(n) for n in ("Hyper Cafe", "Nina's Real Food", "Quitschy's Pizza")]
+        self.assertNotIn(-1, positions)
+        self.assertEqual(positions, sorted(positions))
+        self.assertIsNone(re.search(r"\b\d{1,2}[:h]\d{2}\b", text), "looks like opening hours")
+        self.assertIn("/things-to-do-jeffreys-bay/", [a.get("href") for a in parse(path).anchors])
 
 
 if __name__ == "__main__":
