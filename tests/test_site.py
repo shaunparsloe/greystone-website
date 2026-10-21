@@ -428,5 +428,19 @@ class SiteTests(unittest.TestCase):
             self.assertGreaterEqual(len(rooms.findall("image:image", ns)), 3)
 
 
+    def test_css_files(self):
+        chrome = (SITE / "css/chrome.css").read_text(encoding="utf-8")
+        site = (SITE / "css/site.css").read_text(encoding="utf-8")
+        for token in ("--ink: #080808", "--surface: #111", "--surface-2: #181818", "--gold: #C9A96E",
+                      "--gold-light: #E8D5B0", "--cream: #F5F0E8", "--muted: #7A7567"):
+            self.assertIn(token, chrome)
+        self.assertIn("@media (max-width: 768px)", chrome)
+        self.assertIn(".nav-toggle", chrome)
+        self.assertIn(".help-box", site)
+        self.assertIn(".btn-whatsapp", site)
+        for css in (chrome, site):
+            self.assertNotIn("@import", css)
+
+
 if __name__ == "__main__":
     unittest.main()
