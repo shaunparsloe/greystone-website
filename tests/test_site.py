@@ -442,5 +442,13 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn("@import", css)
 
 
+    def test_sitejs_static(self):
+        js = (SITE / "js/site.js").read_text(encoding="utf-8")
+        for name in ("begin_booking", "contact_whatsapp", "view_reviews", "click_booking_com",
+                     "click_tripadvisor", "navigate_section", "help_topic", "data-help-topic",
+                     "aria-expanded", "Escape", "typeof gtag"):
+            self.assertIn(name, js)
+
+
 if __name__ == "__main__":
     unittest.main()
