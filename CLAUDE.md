@@ -4,7 +4,6 @@
 - **Name:** Greystone Guesthouse
 - **Type:** Bed & Breakfast / Guesthouse
 - **Address:** 11 Mimosa Street, Jeffreys Bay, 6330, South Africa
-- **Owner:** Shaun
 - **Host:** Monique — 30+ years of business and customer care experience; known for attention to detail, anticipating guest needs, and exceptional hospitality
 - **Languages spoken:** Afrikaans, English
 - **Location highlight:** 260m from the beach; situated in Wavecrest (behind Spar); 300m from Supertubes (world-famous surf spot)
@@ -13,28 +12,6 @@
 
 ## Naming
 - When mentioning the city or its airport on the site, in listings or in docs, use both names: **Port Elizabeth**, which most guests know, and **Gqeberha**, the official name. The wording can vary as long as it reads naturally.
-
-## Git workflow
-- **Never commit directly to `main`** in any repo (website, `analytics-data/`, `business-data/`). Branch, push, open a PR with `gh pr create`; Shaun merges. Local pre-commit hooks block commits on `main`. The website repo is also protected on GitHub; the private repos aren't (needs GitHub Pro).
-
-## Data Feeds (see `analytics-data/SEO/data-feeds-setup.md`)
-- **Search Console:** domain property `sc-domain:greystoneguesthouse.co.za`
-- **Google Analytics 4:** property ID `530830177`, measurement ID `G-LHN8DCK50B`
-- **Microsoft Clarity:** project ID `yzbe0qilo7`; pulled daily at 04:17 UTC by GitHub Actions in the private repo `shaunparsloe/greystone-analytics-data` (script `analytics-data/scripts/clarity_pull.py`, secret `CLARITY_API_TOKEN`)
-- **Data repo:** `analytics-data/` is a clone of that private repo (git-ignored by this public one). It holds all cached data and `SEO/` docs and reports. `git pull` before using it; commit what you add on a branch and open a PR. Weekly GSC + GA4 pull also runs there (workflow "Weekly GSC + GA4 pull", Wednesdays 05:07 UTC, `analytics-data/scripts/weekly_pull.py`, secret `GOOGLE_SERVICE_ACCOUNT_JSON`), then Claude writes the weekly report (`analytics-data/.claude/skills/seo-weekly/`, secret `CLAUDE_CODE_OAUTH_TOKEN`) and it's emailed as a GitHub issue. Monthly SEO review runs there on the 10th (workflow "Monthly SEO review", skill `analytics-data/.claude/skills/seo-monthly/`, config `analytics-data/SEO/monthly-config.json`; secrets `DATAFORSEO_USERNAME`, `DATAFORSEO_PASSWORD`, `FIRECRAWL_API_KEY`). Booking data: save the monthly NightsBridge Bookings Report (`Booking Summary YYYY MM DD.xlsx`) and Free Upgrades sheet to `business-data/`, then `python3 analytics-data/scripts/bookings_extract.py` (only anonymised monthly stats go to the repo)
-- **Business data repo:** `business-data/` is its own private repo, `shaunparsloe/greystone-business-data` (git-ignored by this public one). It holds raw NightsBridge exports, P&L, marketing/occupancy reports and `Staff/` documents. Commit new files there on a branch and open a PR; never copy its contents into the public or analytics repos
-- **Google Cloud:** project `greystone-seo`, service account `claude-seo@greystone-seo.iam.gserviceaccount.com`
-- **Credentials:** `~/.config/greystone-seo/secrets.env` + `google-service-account.json` (outside repo; never commit or paste into chat)
-- MCP servers (`gsc`, `analytics`, `clarity`, `firecrawl`, `dataforseo`) launch via `~/.config/greystone-seo/run.sh`
-
-### SEO data rules (DataForSEO is pay-per-call — keep costs low)
-- **Search Console first.** Answer from GSC whenever it can; DataForSEO is only an enrichment layer on top.
-- **Cache GSC results** as JSON in `analytics-data/gsc/` (git-ignored), named `<start>_<end>_<dimensions>[_<filter>].json`. Check the cache before querying; never re-fetch an identical closed date range (ranges ending within the last 3 days may be refreshed, as GSC data is still settling).
-- **Call DataForSEO only** for: external keyword metrics (volume, CPC, difficulty), competitor data, detailed backlink information, or independent ranking checks.
-- **Batch** keywords and domains into one request wherever the endpoint supports it.
-- **Limit result counts** (set `limit`; default ≤100 rows). Don't request thousands of backlinks unless explicitly needed — use summary endpoints first.
-- Cache DataForSEO responses too, in `analytics-data/dataforseo/<YYYY-MM-DD>_<endpoint>_<slug>.json`, and reuse them rather than paying twice for the same query.
-- **Every report states its data source(s) and retrieval date** (e.g. "Source: Google Search Console, retrieved 10 Oct 2026").
 
 ## Booking & Ratings
 - **Primary booking channel:** Booking.com
@@ -130,10 +107,6 @@
 - **Restructure in progress (Oct 2026):** done in a separate Claude Code session started in `website/`, where Superpowers and Playwright are enabled (`website/.claude/settings.json`). **Brief: `analytics-data/SEO/website-restructure-plan.md`**. Read it in full before any website work.
   - Save Superpowers specs and plans (which default to `docs/superpowers/`) and any notes in `analytics-data/SEO/`, never in `website/`.
   - Save Playwright screenshots in the session scratchpad, not `website/`.
-
-## Marketing
-- TODO: Confirm channels (Google, social media, local listings)
-- TODO: Add pricing / seasonal rates
 
 ## Rooms
 
