@@ -122,10 +122,6 @@
 - Travellers exploring the Eastern Cape / Garden Route
 - Adventure seekers (skydiving, horse riding, diving, safaris nearby)
 
-## Current Goals
-1. Build a website for the property
-2. Set up marketing
-
 ## Website
 - Static HTML in `website/`, published by GitHub Pages from `main` to https://greystoneguesthouse.co.za (`.github/workflows/pages.yml`).
 - **`website/` is public twice over:** the repo is public on GitHub, and the site is published from it. Only site files go there.
@@ -190,7 +186,3 @@
 | 14 | 553368833 | **Breakfast on balcony** — pallet table, toast, coffee, street/sea view | Breakfast |
 | 15 | 553368836 | **Breakfast table** — indoor setting, full cooked breakfast | Breakfast |
 | 16 | 553368835 | **Breakfast overhead** — top-down of full spread: eggs/bacon/toast/coffee | Breakfast / menu |
-
-## Outstanding Questions
-- Do you have a domain name already?
-- Any additional photos not on Booking.com?
