@@ -541,5 +541,23 @@ class SiteTests(unittest.TestCase):
                     self.assertFalse(phrase.lower() in text, f"found '{phrase}'")
 
 
+    def test_af_links_to_english_pages_say_so(self):
+        # Only the home page has an Afrikaans version, so on /af/ the menu and footer
+        # name the English pages in English (and mark them lang="en").
+        html = load("/af/")
+        parts = [html.split('<nav id="nav"', 1)[1].split("</nav>", 1)[0],
+                 html.split('<footer class="site-footer">', 1)[1].split("</footer>", 1)[0]]
+        english = {"/": {"Home", "EN"}, "/rooms/": {"Rooms", "Rooms &amp; rates"},
+                   "/surf-accommodation-supertubes/": {"Surf"}, "/things-to-do-jeffreys-bay/": {"Things to do"},
+                   "/restaurants-jeffreys-bay/": {"Restaurants"}, "/business-travel/": {"Business travel"},
+                   "/reviews.html": {"Reviews", "Guest reviews"}, "/#faq": {"FAQ"}}
+        for part in parts:
+            for tag, href, label in re.findall(r'(<a href="([^"]+)"[^>]*>)([^<]*)</a>', part):
+                if href in english and "nav-logo" not in tag:
+                    with self.subTest(href=href, label=label):
+                        self.assertIn(label.strip(), english[href])
+                        self.assertIn('lang="en"', tag)
+
+
 if __name__ == "__main__":
     unittest.main()
