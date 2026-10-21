@@ -21,9 +21,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      # Publish website/ without the Claude Code session files and working docs kept there.
+      - name: Copy site without session files
+        run: rsync -a --exclude='.claude/' --exclude='*.md' website/ _site/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: './website'
+          path: './_site'
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
