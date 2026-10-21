@@ -38,35 +38,111 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: #080808;
       color: #F5F0E8;
       font-family: Georgia, 'Times New Roman', serif;
-      text-align: center;
-      padding: 2rem;
     }
-    .eyebrow { font-family: system-ui, sans-serif; font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; color: #C9A96E; margin-bottom: 1.2rem; }
-    h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 300; margin-bottom: 1rem; }
-    p { color: rgba(245,240,232,0.6); margin-bottom: 2.4rem; font-size: 1.05rem; }
-    nav { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    a { font-family: system-ui, sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2rem; border: 1px solid rgba(245,240,232,0.28); color: #F5F0E8; }
-    a.primary { background: #C9A96E; border-color: #C9A96E; color: #080808; }
+    .lost {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 1rem 4rem;
+    }
+    .lost .eyebrow { font-family: system-ui, sans-serif; font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; color: #C9A96E; margin-bottom: 1.2rem; }
+    .lost h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 300; margin-bottom: 1rem; }
+    .lost p { color: rgba(245,240,232,0.6); margin-bottom: 2.4rem; font-size: 1.05rem; }
+    .lost ul { list-style: none; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; max-width: 760px; }
+    .lost a { display: inline-block; font-family: system-ui, sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2rem; border: 1px solid rgba(245,240,232,0.28); color: #F5F0E8; }
+    .lost a.primary { background: #C9A96E; border-color: #C9A96E; color: #080808; }
   </style>
+  <link rel="stylesheet" href="/css/chrome.css">
 </head>
 <body>
-  <main>
+  <nav id="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
+  <ul class="nav-links" id="nav-menu" role="list">
+    <li><a href="/rooms/">Rooms</a></li>
+    <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+    <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+    <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+    <li><a href="/reviews.html">Reviews</a></li>
+    <li><a href="/af/" hreflang="af" lang="af">AF</a></li>
+    <li><a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="nav-whatsapp">WhatsApp</a></li>
+  </ul>
+  <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="nav-book">Book Now</a>
+  <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span></button>
+</nav>
+
+  <main class="lost">
     <p class="eyebrow">Greystone Guesthouse · Jeffreys Bay</p>
     <h1>This page has drifted out to sea</h1>
     <p>The page you were looking for doesn't exist. Try one of these instead.</p>
     <nav aria-label="Helpful links">
-      <a href="/" class="primary">Home</a>
-      <a href="/#rooms">Rooms</a>
-      <a href="/reviews.html">Guest Reviews</a>
-      <a href="https://book.nightsbridge.com/20319" rel="noopener">Book Now</a>
+      <ul role="list">
+        <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="primary">Book Now</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/rooms/">Rooms &amp; rates</a></li>
+        <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+        <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+        <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+        <li><a href="/business-travel/">Business travel</a></li>
+        <li><a href="/reviews.html">Guest reviews</a></li>
+        <li><a href="/af/" hreflang="af" lang="af">Afrikaans</a></li>
+      </ul>
     </nav>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" aria-label="Greystone Guesthouse">Greystone</a>
+        <p>A boutique B&amp;B guest house in Wavecrest, Jeffreys Bay, 300m from Supertubes, where every stay feels like coming home to the coast.</p>
+        <div class="footer-rating" aria-label="Rated 8.4 Very Good on Booking.com">
+          <span>8.4 · Very Good · Booking.com</span>
+        </div>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/rooms/">Rooms &amp; rates</a></li>
+          <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+          <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+          <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+          <li><a href="/business-travel/">Business travel</a></li>
+          <li><a href="/reviews.html">Guest reviews</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/af/" hreflang="af" lang="af">Afrikaans</a></li>
+          <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">Book Now</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="footer-heading">Find Us</p>
+        <address>
+          11 Mimosa Street<br>
+          Wavecrest, Jeffreys Bay<br>
+          Eastern Cape, 6330<br>
+          South Africa<br>
+          <br>
+          Check-in: 14:00 – 20:00<br>
+          Check-out: 07:00 – 10:00<br>
+          <br>
+          Languages: Afrikaans &amp; English
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Greystone Guesthouse. All rights reserved.</p>
+      <p>Jeffreys Bay &nbsp;·&nbsp; Eastern Cape &nbsp;·&nbsp; South Africa</p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
 </body>
 </html>

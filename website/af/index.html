@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
+  <script>
+    (function(){
+      var m = location.search.match(/[?&]notrack=([01])(&|$)/), off = !!m && m[1] === '1';
+      try {
+        if (m) { if (off) localStorage.setItem('notrack', '1'); else localStorage.removeItem('notrack'); }
+        else off = localStorage.getItem('notrack') === '1';
+      } catch (e) {}
+      // Bot filter (19 Oct 2026): a bot wave logged as Singapore/China loads the home page with fake Google
+      // click parameters (?sa=X&ved=...) and no referrer. Skip GA4 + Clarity for these; ?notrack=0 overrides.
+      var bot = false;
+      try {
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (/^Asia\/(Singapore|Shanghai|Chongqing|Harbin|Urumqi)$/.test(tz)) bot = true;
+      } catch (e) {}
+      if (/[?&]sa=X(&|$)/.test(location.search) && /[?&]ved=/.test(location.search) && !document.referrer) bot = true;
+      if (bot && !(m && m[1] === '0')) { off = true; console.info('Tracking skipped (bot filter)'); }
+      window.ggNoTrack = off;
+      if (off) { window['ga-disable-G-LHN8DCK50B'] = true; console.info('Tracking off on this device'); }
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window.ggNoTrack) {
+      var gt = document.createElement('script');
+      gt.async = true; gt.src = 'https://www.googletagmanager.com/gtag/js?id=G-LHN8DCK50B';
+      document.head.appendChild(gt);
+      gtag('js', new Date());
+      gtag('config', 'G-LHN8DCK50B');
+    }
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    if (!window.ggNoTrack) (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yzbe0qilo7");
+  </script>
+  <title>Verblyf in Jeffreysbaai | Greystone Gastehuis B&amp;B</title>
+  <meta name="description" content="B&amp;B-gastehuis in Jeffreysbaai, 260 m van die strand en 300 m van Supertubes. Agt kamers met eie badkamer vanaf R650 per nag, gratis WiFi en parkering.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://greystoneguesthouse.co.za/af/">
+  <link rel="alternate" hreflang="en-ZA" href="https://greystoneguesthouse.co.za/">
+  <link rel="alternate" hreflang="af" href="https://greystoneguesthouse.co.za/af/">
+  <link rel="alternate" hreflang="x-default" href="https://greystoneguesthouse.co.za/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Greystone Gastehuis | B&amp;B-verblyf in Jeffreysbaai">
+  <meta property="og:description" content="B&amp;B-gastehuis in Jeffreysbaai, 260 m van die strand en 300 m van Supertubes. Agt kamers met eie badkamer vanaf R650 per nag, gratis WiFi en parkering.">
+  <meta property="og:url" content="https://greystoneguesthouse.co.za/af/">
+  <meta property="og:image" content="https://greystoneguesthouse.co.za/images/553368676.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="461">
+  <meta property="og:image:alt" content="Sonsondergang oor Jeffreysbaai, gesien vanaf Greystone Gastehuis">
+  <meta property="og:locale" content="af_ZA">
+  <meta property="og:site_name" content="Greystone Guesthouse">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Greystone Gastehuis | B&amp;B-verblyf in Jeffreysbaai">
+  <meta name="twitter:description" content="B&amp;B-gastehuis in Jeffreysbaai, 260 m van die strand en 300 m van Supertubes. Agt kamers met eie badkamer vanaf R650 per nag, gratis WiFi en parkering.">
+  <meta name="twitter:image" content="https://greystoneguesthouse.co.za/images/553368676.jpg">
+  <meta name="twitter:image:alt" content="Sonsondergang oor Jeffreysbaai, gesien vanaf Greystone Gastehuis">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="/css/chrome.css">
+  <link rel="stylesheet" href="/css/site.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Tuis",
+      "item": "https://greystoneguesthouse.co.za/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Afrikaans",
+      "item": "https://greystoneguesthouse.co.za/af/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Greystone Gastehuis, B&B-verblyf in Jeffreysbaai",
+  "url": "https://greystoneguesthouse.co.za/af/",
+  "inLanguage": "af",
+  "description": "B&B-gastehuis in Jeffreysbaai, 260 m van die strand en 300 m van Supertubes.",
+  "about": {
+    "@id": "https://greystoneguesthouse.co.za/#lodging"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://greystoneguesthouse.co.za/"
+  }
+}
+  </script>
+</head>
+
+<body>
+  <!-- Afrikaans copy: for Monique's review -->
+  <nav id="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
+  <ul class="nav-links" id="nav-menu" role="list">
+    <li><a href="/rooms/">Kamers</a></li>
+    <li><a href="/surf-accommodation-supertubes/">Branders</a></li>
+    <li><a href="/things-to-do-jeffreys-bay/">Wat om te doen</a></li>
+    <li><a href="/restaurants-jeffreys-bay/">Restaurante</a></li>
+    <li><a href="/reviews.html">Resensies</a></li>
+    <li><a href="/" hreflang="en" lang="en">EN</a></li>
+    <li><a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="nav-whatsapp">WhatsApp</a></li>
+  </ul>
+  <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="nav-book">Bespreek Nou</a>
+  <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Maak kieslys oop"><span></span></button>
+</nav>
+
+  <main id="main">
+    <header class="page-hero" style="background-image: url('/images/553368676.jpg'); background-image: image-set(url('/images/553368676.webp') type('image/webp'), url('/images/553368676.jpg') type('image/jpeg'));">
+      <div class="page-hero-inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Tuis</a></li><li aria-current="page">Afrikaans</li></ol></nav>
+        <p class="eyebrow">Wavecrest · Jeffreysbaai · Oos-Kaap</p>
+        <h1 class="display">Greystone Gastehuis, B&amp;B-verblyf in Jeffreysbaai</h1>
+        <p class="lead">’n Rustige gastehuis in Wavecrest, 260 m van die strand en 300 m van Supertubes. Monique, jou gasvrou, praat Afrikaans en Engels en sorg dat elke gas tuis voel.</p>
+      </div>
+    </header>
+
+    <section class="content" aria-labelledby="oor-ons">
+      <div class="article">
+        <p class="eyebrow">Welkom</p>
+        <h2 id="oor-ons">Oor Greystone</h2>
+        <p>Greystone Gastehuis is ’n 3-ster B&amp;B in Wavecrest, die woonbuurt net agter Supertubes en die Point. Jy kan die strand in drie minute stap, en ’n supermark en restaurante is binne 100 m.</p>
+        <p>Jou gasvrou, Monique, het meer as 30 jaar ondervinding in besigheid en kliëntediens. Sy let op die klein dingetjies en help jou graag om jou kuier in Jeffreysbaai te beplan.</p>
+        <div class="btn-row">
+          <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="btn-gold">Bespreek Nou</a>
+          <a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="btn-whatsapp">WhatsApp ons</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="kamers">
+      <div class="article-wide">
+        <h2 id="kamers">Kamers en tariewe</h2>
+        <div class="cards">
+          <div class="card"><p class="meta">Kamers 1–4</p><h3>Deluxe-kamers met seesig</h3><p>Balkon of patio en gedeeltelike seesig, eie badkamer. Vanaf <strong>R1 200</strong> per nag vir twee, of <strong>R700</strong> vir een gas.</p></div>
+          <div class="card"><p class="meta">Kamers 5–6</p><h3>Queen-kamers</h3><p>Eie badkamer, geen uitsig. Kamer 6 het twee enkelbeddens. Vanaf <strong>R1 000</strong> per nag vir twee, of <strong>R650</strong> vir een gas.</p></div>
+          <div class="card"><p class="meta">Kamers 7–8 · Grondvloer</p><h3>Buitekamers met eie ingang</h3><p>Eie badkamer, mikrogolfoond, yskas en ketel. Vanaf <strong>R1 000</strong> per nag vir twee, of <strong>R650</strong> vir een gas.</p></div>
+        </div>
+        <p>Al die kamers het ’n eie badkamer, ’n platskerm-TV, gratis WiFi en ’n tee- en koffiemaker. Tariewe verander met die seisoen; kyk na die <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">besprekingsblad</a> vir pryse op jou datums, of sien al die besonderhede op ons <a href="/rooms/" hreflang="en">kamerblad (in Engels)</a>.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="ontbyt">
+      <div class="article">
+        <h2 id="ontbyt">Ontbyt</h2>
+        <p>Ons tariewe is slegs vir die kamer. ’n Volledige gekookte Suid-Afrikaanse ontbyt kan elke oggend bestel word, in die eetkamer of op die balkon met ’n uitsig oor die see.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="ligging">
+      <div class="article">
+        <h2 id="ligging">Ligging</h2>
+        <ul>
+          <li><strong>Strand:</strong> 260 m. Point Beach is omtrent 450 m weg.</li>
+          <li><strong>Supertubes:</strong> 300 m, ’n wêreldbekende branderplek.</li>
+          <li><strong>Lughawe:</strong> Chief Dawid Stuurman Internasionale Lughawe in Port Elizabeth (Gqeberha), 64 km, omtrent ’n uur se ry.</li>
+          <li><strong>Humansdorp:</strong> omtrent 15 minute se ry.</li>
+          <li><strong>Uitstappies:</strong> Addo-olifantpark (omtrent 1¼ tot 1½ uur) en Tsitsikamma (omtrent 1¼ uur).</li>
+        </ul>
+        <p>Lees meer in ons <a href="/things-to-do-jeffreys-bay/" hreflang="en">gids tot Jeffreysbaai (in Engels)</a>.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="huisreels">
+      <div class="article">
+        <h2 id="huisreels">Huisreëls</h2>
+        <ul>
+          <li><strong>Inklok:</strong> 14:00–20:00. Laat ons asseblief vooraf weet hoe laat jy aankom.</li>
+          <li><strong>Uitklok:</strong> 07:00–10:00</li>
+          <li><strong>Stiltetyd:</strong> 21:00–09:00</li>
+          <li>Gaste onder 18 moet saam met ’n ouer of voog wees.</li>
+          <li>Geen troeteldiere, rook of partytjies nie.</li>
+          <li><strong>Betaling:</strong> per bankoorplasing voor aankoms. Ons aanvaar Visa, Mastercard en Bankcard, maar nie kontant nie.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content faq" aria-labelledby="vrae">
+      <div class="article">
+        <h2 id="vrae">Algemene vrae</h2>
+        <details><summary>Hoe ver is Greystone van Supertubes?</summary><p>Greystone is 260 m van die strand en 300 m van Supertubes, een van die wêreld se bekendste branderplekke. Ons is in Wavecrest, Jeffreysbaai, met restaurante en winkels binne 100 m.</p></details>
+        <details><summary>Is ontbyt ingesluit?</summary><p>Ons tariewe is slegs vir die kamer. ’n Volledige gekookte Suid-Afrikaanse ontbyt kan elke oggend bestel word: eiers, spek, wors, roosterbrood, vars koffie en tee.</p></details>
+        <details><summary>Wat gebeur tydens beurtkrag?</summary><p>Niks verander vir ons gaste nie. Greystone het sonkrag met ’n omsetter en batterye, so die ligte, WiFi en warm water bly aan tydens Eskom se kragonderbrekings.</p></details>
+        <details><summary>Is daar gratis parkering en WiFi?</summary><p>Ja. Daar is gratis privaat parkering op die perseel (geen bespreking nodig nie) en gratis WiFi in al die kamers.</p></details>
+        <details><summary>Hoe ver is die lughawe?</summary><p>Chief Dawid Stuurman Internasionale Lughawe in Port Elizabeth (Gqeberha) is 64 km weg, omtrent ’n uur se ry. Monique help jou graag om ’n lughawependeldiens te reël en kan jou in kontak bring met plaaslike operateurs.</p></details>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="af-cta">
+      <h2 class="display" id="af-cta">Gereed vir <em>die see?</em></h2>
+      <p>Bespreek direk by ons, of stuur vir Monique ’n WhatsApp as jy eers vrae het.</p>
+      <div class="btn-row">
+        <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="btn-gold">Bespreek Nou</a>
+        <a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="btn-whatsapp">WhatsApp ons</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" aria-label="Greystone Guesthouse">Greystone</a>
+        <p>’n Boetiek-B&amp;B-gastehuis in Wavecrest, Jeffreysbaai, 300 m van Supertubes, waar elke verblyf voel soos om by die see tuis te kom.</p>
+        <div class="footer-rating" aria-label="Rated 8.4 Very Good on Booking.com">
+          <span>8.4 · Baie goed · Booking.com</span>
+        </div>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <p class="footer-heading">Verken</p>
+        <ul class="footer-links" role="list">
+          <li><a href="/">Tuis (Engels)</a></li>
+          <li><a href="/rooms/">Kamers en tariewe</a></li>
+          <li><a href="/surf-accommodation-supertubes/">Branderry</a></li>
+          <li><a href="/things-to-do-jeffreys-bay/">Wat om te doen</a></li>
+          <li><a href="/restaurants-jeffreys-bay/">Restaurante</a></li>
+          <li><a href="/business-travel/">Sakereise</a></li>
+          <li><a href="/reviews.html">Gasteresensies</a></li>
+          <li><a href="/#faq">Algemene vrae</a></li>
+          <li><a href="/af/" hreflang="af" lang="af">Afrikaans</a></li>
+          <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">Bespreek nou</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="footer-heading">Vind ons</p>
+        <address>
+          11 Mimosa Street<br>
+          Wavecrest, Jeffreys Bay<br>
+          Eastern Cape, 6330<br>
+          South Africa<br>
+          <br>
+          Inklok: 14:00 – 20:00<br>
+          Uitklok: 07:00 – 10:00<br>
+          <br>
+          Tale: Afrikaans en Engels
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Greystone Guesthouse. All rights reserved.</p>
+      <p>Jeffreys Bay &nbsp;·&nbsp; Eastern Cape &nbsp;·&nbsp; South Africa</p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

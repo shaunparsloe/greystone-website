@@ -1,0 +1,290 @@
+/* Greystone Guesthouse: styles for the content pages (rooms, guides, business, Afrikaans).
+   Values follow index.html so the pages match the home page. chrome.css supplies the tokens. */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+picture { display: contents; }
+
+a { color: var(--gold-light); }
+a:hover { color: var(--cream); }
+:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+
+/* ─── SCROLL REVEAL ─────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity 0.85s cubic-bezier(.22,.6,.36,1), transform 0.85s cubic-bezier(.22,.6,.36,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── TYPOGRAPHY ────────────────────────────────────────────── */
+.eyebrow {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+}
+
+.display {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.display em { font-style: italic; color: var(--gold-light); }
+
+/* ─── BUTTONS ───────────────────────────────────────────────── */
+.btn-gold,
+.btn-outline,
+.btn-whatsapp {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  cursor: pointer;
+}
+.btn-gold { background: var(--gold); color: var(--ink); }
+.btn-gold:hover { background: var(--gold-light); color: var(--ink); transform: translateY(-2px); }
+.btn-outline { border: 1px solid rgba(245,240,232,0.28); color: var(--cream); font-weight: 400; }
+.btn-outline:hover { border-color: var(--cream); color: var(--cream); transform: translateY(-2px); }
+.btn-whatsapp { background: #25D366; color: #fff; }
+.btn-whatsapp:hover { background: #1ebe57; color: #fff; transform: translateY(-2px); }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+
+/* ─── PAGE HERO ─────────────────────────────────────────────── */
+.page-hero {
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 9rem 3.5rem 4rem;
+  background-color: var(--surface);
+  background-size: cover;
+  background-position: center;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(175deg, rgba(8,8,8,0.45) 0%, rgba(8,8,8,0.55) 55%, rgba(8,8,8,0.96) 100%);
+}
+.page-hero-inner { position: relative; max-width: 1100px; width: 100%; margin: 0 auto; }
+.page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); margin-bottom: 1.2rem; }
+.page-hero .lead {
+  max-width: 62ch;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(245,240,232,0.75);
+}
+
+/* ─── BREADCRUMBS ───────────────────────────────────────────── */
+.breadcrumbs ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.55);
+  margin-bottom: 1.5rem;
+}
+.breadcrumbs li + li::before { content: '/'; margin-right: 0.5rem; color: var(--gold); }
+.breadcrumbs a { color: rgba(245,240,232,0.7); text-decoration: none; }
+.breadcrumbs a:hover { color: var(--cream); }
+
+/* ─── CONTENT ───────────────────────────────────────────────── */
+.content { padding: 5rem 3.5rem; }
+.content + .content { padding-top: 0; }
+
+.article {
+  max-width: 70ch;
+  margin: 0 auto;
+}
+.article-wide { max-width: 1100px; margin: 0 auto; }
+
+.article section,
+.article-wide section { margin-bottom: 4.5rem; }
+
+.article h2,
+.article-wide h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  margin-bottom: 1.4rem;
+}
+.article h3,
+.article-wide h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 2rem 0 0.8rem;
+  color: var(--gold-light);
+}
+.article p,
+.article-wide p,
+.article li,
+.article-wide li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(245,240,232,0.78);
+}
+.article p + p,
+.article-wide p + p { margin-top: 1rem; }
+.article ul,
+.article-wide ul { margin: 1rem 0 1rem 1.2rem; }
+.article li + li,
+.article-wide li + li { margin-top: 0.4rem; }
+.article strong,
+.article-wide strong { font-weight: 500; color: var(--cream); }
+
+.note { font-size: 0.85rem; color: var(--muted); }
+
+/* ─── CARDS ─────────────────────────────────────────────────── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-faint);
+  padding: 1.6rem;
+}
+.card h3 { margin-top: 0; }
+.card .meta {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+/* Room tiers on /rooms/ */
+.room-tier {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.room-photos { display: grid; gap: 1rem; }
+.room-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.room-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--gold-light);
+  margin: 0.5rem 0 1rem;
+}
+.room-price small { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--muted); }
+
+/* ─── TABLES ────────────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; margin: 1.5rem 0; -webkit-overflow-scrolling: touch; }
+.table-wrap table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.9rem; }
+.table-wrap th,
+.table-wrap td {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-faint);
+  color: rgba(245,240,232,0.8);
+  vertical-align: top;
+}
+.table-wrap th {
+  font-weight: 500;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ─── FAQ ───────────────────────────────────────────────────── */
+.faq details { border-bottom: 1px solid var(--border-faint); }
+.faq summary {
+  display: block;
+  padding: 1.4rem 2rem 1.4rem 0;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--cream);
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.25s;
+}
+.faq summary:hover { color: var(--gold); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: transform 0.3s;
+}
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 0 1.4rem; font-size: 0.95rem; }
+
+/* ─── HELP BOX ("Staying at Greystone?") ────────────────────── */
+.help-box {
+  border: 1px solid rgba(201,169,110,0.35);
+  background: var(--surface);
+  padding: 1.1rem 1.25rem;
+  margin: 1.8rem 0;
+}
+.help-box p { margin-bottom: 0.9rem; }
+.help-box .btn-whatsapp { padding: 0.8rem 1.6rem; }
+
+/* ─── CTA BAND ──────────────────────────────────────────────── */
+.cta-band {
+  border-top: 1px solid var(--border-faint);
+  padding: 5rem 3.5rem;
+  text-align: center;
+}
+.cta-band h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 1rem; }
+.cta-band p { color: rgba(245,240,232,0.7); max-width: 56ch; margin: 0 auto; }
+.cta-band .btn-row { justify-content: center; }
+
+/* ─── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .page-hero { padding: 8rem 2rem 3.5rem; }
+  .content, .cta-band { padding-left: 2rem; padding-right: 2rem; }
+  .room-tier { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding: 7rem 1rem 3rem; min-height: 40vh; }
+  .content { padding: 3.5rem 1rem; }
+  .cta-band { padding: 4rem 1rem; }
+  .btn-gold, .btn-outline, .btn-whatsapp { padding: 0.95rem 1.6rem; }
+  .btn-row .btn-gold, .btn-row .btn-outline, .btn-row .btn-whatsapp { flex: 1 1 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

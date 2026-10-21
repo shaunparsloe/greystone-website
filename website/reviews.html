@@ -49,7 +49,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#080808">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://greystoneguesthouse.co.za/reviews.html">
 
   <!-- Open Graph -->
@@ -216,62 +216,6 @@
       color: var(--gold);
       margin-bottom: 1.2rem;
     }
-
-    /* ─── NAV ──────────────────────────────────────────────────── */
-    #nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 200;
-      padding: 1.6rem 3.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background 0.5s, backdrop-filter 0.5s, padding 0.4s, border-color 0.5s;
-      border-bottom: 1px solid transparent;
-      background: rgba(8,8,8,0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-color: var(--border-faint);
-    }
-
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--cream);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.8rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(245,240,232,0.55);
-      text-decoration: none;
-      transition: color 0.25s;
-    }
-    .nav-links a:hover { color: var(--cream); }
-
-    .nav-book {
-      font-size: 0.7rem !important;
-      font-weight: 500 !important;
-      letter-spacing: 0.18em !important;
-      color: var(--ink) !important;
-      background: var(--gold);
-      padding: 0.6rem 1.5rem;
-      transition: background 0.25s, transform 0.25s !important;
-    }
-    .nav-book:hover { background: var(--gold-light) !important; transform: translateY(-1px) !important; }
 
     /* ─── PAGE HEADER ──────────────────────────────────────────── */
     .page-header {
@@ -481,103 +425,17 @@
     /* ─── FOOTER ───────────────────────────────────────────────── */
     footer { border-top: 1px solid var(--border); }
 
-    .footer-main {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr;
-      gap: 4rem;
-      padding: 5rem 3.5rem 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-brand .nav-logo { display: block; margin-bottom: 1.2rem; }
-
-    .footer-brand p {
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.7;
-      max-width: 28ch;
-    }
-
-    .footer-rating {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      margin-top: 1.4rem;
-      font-size: 0.78rem;
-      color: var(--cream);
-    }
-
-    .footer-heading {
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.4rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.82rem;
-      transition: color 0.25s;
-    }
-    .footer-links a:hover { color: var(--cream); }
-
-    address {
-      font-style: normal;
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.7;
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      padding: 1.4rem 3.5rem;
-      border-top: 1px solid var(--border);
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-bottom p {
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-    }
-
     /* ─── RESPONSIVE ───────────────────────────────────────────── */
     @media (max-width: 900px) {
-      #nav { padding: 1.4rem 2rem; }
       .page-header { padding: 9rem 2rem 3rem; }
       .platforms { grid-template-columns: 1fr; padding: 0 2rem 4rem; }
       .platform-card { padding: 2.2rem; }
       .review-links { flex-direction: column; align-items: center; padding: 0 2rem 5rem; }
       .quotes-section { padding: 0 2rem 4rem; }
       .quotes-grid { gap: 1.5rem; }
-      .footer-main { padding: 4rem 2rem; gap: 3rem; }
-      .footer-bottom { padding: 1.4rem 2rem; }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links li { display: none; }
-      .nav-links li:last-child { display: block; }
     }
 
     @media (max-width: 600px) {
-      #nav { padding: 1.2rem 1.5rem; }
-      .nav-links { gap: 0; }
-      .nav-links li { display: none; }
-      .nav-links li:last-child { display: block; }
-      .nav-book { padding: 0.55rem 1.1rem; }
       .page-header { padding: 8rem 1.5rem 2.5rem; }
       .platforms { padding: 0 1.5rem 3.5rem; }
       .platform-card { padding: 1.8rem; }
@@ -586,25 +444,27 @@
       .quotes-section { padding: 0 1.5rem 3.5rem; }
       .quotes-grid { grid-template-columns: 1fr; }
       .quote-card { padding: 1.8rem; }
-      .footer-main { grid-template-columns: 1fr; padding: 3.5rem 1.5rem; gap: 2.5rem; }
-      .footer-bottom { padding: 1.4rem 1.5rem; flex-direction: column; gap: 0.4rem; text-align: center; }
     }
   </style>
+  <link rel="stylesheet" href="/css/chrome.css">
 </head>
 <body>
 
   <!-- ── NAV ─────────────────────────────────────────────────────── -->
   <nav id="nav" aria-label="Main navigation">
-    <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
-    <ul class="nav-links" role="list">
-      <li><a href="/#rooms">Rooms</a></li>
-      <li><a href="/#breakfast">Breakfast</a></li>
-      <li><a href="/#location">J&#8209;Bay</a></li>
-      <li><a href="reviews.html" aria-current="page">Reviews</a></li>
-      <li><a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="nav-book" style="background:#25D366;color:#fff">WhatsApp</a></li>
-      <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="nav-book">Book Now</a></li>
-    </ul>
-  </nav>
+  <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
+  <ul class="nav-links" id="nav-menu" role="list">
+    <li><a href="/rooms/">Rooms</a></li>
+    <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+    <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+    <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+    <li><a href="/reviews.html" aria-current="page">Reviews</a></li>
+    <li><a href="/af/" hreflang="af" lang="af">AF</a></li>
+    <li><a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="nav-whatsapp">WhatsApp</a></li>
+  </ul>
+  <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="nav-book">Book Now</a>
+  <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span></button>
+</nav>
 
   <!-- ── PAGE HEADER ─────────────────────────────────────────────── -->
   <header class="page-header">
@@ -818,36 +678,42 @@
 
   <!-- ── READ MORE LINKS ─────────────────────────────────────────── -->
   <div class="review-links">
+    <a href="https://book.nightsbridge.com/20319"
+       target="_blank" rel="noopener"
+       class="review-link review-link--booking"
+       aria-label="Book your stay at Greystone Guesthouse">Book Now</a>
     <a href="https://www.booking.com/hotel/za/greystone-guesthouse-jeffreys-bay.en-gb.html#tab-reviews"
        target="_blank" rel="noopener"
-       class="review-link review-link--booking">Read Booking.com Reviews</a>
+       class="review-link review-link--tripadvisor">Read Booking.com Reviews</a>
     <a href="https://www.tripadvisor.co.uk/Hotel_Review-g469383-d1342566-Reviews-Greystone_Guest_House-Jeffreys_Bay_Eastern_Cape.html"
        target="_blank" rel="noopener"
        class="review-link review-link--tripadvisor">Read TripAdvisor Reviews</a>
   </div>
 
   <!-- ── FOOTER ────────────────────────────────────────────────────── -->
-  <footer>
+  <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-brand">
         <a href="/" class="nav-logo" aria-label="Greystone Guesthouse">Greystone</a>
-        <p>A boutique guesthouse in the heart of Jeffreys Bay, where every stay feels like coming home to the coast.</p>
+        <p>A boutique B&amp;B guest house in Wavecrest, Jeffreys Bay, 300m from Supertubes, where every stay feels like coming home to the coast.</p>
         <div class="footer-rating" aria-label="Rated 8.4 Very Good on Booking.com">
-          <span>8.4</span>
-          <span style="color:var(--muted)">·</span>
-          <span>Very Good · Booking.com</span>
+          <span>8.4 · Very Good · Booking.com</span>
         </div>
       </div>
 
       <nav aria-label="Footer navigation">
-        <p class="footer-heading">Navigate</p>
+        <p class="footer-heading">Explore</p>
         <ul class="footer-links" role="list">
-          <li><a href="/#rooms">Rooms &amp; Rates</a></li>
-          <li><a href="/#breakfast">Breakfast</a></li>
-          <li><a href="/#location">J-Bay &amp; Activities</a></li>
-          <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">Book Now</a></li>
-          <li><a href="reviews.html">Guest Reviews</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/rooms/">Rooms &amp; rates</a></li>
+          <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+          <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+          <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+          <li><a href="/business-travel/">Business travel</a></li>
+          <li><a href="/reviews.html">Guest reviews</a></li>
           <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/af/" hreflang="af" lang="af">Afrikaans</a></li>
+          <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">Book Now</a></li>
         </ul>
       </nav>
 
@@ -860,7 +726,7 @@
           South Africa<br>
           <br>
           Check-in: 14:00 – 20:00<br>
-          Check-out: by 10:00<br>
+          Check-out: 07:00 – 10:00<br>
           <br>
           Languages: Afrikaans &amp; English
         </address>
@@ -887,40 +753,7 @@
     document.querySelectorAll('.category-bar-fill').forEach(bar => observer.observe(bar));
   </script>
 
-  <!-- Conversion tracking -->
-  <script>
-    document.addEventListener('click', function(e) {
-      var link = e.target.closest('a[href]');
-      if (!link) return;
-      var href = link.href;
-      var label = link.getAttribute('aria-label') || link.textContent.trim();
-      if (href.indexOf('book.nightsbridge.com') !== -1) {
-        gtag('event', 'begin_booking', {
-          event_category: 'conversion',
-          event_label: label,
-          link_url: href
-        });
-      } else if (href.indexOf('wa.me') !== -1) {
-        gtag('event', 'contact_whatsapp', {
-          event_category: 'conversion',
-          event_label: label,
-          link_url: href
-        });
-      } else if (href.indexOf('booking.com') !== -1) {
-        gtag('event', 'click_booking_com', {
-          event_category: 'outbound',
-          event_label: label,
-          link_url: href
-        });
-      } else if (href.indexOf('tripadvisor') !== -1) {
-        gtag('event', 'click_tripadvisor', {
-          event_category: 'outbound',
-          event_label: label,
-          link_url: href
-        });
-      }
-    });
-  </script>
+  <script src="/js/site.js" defer></script>
 
 </body>
 </html>

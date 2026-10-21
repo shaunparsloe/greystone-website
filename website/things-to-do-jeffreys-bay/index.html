@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
+  <script>
+    (function(){
+      var m = location.search.match(/[?&]notrack=([01])(&|$)/), off = !!m && m[1] === '1';
+      try {
+        if (m) { if (off) localStorage.setItem('notrack', '1'); else localStorage.removeItem('notrack'); }
+        else off = localStorage.getItem('notrack') === '1';
+      } catch (e) {}
+      // Bot filter (19 Oct 2026): a bot wave logged as Singapore/China loads the home page with fake Google
+      // click parameters (?sa=X&ved=...) and no referrer. Skip GA4 + Clarity for these; ?notrack=0 overrides.
+      var bot = false;
+      try {
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (/^Asia\/(Singapore|Shanghai|Chongqing|Harbin|Urumqi)$/.test(tz)) bot = true;
+      } catch (e) {}
+      if (/[?&]sa=X(&|$)/.test(location.search) && /[?&]ved=/.test(location.search) && !document.referrer) bot = true;
+      if (bot && !(m && m[1] === '0')) { off = true; console.info('Tracking skipped (bot filter)'); }
+      window.ggNoTrack = off;
+      if (off) { window['ga-disable-G-LHN8DCK50B'] = true; console.info('Tracking off on this device'); }
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window.ggNoTrack) {
+      var gt = document.createElement('script');
+      gt.async = true; gt.src = 'https://www.googletagmanager.com/gtag/js?id=G-LHN8DCK50B';
+      document.head.appendChild(gt);
+      gtag('js', new Date());
+      gtag('config', 'G-LHN8DCK50B');
+    }
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    if (!window.ggNoTrack) (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yzbe0qilo7");
+  </script>
+  <title>Things to Do in Jeffreys Bay: A Local Guide | Greystone</title>
+  <meta name="description" content="A local's guide to Jeffreys Bay: the best beaches near Supertubes, surfing and lessons, nature walks, Addo and Tsitsikamma day trips and getting here.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://greystoneguesthouse.co.za/things-to-do-jeffreys-bay/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Things to Do in Jeffreys Bay: A Local Guide">
+  <meta property="og:description" content="A local's guide to Jeffreys Bay: the best beaches near Supertubes, surfing and lessons, nature walks, Addo and Tsitsikamma day trips and getting here.">
+  <meta property="og:url" content="https://greystoneguesthouse.co.za/things-to-do-jeffreys-bay/">
+  <meta property="og:image" content="https://greystoneguesthouse.co.za/images/553368676.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="461">
+  <meta property="og:image:alt" content="Sunset over Jeffreys Bay seen from Greystone Guesthouse">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:site_name" content="Greystone Guesthouse">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Things to Do in Jeffreys Bay: A Local Guide">
+  <meta name="twitter:description" content="A local's guide to Jeffreys Bay: the best beaches near Supertubes, surfing and lessons, nature walks, Addo and Tsitsikamma day trips and getting here.">
+  <meta name="twitter:image" content="https://greystoneguesthouse.co.za/images/553368676.jpg">
+  <meta name="twitter:image:alt" content="Sunset over Jeffreys Bay seen from Greystone Guesthouse">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="/css/chrome.css">
+  <link rel="stylesheet" href="/css/site.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://greystoneguesthouse.co.za/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Things to do in Jeffreys Bay",
+      "item": "https://greystoneguesthouse.co.za/things-to-do-jeffreys-bay/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Things to do in Jeffreys Bay: a local guide",
+  "description": "Beaches, surfing, nature reserves, day trips and practical tips for a visit to Jeffreys Bay, from Greystone Guesthouse in Wavecrest.",
+  "about": {
+    "@type": "Place",
+    "name": "Jeffreys Bay",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jeffreys Bay",
+      "addressRegion": "Eastern Cape",
+      "addressCountry": "ZA"
+    }
+  },
+  "author": {
+    "@id": "https://greystoneguesthouse.co.za/#lodging"
+  },
+  "publisher": {
+    "@id": "https://greystoneguesthouse.co.za/#lodging"
+  },
+  "image": "https://greystoneguesthouse.co.za/images/553368676.jpg",
+  "datePublished": "2026-10-21",
+  "dateModified": "2026-10-21",
+  "mainEntityOfPage": "https://greystoneguesthouse.co.za/things-to-do-jeffreys-bay/"
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Things to do near Greystone Guesthouse, Jeffreys Bay",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Supertubes",
+        "description": "World-famous right-hand point break and home of the J-Bay Open, about 300 m from Greystone."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Point Beach",
+        "description": "The nearest beach to Greystone, about 450 m away, next to the Point surf break."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Dolphin Beach and Kitchen Windows",
+        "description": "Long sandy beach about 1.1 km from Greystone, where beginners learn to surf at Kitchen Windows."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Kabeljous Beach",
+        "description": "Wide beach about 2.1 km from Greystone, at the mouth of the Kabeljous river."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Pellsrus Beach",
+        "description": "Beach on the south side of town, about 3.5 km from Greystone."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Aston Bay Beach",
+        "description": "Quieter beach about 6.8 km from Greystone."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Jeffrey's Bay Shell Museum",
+        "description": "Museum of local and world shells, about 2.7 km from Greystone."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Kabeljous Nature Reserve",
+        "description": "Small coastal reserve about 5.3 km from Greystone."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Seekoeirivier Nature Reserve",
+        "description": "Estuary reserve about 7.6 km from Greystone."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Addo Elephant National Park",
+        "description": "National park with elephants in their natural habitat, about 1¼–1½ hours' drive from Jeffreys Bay."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "TouristAttraction",
+        "name": "Tsitsikamma (Storms River)",
+        "description": "Section of the Garden Route National Park, about 1¼ hours' drive west of Jeffreys Bay."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+
+<body>
+
+  <nav id="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
+  <ul class="nav-links" id="nav-menu" role="list">
+    <li><a href="/rooms/">Rooms</a></li>
+    <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+    <li><a href="/things-to-do-jeffreys-bay/" aria-current="page">Things to do</a></li>
+    <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+    <li><a href="/reviews.html">Reviews</a></li>
+    <li><a href="/af/" hreflang="af" lang="af">AF</a></li>
+    <li><a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="nav-whatsapp">WhatsApp</a></li>
+  </ul>
+  <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="nav-book">Book Now</a>
+  <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span></button>
+</nav>
+
+  <main id="main">
+    <header class="page-hero" style="background-image: url('/images/553368676.jpg'); background-image: image-set(url('/images/553368676.webp') type('image/webp'), url('/images/553368676.jpg') type('image/jpeg'));">
+      <div class="page-hero-inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Things to do in Jeffreys Bay</li></ol></nav>
+        <p class="eyebrow">A local guide from Greystone, Wavecrest</p>
+        <h1 class="display">Things to do in Jeffreys Bay</h1>
+        <p class="lead">We live 300 m from Supertubes, and guests ask us the same good questions every week: where to swim, where to learn to surf, what to do when the wind blows and how long the drive to Addo really is. Here are our answers, with distances from our front door.</p>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="article">
+        <nav aria-label="On this page">
+          <p class="eyebrow">On this page</p>
+          <ul>
+            <li><a href="#beaches">Beaches near Greystone</a></li>
+            <li><a href="#surfing">Surfing</a></li>
+            <li><a href="#nature">Nature reserves and walks</a></li>
+            <li><a href="#day-trips">Wildlife and day trips</a></li>
+            <li><a href="#adventure">Adventure</a></li>
+            <li><a href="#rainy-day">Rainy-day and family ideas</a></li>
+            <li><a href="#when">When to visit</a></li>
+            <li><a href="#eat">Where to eat</a></li>
+            <li><a href="#getting-here">Getting here</a></li>
+            <li><a href="#stay">Where to stay</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="beaches">
+      <div class="article">
+        <p class="eyebrow">From 450 m</p>
+        <h2 id="beaches">Beaches near Greystone</h2>
+        <p>Jeffreys Bay is a long curve of beaches and rocky points, and from Greystone in Wavecrest you can walk to the best-known of them. The beach itself is 260 m from our door, about a three-minute walk.</p>
+        <ul>
+          <li><strong>Point Beach (about 450 m).</strong> Our nearest beach, beside the Point surf break. A good spot to watch the surfers and the sunset, and the start of an easy walk along the shore.</li>
+          <li><strong>Dolphin Beach and Kitchen Windows (about 1.1 km).</strong> A long sandy beach in the middle of town. Kitchen Windows is where most beginners learn to surf because the waves are gentler.</li>
+          <li><strong>Kabeljous Beach (about 2.1 km).</strong> A wide beach at the mouth of the Kabeljous river, with plenty of room for a long walk.</li>
+          <li><strong>Pellsrus Beach (about 3.5 km).</strong> On the south side of town, near the main road out.</li>
+          <li><strong>Aston Bay Beach (about 6.8 km).</strong> Quieter, a short drive away, with lots of space for a long walk.</li>
+        </ul>
+        <p>The sea here is the open Indian Ocean, with strong currents in places. Swim where others are swimming, stay away from the rocks and the surf breaks, and ask Monique where the water is calmest on the day.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="surfing">
+      <div class="article">
+        <p class="eyebrow">300 m from Greystone</p>
+        <h2 id="surfing">Surfing</h2>
+        <p>Supertubes is the reason most surfers come to J-Bay: a long, fast right-hand point break that, on a good day, runs for hundreds of metres. It's a five-minute walk from Greystone, so you can check the waves from the street and be in the water a few minutes later.</p>
+        <p>The best swells arrive in the South African winter, roughly May to September, when cold fronts push long-period groundswell up the coast. Summer still has rideable days, with warmer water and fewer people. The World Surf League's J-Bay Open is usually held at Supertubes in July; check the <a href="https://www.worldsurfleague.com" target="_blank" rel="noopener">WSL website</a> for this year's dates.</p>
+        <h3>Learning to surf</h3>
+        <p>Supertubes is for experienced surfers. Beginners learn at Kitchen Windows on Dolphin Beach, about 1.1 km from Greystone. <a href="https://wavecrestsurfschool.co.za" target="_blank" rel="noopener">Wavecrest Surf School</a> and Learn 2 Surf both teach there, with boards and wetsuits for their lessons. If you already surf, several shops in town hire out boards and wetsuits by the day. Read more on our page about <a href="/surf-accommodation-supertubes/">surf accommodation near Supertubes</a>.</p>
+        <aside class="help-box" aria-label="Help from Monique">
+  <p><strong>Staying at Greystone?</strong> Monique will help you arrange surf lessons or board and wetsuit hire, and can put you in touch with the right people for the season.</p>
+  <a href="https://wa.me/27829537641?text=Hi%20Monique%2C%20I'm%20staying%20at%20Greystone%20and%20would%20like%20help%20arranging%20surf%20lessons%20or%20board%20and%20wetsuit%20hire." target="_blank" rel="noopener" class="btn-whatsapp" data-help-topic="surf">WhatsApp Monique</a>
+</aside>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="nature">
+      <div class="article">
+        <p class="eyebrow">5–8 km</p>
+        <h2 id="nature">Nature reserves and walks</h2>
+        <p>Two small reserves sit within a short drive of Wavecrest:</p>
+        <ul>
+          <li><strong>Kabeljous Nature Reserve (about 5.3 km)</strong>, a small coastal reserve near the Kabeljous river mouth.</li>
+          <li><strong>Seekoeirivier Nature Reserve (about 7.6 km)</strong>, around the Seekoei river estuary, a good place to look for water birds.</li>
+        </ul>
+        <p>For the simplest walk of all, head down to the beach from Greystone and walk along the shoreline towards Dolphin Beach. Early morning and the hour before sunset are the best times, when the light is soft and the wind usually drops.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="day-trips">
+      <div class="article">
+        <p class="eyebrow">1–1½ hours away</p>
+        <h2 id="day-trips">Wildlife and day trips</h2>
+        <p>Jeffreys Bay sits between two of the Eastern Cape's big days out, so it makes a good base for both.</p>
+        <h3>Addo Elephant National Park</h3>
+        <p>About 105–117 km away, roughly 1¼ to 1½ hours' drive, depending on which gate you use. Addo is known for its elephant herds, which you can see in their natural habitat from your own car or on a guided drive. Leave early: the animals are most active in the cool of the morning, and the park is big enough to fill a whole day.</p>
+        <h3>Tsitsikamma and Storms River</h3>
+        <p>About 110 km west along the N2, roughly 1¼ hours. Tsitsikamma is part of the Garden Route National Park, with forest, cliffs and the Storms River mouth. It's an easy first stop if you're carrying on along the Garden Route.</p>
+        <h3>St Francis Bay</h3>
+        <p>A short drive west of Jeffreys Bay, St Francis Bay is a quieter holiday village with canals, beaches and its own famous surf spot, Bruce's Beauties. It's good for a relaxed afternoon.</p>
+        <p>Nearer home, there's also a lion sanctuary in the area, and a golf course within 3 km of Greystone.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="adventure">
+      <div class="article">
+        <h2 id="adventure">Adventure</h2>
+        <p>If you'd like your heart rate up, J-Bay has plenty to offer:</p>
+        <ul>
+          <li><strong>Horse riding on the beach.</strong> Guided rides along the sand.</li>
+          <li><strong>Skydiving.</strong> Tandem jumps with views over the bay and the coastline.</li>
+          <li><strong>Sandboarding</strong> on the dunes around the bay.</li>
+          <li><strong>Snorkelling, diving and fishing</strong> along the reefs and rocky points.</li>
+          <li><strong>Windsurfing and kitesurfing</strong> when the wind is up.</li>
+        </ul>
+        <p>Operators change, and some only run in certain seasons or weather, so check before you go. Monique can tell you who she recommends at the moment.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="rainy-day">
+      <div class="article">
+        <h2 id="rainy-day">Rainy-day and family ideas</h2>
+        <ul>
+          <li><strong>Jeffrey's Bay Shell Museum (about 2.7 km).</strong> A surprising collection of shells from the local coast and around the world, good for an hour with children or on a windy afternoon.</li>
+          <li><strong>The surf shops.</strong> Jeffreys Bay is known for its surf shops and factory outlets, which are fun to browse even if you don't surf.</li>
+          <li><strong>Mini golf and bowling</strong> in town.</li>
+          <li><strong>At Greystone:</strong> the games room has a billiards table and darts, and there are board games and puzzles in the lounge.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="when">
+      <div class="article">
+        <h2 id="when">When to visit</h2>
+        <ul>
+          <li><strong>Winter (roughly May to September)</strong> brings the big swells, and the best chance of Supertubes at its best. Days are often clear and mild, but evenings are cool, so pack a warm layer.</li>
+          <li><strong>July</strong> is usually J-Bay Open month, when the town fills up with surf fans. Book early if you want to be within walking distance of the contest.</li>
+          <li><strong>Summer (roughly October to April)</strong> has warmer water, long evenings and the best beach days. The South African school holidays in December and January are the busiest time of year, so book well ahead.</li>
+          <li><strong>Spring and autumn</strong> are quieter and good value, and a fine time for walks, day trips and learning to surf.</li>
+        </ul>
+        <p>Whatever the season, mornings are usually the calmest part of the day, both for surfing and for walks on the beach. Our rates change with the season; check live availability for your dates on our <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">booking page</a>.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="eat">
+      <div class="article">
+        <p class="eyebrow">From 90 m</p>
+        <h2 id="eat">Where to eat</h2>
+        <p>You don't need a car to eat well from Greystone. Hyper Cafe &amp; Bar is about 90 m away, Nina's Real Food about 275 m and Quitschy's Pizza about 365 m. The Spar supermarket is right behind us for picnic supplies and late snacks. Our <a href="/restaurants-jeffreys-bay/">guide to restaurants in Jeffreys Bay</a> has the full list, including places further afield.</p>
+        <aside class="help-box" aria-label="Help from Monique">
+  <p><strong>Staying at Greystone?</strong> Monique will tell you her current favourites, from a quick coffee to a special dinner.</p>
+  <a href="https://wa.me/27829537641?text=Hi%20Monique%2C%20I'm%20staying%20at%20Greystone.%20Which%20restaurants%20would%20you%20recommend%3F" target="_blank" rel="noopener" class="btn-whatsapp" data-help-topic="restaurants">WhatsApp Monique</a>
+</aside>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="getting-here">
+      <div class="article">
+        <h2 id="getting-here">Getting here</h2>
+        <ul>
+          <li><strong>By air:</strong> the nearest airport is Chief Dawid Stuurman International Airport in Port Elizabeth (Gqeberha), 64 km from Greystone, about an hour's drive along the N2.</li>
+          <li><strong>By car:</strong> Jeffreys Bay is just off the N2 between Port Elizabeth (Gqeberha) and the Garden Route. Humansdorp is about 15 minutes' drive further west.</li>
+          <li><strong>Parking:</strong> we have free private parking on site, with no need to reserve.</li>
+        </ul>
+        <p>Many guests hire a car at the airport, which makes day trips to Addo and Tsitsikamma easy. If you'd rather not drive, an airport shuttle is the simplest option.</p>
+        <aside class="help-box" aria-label="Help from Monique">
+  <p><strong>Staying at Greystone?</strong> Monique will help you arrange an airport shuttle from Port Elizabeth (Gqeberha) and can put you in touch with local operators.</p>
+  <a href="https://wa.me/27829537641?text=Hi%20Monique%2C%20I'm%20staying%20at%20Greystone%20and%20would%20like%20help%20arranging%20an%20airport%20shuttle." target="_blank" rel="noopener" class="btn-whatsapp" data-help-topic="shuttle">WhatsApp Monique</a>
+</aside>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="stay">
+      <h2 class="display" id="stay">Where to <em>stay</em></h2>
+      <p>Greystone Guesthouse is a B&amp;B in Wavecrest, 260 m from the beach and 300 m from Supertubes, with eight en-suite rooms from R650 a night, free WiFi and parking, and solar backup through load shedding.</p>
+      <div class="btn-row">
+        <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="btn-gold">Book Now</a>
+        <a href="/rooms/" class="btn-outline">See rooms &amp; rates</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" aria-label="Greystone Guesthouse">Greystone</a>
+        <p>A boutique B&amp;B guest house in Wavecrest, Jeffreys Bay, 300m from Supertubes, where every stay feels like coming home to the coast.</p>
+        <div class="footer-rating" aria-label="Rated 8.4 Very Good on Booking.com">
+          <span>8.4 · Very Good · Booking.com</span>
+        </div>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/rooms/">Rooms &amp; rates</a></li>
+          <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+          <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+          <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+          <li><a href="/business-travel/">Business travel</a></li>
+          <li><a href="/reviews.html">Guest reviews</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/af/" hreflang="af" lang="af">Afrikaans</a></li>
+          <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">Book Now</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="footer-heading">Find Us</p>
+        <address>
+          11 Mimosa Street<br>
+          Wavecrest, Jeffreys Bay<br>
+          Eastern Cape, 6330<br>
+          South Africa<br>
+          <br>
+          Check-in: 14:00 – 20:00<br>
+          Check-out: 07:00 – 10:00<br>
+          <br>
+          Languages: Afrikaans &amp; English
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Greystone Guesthouse. All rights reserved.</p>
+      <p>Jeffreys Bay &nbsp;·&nbsp; Eastern Cape &nbsp;·&nbsp; South Africa</p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>
