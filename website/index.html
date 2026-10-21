@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
+  <script>
+    (function(){
+      var m = location.search.match(/[?&]notrack=([01])(&|$)/), off = !!m && m[1] === '1';
+      try {
+        if (m) { if (off) localStorage.setItem('notrack', '1'); else localStorage.removeItem('notrack'); }
+        else off = localStorage.getItem('notrack') === '1';
+      } catch (e) {}
+      // Bot filter (19 Oct 2026): a bot wave logged as Singapore/China loads the home page with fake Google
+      // click parameters (?sa=X&ved=...) and no referrer. Skip GA4 + Clarity for these; ?notrack=0 overrides.
+      var bot = false;
+      try {
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (/^Asia\/(Singapore|Shanghai|Chongqing|Harbin|Urumqi)$/.test(tz)) bot = true;
+      } catch (e) {}
+      if (/[?&]sa=X(&|$)/.test(location.search) && /[?&]ved=/.test(location.search) && !document.referrer) bot = true;
+      if (bot && !(m && m[1] === '0')) { off = true; console.info('Tracking skipped (bot filter)'); }
+      window.ggNoTrack = off;
+      if (off) { window['ga-disable-G-LHN8DCK50B'] = true; console.info('Tracking off on this device'); }
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window.ggNoTrack) {
+      var gt = document.createElement('script');
+      gt.async = true; gt.src = 'https://www.googletagmanager.com/gtag/js?id=G-LHN8DCK50B';
+      document.head.appendChild(gt);
+      gtag('js', new Date());
+      gtag('config', 'G-LHN8DCK50B');
+    }
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    if (!window.ggNoTrack) (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yzbe0qilo7");
+  </script>
+  <title>Jeffreys Bay Accommodation | Greystone Guesthouse B&B</title>
+  <meta name="description" content="B&amp;B guest house accommodation in Jeffreys Bay, 260m from the beach and 300m from Supertubes. 8 en-suite rooms from R638/night, free WiFi &amp; parking.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://greystoneguesthouse.co.za/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Greystone Guesthouse | B&amp;B Accommodation in Jeffreys Bay">
+  <meta property="og:description" content="Boutique guesthouse 260m from Supertubes. 8 en-suite rooms, full breakfast, free WiFi & parking. Rated 8.4 Very Good on Booking.com.">
+  <meta property="og:url" content="https://greystoneguesthouse.co.za/">
+  <meta property="og:image" content="https://greystoneguesthouse.co.za/images/553368676.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="461">
+  <meta property="og:image:alt" content="Sunset over Jeffreys Bay seen from Greystone Guesthouse">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:site_name" content="Greystone Guesthouse">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Greystone Guesthouse | B&amp;B Accommodation in Jeffreys Bay">
+  <meta name="twitter:description" content="Boutique B&B 260m from Supertubes. 8 en-suite rooms, full breakfast, rated 8.4 Very Good on Booking.com.">
+  <meta name="twitter:image" content="https://greystoneguesthouse.co.za/images/553368676.jpg">
+  <meta name="twitter:image:alt" content="Sunset over Jeffreys Bay seen from Greystone Guesthouse">
+
+  <!-- Geo tags for local SEO -->
+  <meta name="geo.region" content="ZA-EC">
+  <meta name="geo.placename" content="Jeffreys Bay">
+  <meta name="geo.position" content="-34.0331;24.9295">
+  <meta name="ICBM" content="-34.0331, 24.9295">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BedAndBreakfast",
+    "@id": "https://greystoneguesthouse.co.za/#lodging",
+    "name": "Greystone Guesthouse",
+    "alternateName": ["Greystone Guest House", "Greystone B&B Jeffreys Bay", "Graystone Guesthouse"],
+    "description": "Boutique bed and breakfast guest house accommodation in Jeffreys Bay, South Africa. Located 260 metres from the beach and 300 metres from Supertubes, Greystone Guesthouse offers 8 en-suite rooms with sea views, full South African breakfast, free WiFi, and free parking. Ideal for surfers, couples, and travellers exploring the Eastern Cape and Garden Route.",
+    "url": "https://greystoneguesthouse.co.za",
+    "telephone": "+27829537641",
+    "image": [
+      "https://greystoneguesthouse.co.za/images/553368676.jpg",
+      "https://greystoneguesthouse.co.za/images/553368832.jpg",
+      "https://greystoneguesthouse.co.za/images/deluxe-seaview.jpg"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "11 Mimosa Street",
+      "addressLocality": "Jeffreys Bay",
+      "addressRegion": "Eastern Cape",
+      "postalCode": "6330",
+      "addressCountry": "ZA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -34.0331,
+      "longitude": 24.9295
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Greystone+Guesthouse+11+Mimosa+Street+Jeffreys+Bay",
+    "checkinTime": "14:00",
+    "checkoutTime": "10:00",
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": "3"
+    },
+    "numberOfRooms": 8,
+    "petsAllowed": false,
+    "smokingAllowed": false,
+    "availableLanguage": ["English", "Afrikaans"],
+    "priceRange": "ZAR 638 - ZAR 1,275",
+    "currenciesAccepted": "ZAR",
+    "paymentAccepted": "Visa, Mastercard, Bank Transfer",
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "En-suite Bathrooms", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Flat-screen TV", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Daily Housekeeping", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "BBQ Facilities", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Games Room", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Breakfast Available", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Safety Deposit Box", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Shuttle Service", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Solar Power with Battery Backup", "value": true }
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "Deluxe Sea View Room",
+        "description": "258 ft² room with balcony, partial sea view, en-suite bathroom, flat-screen TV, and free WiFi. King or double bed options available.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "1275",
+          "priceCurrency": "ZAR",
+          "unitText": "per night"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Standard Queen Room",
+        "description": "En-suite room with queen bed, flat-screen TV, and free WiFi. Comfortable and affordable accommodation in Jeffreys Bay.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "1105",
+          "priceCurrency": "ZAR",
+          "unitText": "per night"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Budget Annex Room",
+        "description": "161 ft² ground floor room with private entrance, en-suite bathroom, kitchenette with microwave, fridge and kettle, flat-screen TV, and free WiFi.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "1105",
+          "priceCurrency": "ZAR",
+          "unitText": "per night"
+        }
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "8.4",
+      "bestRating": "10",
+      "worstRating": "1",
+      "ratingCount": "462",
+      "reviewCount": "462"
+    },
+    "sameAs": [
+      "https://www.booking.com/hotel/za/greystone-guesthouse-jeffreys-bay.en-gb.html",
+      "https://www.tripadvisor.co.uk/Hotel_Review-g469383-d1342566-Reviews-Greystone_Guest_House-Jeffreys_Bay_Eastern_Cape.html",
+      "https://www.facebook.com/greystoneguesthouse/",
+      "https://www.lekkeslaap.co.za/accommodation/greystone-guesthouse",
+      "https://maps.google.com/?cid=3452924380150715318"
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How far is Greystone Guesthouse from Supertubes beach?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Greystone Guesthouse is just 260 metres (about a 3-minute walk) from the beach and 300 metres from Supertubes, one of the world's most famous surf breaks. We're located in the Wavecrest area of Jeffreys Bay."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What accommodation options are available at Greystone Guesthouse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Greystone offers 8 en-suite rooms across three tiers: Deluxe Sea View rooms (Rooms 1-4) with balconies and sea views from ZAR 1,275/night, Standard Queen rooms (Rooms 5-6) from ZAR 1,105/night, and Budget Annex rooms (Rooms 7-8) with private entrances and kitchenettes from ZAR 1,105/night. Single occupancy rates start from ZAR 638/night."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is breakfast included at Greystone Guesthouse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rates are room-only, with a full cooked South African breakfast available to order each morning, featuring eggs, bacon, sausages, toast, fresh coffee and tea. Breakfast can be enjoyed in the dining room or on the balcony with sea views."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Greystone Guesthouse have free parking and WiFi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Greystone Guesthouse offers free private on-site parking (no reservation needed) and free WiFi throughout the property, including in all guest rooms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens during load shedding at Greystone Guesthouse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nothing changes for our guests. Greystone Guesthouse has a full solar power system with inverter and battery backup, so your lights, WiFi, and hot water stay on through Eskom power outages. You can continue working, streaming and using your devices without interruption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the check-in and check-out time at Greystone Guesthouse?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check-in is from 14:00 to 20:00 (advance notice of arrival time is required). Check-out is between 07:00 and 10:00."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What activities are available near Greystone Guesthouse in Jeffreys Bay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Jeffreys Bay offers world-class surfing at Supertubes (300m away), beach horse riding, skydiving over the Indian Ocean, ADDO Elephant Park day trips, lion sanctuary visits, snorkelling, diving, fishing, windsurfing, golf, and hiking. Restaurants and a supermarket are within 100 metres."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Greystone a hotel or a guest house?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Greystone is a 3-star graded B&B guest house rather than a hotel. You get what you'd expect from a Jeffreys Bay hotel (en-suite rooms, daily housekeeping, free WiFi and secure parking) with a host on site who looks after every guest personally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you have affordable accommodation in Jeffreys Bay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our Standard Queen and Budget Annex rooms start at ZAR 1,105 per night for two people, and single occupancy starts at ZAR 638 per night. Every room is en-suite with free WiFi and parking, and power stays on during load shedding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where should surfers stay in Jeffreys Bay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wavecrest, the area right behind Supertubes and The Point, puts you closest to the best waves. Greystone is 300 metres from Supertubes, so you can check the surf from the balcony and be in the water in minutes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How far is Greystone from Humansdorp?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Humansdorp is about 15 minutes' drive from Greystone. If you're working in Humansdorp or the Kouga area, you can stay by the sea in Jeffreys Bay, with free parking, fast WiFi and solar backup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get to Greystone Guesthouse from the airport?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Greystone Guesthouse is 64 km (about 53 miles) from Chief Dawid Stuurman International Airport in Port Elizabeth (Gqeberha). The drive takes approximately 1 hour. A shuttle service is available at an additional charge."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- WebSite Schema (site name in search results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://greystoneguesthouse.co.za/#website",
+    "name": "Greystone Guesthouse",
+    "alternateName": ["Greystone Guest House", "Greystone B&B Jeffreys Bay"],
+    "url": "https://greystoneguesthouse.co.za/",
+    "inLanguage": "en-ZA",
+    "publisher": { "@id": "https://greystoneguesthouse.co.za/#lodging" }
+  }
+  </script>
+
+  <link rel="preload" as="image" href="images/553368676.webp" type="image/webp" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap"></noscript>
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:         #080808;
+      --surface:     #111111;
+      --surface-2:   #181818;
+      --gold:        #C9A96E;
+      --gold-light:  #E8D5B0;
+      --gold-dim:    rgba(201,169,110,0.15);
+      --cream:       #F5F0E8;
+      --muted:       #7A7567;
+      --border:      rgba(201,169,110,0.12);
+      --border-faint:rgba(255,255,255,0.07);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; }
+    picture { display: contents; }
+
+    /* ─── SCROLL REVEAL ─────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(44px);
+      transition: opacity 0.85s cubic-bezier(.22,.6,.36,1),
+                  transform 0.85s cubic-bezier(.22,.6,.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left  { opacity: 0; transform: translateX(-44px); transition: opacity 0.85s cubic-bezier(.22,.6,.36,1), transform 0.85s cubic-bezier(.22,.6,.36,1); }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(44px);  transition: opacity 0.85s cubic-bezier(.22,.6,.36,1), transform 0.85s cubic-bezier(.22,.6,.36,1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; }
+    .d4 { transition-delay: 0.45s; }
+    .d5 { transition-delay: 0.6s; }
+
+    /* ─── TYPOGRAPHY HELPERS ────────────────────────────────────── */
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .display {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+    .display em { font-style: italic; color: var(--gold-light); }
+
+    /* ─── NAV ───────────────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      padding: 1.6rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.5s, backdrop-filter 0.5s, padding 0.4s, border-color 0.5s;
+      border-bottom: 1px solid transparent;
+    }
+
+    #nav.scrolled {
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.1rem 3.5rem;
+      border-color: var(--border-faint);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.55);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-book {
+      font-size: 0.7rem !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.18em !important;
+      color: var(--ink) !important;
+      background: var(--gold);
+      padding: 0.6rem 1.5rem;
+      transition: background 0.25s, transform 0.25s !important;
+    }
+    .nav-book:hover { background: var(--gold-light) !important; transform: translateY(-1px) !important; }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/553368676.jpg');
+      background-image: image-set(url('images/553368676.webp') type('image/webp'), url('images/553368676.jpg') type('image/jpeg'));
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1.06);
+      transition: transform 9s cubic-bezier(.25,.46,.45,.94);
+    }
+    .hero-bg.loaded { transform: scale(1); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        175deg,
+        rgba(8,8,8,0.28) 0%,
+        rgba(8,8,8,0.18) 35%,
+        rgba(8,8,8,0.55) 70%,
+        rgba(8,8,8,0.98) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 1.5rem;
+      max-width: 960px;
+    }
+
+    .hero-eyebrow {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: heroFade 0.9s 0.4s cubic-bezier(.22,.6,.36,1) forwards;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.8rem, 9vw, 7.5rem);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      transform: translateY(28px);
+      animation: heroFade 0.9s 0.62s cubic-bezier(.22,.6,.36,1) forwards;
+    }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+
+    .hero-divider {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      margin: 0 auto 1.6rem;
+      opacity: 0;
+      animation: heroFade 0.9s 0.82s cubic-bezier(.22,.6,.36,1) forwards;
+    }
+
+    .hero-sub {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.6);
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: heroFade 0.9s 0.92s cubic-bezier(.22,.6,.36,1) forwards;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: heroFade 0.9s 1.1s cubic-bezier(.22,.6,.36,1) forwards;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 1rem 2.8rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.25s;
+      cursor: pointer;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(245,240,232,0.28);
+      color: var(--cream);
+      padding: 1rem 2.8rem;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: pointer;
+    }
+    .btn-outline:hover { border-color: var(--cream); transform: translateY(-2px); }
+
+    .btn-whatsapp {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      padding: 1rem 2.8rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.25s;
+      cursor: pointer;
+    }
+    .btn-whatsapp:hover { background: #1ebe57; transform: translateY(-2px); }
+    .btn-whatsapp svg { vertical-align: middle; margin-right: 0.5rem; }
+
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      z-index: 2;
+      opacity: 0;
+      animation: heroFade 0.9s 1.5s forwards;
+    }
+    .hero-scroll-indicator span {
+      font-size: 0.6rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.35);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes heroFade {
+      to { opacity: 1; transform: translateY(0) translateX(0); }
+    }
+    @keyframes scrollPulse {
+      0%,100% { transform: scaleY(1); opacity: 0.7; }
+      50% { transform: scaleY(0.65); opacity: 0.25; }
+    }
+
+    /* ─── STATS BAR ─────────────────────────────────────────────── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border-faint);
+      border-bottom: 1px solid var(--border-faint);
+    }
+
+    .stat {
+      padding: 2.5rem 1rem;
+      text-align: center;
+      border-right: 1px solid var(--border-faint);
+      position: relative;
+    }
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 4vw, 3.8rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.4rem;
+      display: block;
+    }
+
+    /* ─── ABOUT ─────────────────────────────────────────────────── */
+    .about-section {
+      padding: 9rem 3.5rem;
+    }
+
+    .about-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      height: 620px;
+    }
+
+    .about-img-main {
+      position: absolute;
+      top: 0; left: 0;
+      width: 78%;
+      height: 86%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .about-img-inset {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 52%;
+      height: 46%;
+      object-fit: cover;
+      object-position: center 60%;
+      outline: 5px solid var(--ink);
+    }
+
+    .about-badge {
+      position: absolute;
+      top: 42%; left: 52%;
+      transform: translate(-50%, -50%);
+      width: 108px;
+      height: 108px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      box-shadow: 0 0 0 6px var(--ink), 0 0 0 7px var(--gold);
+    }
+    .about-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .about-badge-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(8,8,8,0.7);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .about-text .eyebrow { margin-bottom: 1rem; }
+
+    .about-text h2 {
+      font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+      margin-bottom: 1.8rem;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(245,240,232,0.65);
+      max-width: 440px;
+    }
+    .about-text p + p { margin-top: 1.1rem; }
+
+    .about-text .btn-gold { margin-top: 2.6rem; }
+
+    /* ─── ROOMS ─────────────────────────────────────────────────── */
+    .rooms-section {
+      background: var(--surface);
+      padding: 9rem 3.5rem;
+    }
+
+    .rooms-header {
+      max-width: 1300px;
+      margin: 0 auto 4.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+    }
+
+    .rooms-header h2 { font-size: clamp(2.8rem, 4.5vw, 4.2rem); }
+
+    .rooms-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      max-width: 260px;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    .rooms-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .room-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 2/3;
+    }
+
+    .room-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(.25,.46,.45,.94);
+    }
+    .room-card:hover img { transform: scale(1.07); }
+
+    .room-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(8,8,8,0.92) 0%,
+        rgba(8,8,8,0.4) 45%,
+        rgba(8,8,8,0.06) 100%
+      );
+      transition: background 0.4s;
+    }
+    .room-card:hover .room-card-overlay {
+      background: linear-gradient(to top, rgba(8,8,8,0.96) 0%, rgba(8,8,8,0.55) 50%, rgba(8,8,8,0.1) 100%);
+    }
+
+    .room-card-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2.2rem 2rem;
+    }
+
+    .room-tier {
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .room-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .room-features {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .room-feature {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.45);
+      border: 1px solid rgba(245,240,232,0.12);
+      padding: 0.25rem 0.6rem;
+    }
+
+    .room-price-line {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+    .room-price-from {
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .room-price-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+    .room-price-unit {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .room-hover-cta {
+      margin-top: 1.2rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s, transform 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .room-card:hover .room-hover-cta,
+    .room-hover-cta:focus-visible { opacity: 1; transform: translateY(0); }
+    @media (hover: none) {
+      .room-hover-cta { opacity: 1; transform: none; }
+    }
+
+    /* ─── REVIEWS SNIPPET ──────────────────────────────────────── */
+    .reviews-snippet {
+      padding: 7rem 3.5rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .reviews-snippet-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .reviews-snippet-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .reviews-snippet-header .display {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-top: 0.7rem;
+    }
+
+    .reviews-snippet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .review-quote {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .review-quote:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-dim);
+    }
+
+    .review-quote-icon {
+      color: var(--gold);
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .review-stars svg {
+      color: var(--gold);
+    }
+
+    .review-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.12rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .review-quote footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .review-source {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .review-origin {
+      color: var(--muted);
+    }
+
+    .reviews-snippet-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .reviews-snippet-scores {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .reviews-snippet-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .snippet-score {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .snippet-label {
+      font-size: 0.78rem;
+      color: var(--cream);
+      line-height: 1.4;
+    }
+
+    .snippet-label small {
+      color: var(--muted);
+      font-size: 0.68rem;
+    }
+
+    @media (max-width: 768px) {
+      .reviews-snippet { padding: 4.5rem 1.5rem; }
+      .reviews-snippet-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .reviews-snippet-footer { flex-direction: column; gap: 2rem; text-align: center; }
+      .reviews-snippet-scores { justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .review-quote { transition: none; }
+    }
+
+    /* ─── BREAKFAST ─────────────────────────────────────────────── */
+    .breakfast-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 85vh;
+    }
+
+    .breakfast-visual {
+      position: relative;
+      overflow: hidden;
+    }
+    .breakfast-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+    }
+
+    .breakfast-content {
+      background: var(--surface-2);
+      padding: 8rem 6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .breakfast-content .eyebrow { margin-bottom: 1rem; }
+    .breakfast-content h2 { font-size: clamp(2.6rem, 4vw, 3.8rem); margin-bottom: 2rem; }
+
+    .breakfast-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.32rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.65;
+      color: rgba(245,240,232,0.55);
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .breakfast-body {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: rgba(245,240,232,0.6);
+      max-width: 380px;
+      margin-bottom: 2.5rem;
+    }
+
+    .breakfast-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+    }
+
+    .breakfast-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.82rem;
+      color: rgba(245,240,232,0.65);
+      letter-spacing: 0.02em;
+    }
+    .breakfast-item::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── LOCATION ──────────────────────────────────────────────── */
+    .location-section {
+      padding: 9rem 3.5rem;
+    }
+
+    .location-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .location-header {
+      margin-bottom: 5rem;
+    }
+    .location-header .eyebrow { margin-bottom: 1rem; }
+    .location-header h2 { font-size: clamp(2.8rem, 4.5vw, 4.2rem); }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7rem;
+      align-items: start;
+    }
+
+    .location-proximity h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: rgba(245,240,232,0.7);
+    }
+
+    .proximity-list {
+      list-style: none;
+    }
+
+    .proximity-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border-faint);
+      font-size: 0.88rem;
+    }
+    .proximity-item:first-child { border-top: 1px solid var(--border-faint); }
+
+    .proximity-name { color: rgba(245,240,232,0.78); }
+    .proximity-dist {
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      font-weight: 400;
+    }
+
+    .activities h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: rgba(245,240,232,0.7);
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .activity-card {
+      background: var(--surface);
+      padding: 2rem 1.8rem;
+      border: 1px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+      cursor: default;
+    }
+    .activity-card:hover {
+      border-color: var(--border);
+      background: var(--surface-2);
+    }
+
+    .activity-icon-line {
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .activity-name {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .activity-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── HOST ──────────────────────────────────────────────────── */
+    .host-section {
+      background: var(--surface);
+      padding: 9rem 3.5rem;
+      border-top: 1px solid var(--border-faint);
+      border-bottom: 1px solid var(--border-faint);
+    }
+
+    .host-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .host-inner .eyebrow { margin-bottom: 2.5rem; }
+
+    .host-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3.5vw, 3rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.45;
+      color: var(--cream);
+      margin-bottom: 2.5rem;
+    }
+
+    .host-attribution {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ─── TRUST STRIP ────────────────────────────────────────────── */
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem 4.5rem;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid var(--border-faint);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .trust-icon {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .trust-label {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .trust-label strong {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+    }
+
+    @media (max-width: 768px) {
+      .trust-strip { gap: 2rem 3rem; padding: 3rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .trust-strip { flex-direction: column; align-items: center; gap: 1.8rem; }
+    }
+
+    /* ─── CTA BANNER ────────────────────────────────────────────── */
+    .cta-section {
+      position: relative;
+      height: 72vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/553368832.jpg');
+      background-image: image-set(url('images/553368832.webp') type('image/webp'), url('images/553368832.jpg') type('image/jpeg'));
+      background-size: cover;
+      background-position: center 25%;
+      background-attachment: fixed;
+    }
+
+    .cta-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(8,8,8,0.68);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .cta-content .eyebrow { margin-bottom: 1.2rem; }
+
+    .cta-title {
+      font-size: clamp(3.2rem, 6.5vw, 5.8rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .cta-sub {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.5);
+      margin-bottom: 3rem;
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    .footer-main {
+      padding: 5rem 3.5rem 3.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand .nav-logo { display: block; margin-bottom: 1.2rem; }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 280px;
+    }
+
+    .footer-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .footer-heading {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--cream); }
+
+    address {
+      font-style: normal;
+      font-size: 0.85rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-faint);
+      padding: 1.6rem 3.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .footer-bottom p {
+      font-size: 0.72rem;
+      color: rgba(122,117,103,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── FAQ ───────────────────────────────────────────────────── */
+    .faq-section {
+      padding: 9rem 3.5rem;
+      border-top: 1px solid var(--border-faint);
+    }
+
+    .faq-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .faq-inner .eyebrow { margin-bottom: 1rem; }
+    .faq-inner h2 { font-size: clamp(2.6rem, 4vw, 3.8rem); margin-bottom: 3.5rem; }
+
+    .faq-list { display: flex; flex-direction: column; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border-faint);
+    }
+
+    .faq-question {
+      display: block;
+      padding: 1.6rem 0;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--cream);
+      cursor: pointer;
+      list-style: none;
+      letter-spacing: 0.01em;
+      transition: color 0.25s;
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-question::marker { display: none; content: ''; }
+
+    .faq-question::after {
+      content: '+';
+      float: right;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      transition: transform 0.3s;
+    }
+    .faq-item[open] .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 0 1.6rem;
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: rgba(245,240,232,0.6);
+      max-width: 680px;
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      #nav { padding: 1.4rem 2rem; }
+      #nav.scrolled { padding: 1rem 2rem; }
+      .about-section { padding: 6rem 2rem; }
+      .about-inner { gap: 4rem; }
+      .rooms-section { padding: 6rem 2rem; }
+      .breakfast-content { padding: 5rem 3.5rem; }
+      .location-section { padding: 6rem 2rem; }
+      .host-section { padding: 6rem 2rem; }
+      .footer-main { padding: 4rem 2rem; gap: 3rem; }
+      .footer-bottom { padding: 1.4rem 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      #nav { padding: 1.2rem 1.5rem; }
+      #nav.scrolled { padding: 0.9rem 1.5rem; }
+      .nav-links { gap: 0; }
+      .nav-links li { display: none; }
+      .nav-links li:last-child { display: block; }
+      .nav-book { padding: 0.55rem 1.1rem; }
+
+      .hero-title { font-size: clamp(3rem, 11vw, 4.5rem); }
+
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border-faint); }
+      .stat:nth-child(odd) { border-right: 1px solid var(--border-faint); }
+      .stat:last-child, .stat:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+
+      .about-section { padding: 5rem 1.5rem; }
+      .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { height: 360px; }
+      .about-text h2 { font-size: clamp(2.4rem, 7vw, 3.2rem); }
+      .about-text p { max-width: 100%; }
+
+      .rooms-section { padding: 5rem 1.5rem; }
+      .rooms-header { flex-direction: column; align-items: flex-start; }
+      .rooms-note { text-align: left; }
+      .rooms-grid { grid-template-columns: 1fr; }
+      .room-card { aspect-ratio: 4/3; }
+
+      .breakfast-section { grid-template-columns: 1fr; }
+      .breakfast-visual { height: 55vw; min-height: 280px; }
+      .breakfast-content { padding: 4rem 1.5rem; }
+      .breakfast-content h2 { font-size: clamp(2.2rem, 7vw, 3rem); }
+      .breakfast-grid { grid-template-columns: 1fr; }
+
+      .location-section { padding: 5rem 1.5rem; }
+      .location-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .activities-grid { grid-template-columns: 1fr; }
+
+      .host-section { padding: 5rem 1.5rem; }
+      .host-quote { font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+
+      .faq-section { padding: 5rem 1.5rem; }
+
+      .cta-bg { background-attachment: scroll; }
+      .cta-title { font-size: clamp(2.8rem, 9vw, 4rem); }
+
+      .footer-main { grid-template-columns: 1fr; padding: 3.5rem 1.5rem; gap: 2.5rem; }
+      .footer-bottom { padding: 1.4rem 1.5rem; flex-direction: column; gap: 0.4rem; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; }
+      .hero-bg { transition: none; }
+      .scroll-line { animation: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────────────────── -->
+  <nav id="nav" aria-label="Main navigation">
+    <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
+    <ul class="nav-links" role="list">
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#breakfast">Breakfast</a></li>
+      <li><a href="#location">J&#8209;Bay</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="nav-book" style="background:#25D366;color:#fff">WhatsApp</a></li>
+      <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="nav-book">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────── -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg" id="heroBg" role="img" aria-label="Sunset over Jeffreys Bay"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Wavecrest &nbsp;·&nbsp; Jeffreys Bay &nbsp;·&nbsp; Eastern Cape</span>
+      <h1 class="hero-title display">
+        <em>Greystone Guesthouse</em><br>
+        B&amp;B Accommodation in Jeffreys Bay
+      </h1>
+      <div class="hero-divider" aria-hidden="true"></div>
+      <p class="hero-sub">260m from the beach &nbsp;·&nbsp; 300m from Supertubes &nbsp;·&nbsp; Rated 8.4 Very Good on Booking.com</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/27829537641" target="_blank" rel="noopener"
+           class="btn-whatsapp"
+           aria-label="Call Greystone Guesthouse on WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926a7.9 7.9 0 0 0 1.056 3.956L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.116.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.589-.525-.985-1.175-1.103-1.372-.116-.197-.012-.304.087-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.325-.336-.445-.342-.116-.007-.248-.007-.38-.007a.729.729 0 0 0-.529.248c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.13 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.116-.943-.05-.084-.182-.133-.38-.232z"/></svg>WhatsApp Call</a>
+        <a href="https://book.nightsbridge.com/20319"
+           target="_blank" rel="noopener"
+           class="btn-gold"
+           aria-label="Book your stay at Greystone Guesthouse">Book Your Stay</a>
+        <a href="#rooms" class="btn-outline">Explore Rooms</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ─────────────────────────────────────────────────── -->
+  <div class="stats-bar" role="region" aria-label="Property highlights">
+    <div class="stat reveal d1">
+      <span class="stat-num">8.4</span>
+      <span class="stat-label">Very Good · Booking.com</span>
+    </div>
+    <div class="stat reveal d2">
+      <span class="stat-num">462</span>
+      <span class="stat-label">Guest Reviews</span>
+    </div>
+    <div class="stat reveal d3">
+      <span class="stat-num">260<small style="font-size:1.4rem">m</small></span>
+      <span class="stat-label">From the Beach</span>
+    </div>
+    <div class="stat reveal d4">
+      <span class="stat-num">8</span>
+      <span class="stat-label">En-suite Rooms</span>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ─────────────────────────────────────────────────────── -->
+  <section class="about-section" id="about" aria-labelledby="about-heading">
+    <div class="about-inner">
+      <div class="about-visual reveal-left">
+        <picture>
+          <source srcset="images/541906671.webp" type="image/webp">
+          <img
+            class="about-img-main"
+            src="images/541906671.jpg"
+            alt="Greystone Guesthouse dining room with wooden tables and African wildlife artwork"
+            loading="lazy" decoding="async"
+            width="1024" height="461">
+        </picture>
+        <picture>
+          <source srcset="images/553368835.webp" type="image/webp">
+          <img
+            class="about-img-inset"
+            src="images/553368835.jpg"
+            alt="Full South African breakfast at Greystone"
+            loading="lazy" decoding="async"
+            width="346" height="768">
+        </picture>
+        <div class="about-badge" aria-hidden="true">
+          <span class="about-badge-num">8.4</span>
+          <span class="about-badge-text">Booking.com<br>Very Good</span>
+        </div>
+      </div>
+
+      <div class="about-text reveal-right">
+        <p class="eyebrow">The Guest House</p>
+        <h2 class="display" id="about-heading">
+          A Jeffreys Bay guest house<br><em>near the beach</em>
+        </h2>
+        <p>Looking for a place to stay in Jeffreys Bay near the beach? Greystone Guesthouse is a boutique B&amp;B tucked into Wavecrest, just 260 metres from the shore and 300m from Supertubes. Eight individually appointed en-suite rooms, genuine South African hospitality, and a breakfast worth waking up for.</p>
+        <p>Whether you're chasing the perfect wave at Supertubes, exploring the Garden Route, venturing to ADDO Elephant Park, or simply unwinding — Greystone is your bed and breakfast base in Jeffreys Bay.</p>
+        <a href="https://wa.me/27829537641" target="_blank" rel="noopener"
+           class="btn-whatsapp"
+           aria-label="Call Greystone Guesthouse on WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926a7.9 7.9 0 0 0 1.056 3.956L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.116.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.589-.525-.985-1.175-1.103-1.372-.116-.197-.012-.304.087-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.325-.336-.445-.342-.116-.007-.248-.007-.38-.007a.729.729 0 0 0-.529.248c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.13 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.116-.943-.05-.084-.182-.133-.38-.232z"/></svg>WhatsApp Call</a>
+        <a href="https://book.nightsbridge.com/20319"
+           target="_blank" rel="noopener"
+           class="btn-gold"
+           aria-label="Check availability">Check Availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ROOMS ─────────────────────────────────────────────────────── -->
+  <section class="rooms-section" id="rooms" aria-labelledby="rooms-heading">
+    <div class="rooms-header reveal">
+      <div>
+        <p class="eyebrow">Accommodation</p>
+        <h2 class="display" id="rooms-heading">Affordable rooms,<br><em>sea views</em></h2>
+      </div>
+      <p class="rooms-note">All rooms en-suite · Flat-screen TV · Free WiFi · Daily housekeeping</p>
+    </div>
+
+    <div class="rooms-grid">
+      <!-- Deluxe -->
+      <div class="room-card reveal d1">
+        <picture>
+          <source srcset="images/deluxe-seaview.webp" type="image/webp">
+          <img
+            src="images/deluxe-seaview.jpg"
+            alt="Deluxe sea-view room with balcony at Greystone Guesthouse, Jeffreys Bay"
+            loading="lazy" decoding="async"
+            width="1024" height="461">
+        </picture>
+        <div class="room-card-overlay" aria-hidden="true"></div>
+        <div class="room-card-body">
+          <p class="room-tier">Rooms 1–4</p>
+          <h3 class="room-name display">Deluxe<br><em>Sea View</em></h3>
+          <div class="room-features" aria-label="Room features">
+            <span class="room-feature">Balcony</span>
+            <span class="room-feature">Sea View</span>
+            <span class="room-feature">From R1,275</span>
+          </div>
+          <a href="https://book.nightsbridge.com/20319"
+             target="_blank" rel="noopener"
+             class="room-hover-cta"
+             aria-label="Book Deluxe Sea View room">Book this room →</a>
+        </div>
+      </div>
+
+      <!-- Standard -->
+      <div class="room-card reveal d2">
+        <picture>
+          <source srcset="images/standard-queen-1.webp" type="image/webp">
+          <img
+            src="images/standard-queen-1.jpg"
+            alt="Standard queen en-suite room at Greystone Guesthouse, Jeffreys Bay"
+            loading="lazy" decoding="async"
+            width="1024" height="461">
+        </picture>
+        <div class="room-card-overlay" aria-hidden="true"></div>
+        <div class="room-card-body">
+          <p class="room-tier">Rooms 5–6</p>
+          <h3 class="room-name display">Standard<br><em>Queen</em></h3>
+          <div class="room-features" aria-label="Room features">
+            <span class="room-feature">En-suite</span>
+            <span class="room-feature">Queen Bed</span>
+            <span class="room-feature">From R1,105</span>
+          </div>
+          <a href="https://book.nightsbridge.com/20319"
+             target="_blank" rel="noopener"
+             class="room-hover-cta"
+             aria-label="Book Standard Queen room">Book this room →</a>
+        </div>
+      </div>
+
+      <!-- Budget Annex -->
+      <div class="room-card reveal d3">
+        <picture>
+          <source srcset="images/budget-double-1.webp" type="image/webp">
+          <img
+            src="images/budget-double-1.jpg"
+            alt="Budget double room with private entrance at Greystone Guesthouse, Jeffreys Bay"
+            loading="lazy" decoding="async"
+            width="1024" height="461">
+        </picture>
+        <div class="room-card-overlay" aria-hidden="true"></div>
+        <div class="room-card-body">
+          <p class="room-tier">Rooms 7–8</p>
+          <h3 class="room-name display">Budget<br><em>Annex</em></h3>
+          <div class="room-features" aria-label="Room features">
+            <span class="room-feature">From R1,105</span>
+            <span class="room-feature">Private Entry</span>
+            <span class="room-feature">Kitchenette</span>
+          </div>
+          <a href="https://book.nightsbridge.com/20319"
+             target="_blank" rel="noopener"
+             class="room-hover-cta"
+             aria-label="Book Budget Annex room">Book this room →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GUEST REVIEWS SNIPPET ──────────────────────────────────────── -->
+  <section class="reviews-snippet" aria-labelledby="reviews-heading">
+    <div class="reviews-snippet-inner">
+      <div class="reviews-snippet-header reveal">
+        <p class="eyebrow">Guest Reviews</p>
+        <h2 class="display" id="reviews-heading">Don't take our<br>word for <em>it</em></h2>
+      </div>
+      <div class="reviews-snippet-grid">
+        <blockquote class="review-quote reveal d1">
+          <svg class="review-quote-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p>"I extended my stay 3 times! The location is just perfect and the owner with her team always super helpful and friendly."</p>
+          <footer>
+            <span class="review-source">TripAdvisor</span>
+            <span class="review-origin">Georgia</span>
+          </footer>
+        </blockquote>
+        <blockquote class="review-quote reveal d2">
+          <svg class="review-quote-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+          <div class="review-stars" aria-label="9 out of 10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p>"Just a quick one-night stay, but I was very happy with the room. Friendly staff. Great WiFi. Comfy bed. Great location."</p>
+          <footer>
+            <span class="review-source">Booking.com &middot; 9.0</span>
+            <span class="review-origin">Canada</span>
+          </footer>
+        </blockquote>
+        <blockquote class="review-quote reveal d3">
+          <svg class="review-quote-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.68 11 13.194 11 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C19.591 11.68 21 13.194 21 15c0 1.933-1.567 3.5-3.5 3.5-1.174 0-2.292-.593-2.917-1.179z"/></svg>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p>"I was warmly greeted when I arrived and felt right at home right away — the view is glorious and the setting is quiet and calm."</p>
+          <footer>
+            <span class="review-source">TripAdvisor</span>
+            <span class="review-origin">United Kingdom</span>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="reviews-snippet-footer reveal">
+        <div class="reviews-snippet-scores">
+          <div class="reviews-snippet-badge">
+            <span class="snippet-score">8.4</span>
+            <span class="snippet-label">Booking.com<br><small>462 reviews</small></span>
+          </div>
+          <div class="reviews-snippet-badge">
+            <span class="snippet-score">4.5</span>
+            <span class="snippet-label">TripAdvisor<br><small>135 reviews</small></span>
+          </div>
+        </div>
+        <a href="reviews.html" class="btn-outline">Read All Reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BREAKFAST ──────────────────────────────────────────────────── -->
+  <section class="breakfast-section" id="breakfast" aria-labelledby="breakfast-heading">
+    <div class="breakfast-visual reveal-left">
+      <picture>
+        <source srcset="images/553368835.webp" type="image/webp">
+        <img
+          src="images/553368835.jpg"
+          alt="Full South African breakfast with eggs, bacon, sausages, toast and coffee at Greystone"
+          loading="lazy" decoding="async"
+          width="346" height="768">
+      </picture>
+    </div>
+    <div class="breakfast-content reveal-right d2">
+      <p class="eyebrow">Morning</p>
+      <h2 class="display" id="breakfast-heading">Bed &amp; breakfast,<br><em>done properly</em></h2>
+      <blockquote class="breakfast-quote">
+        "A proper South African breakfast, with a sea view. There's nothing quite like it."
+      </blockquote>
+      <p class="breakfast-body">
+        Our full cooked breakfast is available to order each morning — the perfect fuel before a dawn surf session or a day exploring the Eastern Cape.
+      </p>
+      <div class="breakfast-grid" role="list" aria-label="Breakfast menu highlights">
+        <div class="breakfast-item" role="listitem">Fried or scrambled eggs</div>
+        <div class="breakfast-item" role="listitem">Grilled bacon &amp; sausage</div>
+        <div class="breakfast-item" role="listitem">Toast with preserves</div>
+        <div class="breakfast-item" role="listitem">Fresh coffee &amp; tea</div>
+        <div class="breakfast-item" role="listitem">Served in the dining room</div>
+        <div class="breakfast-item" role="listitem">Balcony dining available</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOCATION ──────────────────────────────────────────────────── -->
+  <section class="location-section" id="location" aria-labelledby="location-heading">
+    <div class="location-inner">
+      <div class="location-header reveal">
+        <p class="eyebrow">The Destination</p>
+        <h2 class="display" id="location-heading">
+          Things to do in<br><em>Jeffreys Bay</em>
+        </h2>
+      </div>
+
+      <div class="location-grid">
+        <div class="location-proximity reveal-left">
+          <h3>On your doorstep</h3>
+          <ul class="proximity-list" aria-label="Distances from Greystone">
+            <li class="proximity-item">
+              <span class="proximity-name">Supertubes Surf Break</span>
+              <span class="proximity-dist">300 m</span>
+            </li>
+            <li class="proximity-item">
+              <span class="proximity-name">Point Beach</span>
+              <span class="proximity-dist">500 yd</span>
+            </li>
+            <li class="proximity-item">
+              <span class="proximity-name">Hyper Cafe &amp; Bar</span>
+              <span class="proximity-dist">100 yd</span>
+            </li>
+            <li class="proximity-item">
+              <span class="proximity-name">Ninas Real Food Restaurant</span>
+              <span class="proximity-dist">300 yd</span>
+            </li>
+            <li class="proximity-item">
+              <span class="proximity-name">Quitschys Pizza Restaurant</span>
+              <span class="proximity-dist">400 yd</span>
+            </li>
+            <li class="proximity-item">
+              <span class="proximity-name">Dolphin Beach</span>
+              <span class="proximity-dist">0.7 mi</span>
+            </li>
+            <li class="proximity-item">
+              <span class="proximity-name">Jeffrey's Bay Shell Museum</span>
+              <span class="proximity-dist">1.7 mi</span>
+            </li>
+            <li class="proximity-item">
+              <span class="proximity-name">Humansdorp</span>
+              <span class="proximity-dist">15 min drive</span>
+            </li>
+            <li class="proximity-item">
+              <span class="proximity-name">ADDO Elephant Park</span>
+              <span class="proximity-dist">Day trip</span>
+            </li>
+            <li class="proximity-item">
+              <span class="proximity-name">Port Elizabeth (Gqeberha) airport</span>
+              <span class="proximity-dist">53 mi</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="activities reveal-right d2">
+          <h3>Adventures nearby</h3>
+          <div class="activities-grid" role="list" aria-label="Activities near Jeffreys Bay">
+            <div class="activity-card" role="listitem">
+              <div class="activity-icon-line" aria-hidden="true"></div>
+              <p class="activity-name">Surfing</p>
+              <p class="activity-desc">Supertubes is 300m away — one of the world's fastest and most perfect right-hand point breaks</p>
+            </div>
+            <div class="activity-card" role="listitem">
+              <div class="activity-icon-line" aria-hidden="true"></div>
+              <p class="activity-name">Safari</p>
+              <p class="activity-desc">ADDO Elephant Park and a lion sanctuary are within day-trip distance from J-Bay</p>
+            </div>
+            <div class="activity-card" role="listitem">
+              <div class="activity-icon-line" aria-hidden="true"></div>
+              <p class="activity-name">Skydiving</p>
+              <p class="activity-desc">Jump over the Indian Ocean with panoramic views of Jeffreys Bay and the coastline</p>
+            </div>
+            <div class="activity-card" role="listitem">
+              <div class="activity-icon-line" aria-hidden="true"></div>
+              <p class="activity-name">Horse Riding</p>
+              <p class="activity-desc">Canter along the beach at sunrise or sunset on the shores of the Eastern Cape</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOST ──────────────────────────────────────────────────────── -->
+  <section class="host-section" aria-labelledby="host-heading">
+    <div class="host-inner reveal">
+      <h2 class="eyebrow" id="host-heading">Your Host · Monique</h2>
+      <blockquote class="host-quote">
+        "Guests can trust in genuine care, anticipation of their needs, and the kind of hospitality that turns a stay into a memory."
+      </blockquote>
+      <p class="host-attribution">30+ Years in Hospitality &nbsp;·&nbsp; Greystone Guesthouse &nbsp;·&nbsp; Jeffreys Bay</p>
+    </div>
+  </section>
+
+  <!-- ── TRUST STRIP ───────────────────────────────────────────────── -->
+  <div class="trust-strip reveal" role="region" aria-label="Guest assurances">
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.09 4.26L19 7.27l-3.5 3.41.82 4.82L12 13.4l-4.32 2.1.82-4.82L5 7.27l4.91-1.01L12 2z"/></svg>
+      <span class="trust-label"><strong>3-Star Graded</strong>Tourism Grading Council of SA</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <span class="trust-label"><strong>Solar Powered</strong>Battery backup through loadshedding</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+      <span class="trust-label"><strong>Free WiFi</strong>In all rooms &amp; common areas</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><path d="M16 8h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/></svg>
+      <span class="trust-label"><strong>Free Parking</strong>Private on-site, no booking needed</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span class="trust-label"><strong>Quiet Neighbourhood</strong>Relaxed residential Wavecrest area</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span class="trust-label"><strong>Walk to Everything</strong>Shops &amp; restaurants within 100m</span>
+    </div>
+  </div>
+
+  <!-- ── CTA BANNER ────────────────────────────────────────────────── -->
+  <section class="cta-section" aria-label="Book your stay">
+    <div class="cta-bg" role="img" aria-label="Breakfast on a Greystone balcony with sea view"></div>
+    <div class="cta-overlay" aria-hidden="true"></div>
+    <div class="cta-content reveal">
+      <p class="eyebrow">11 Mimosa Street, Jeffreys Bay</p>
+      <h2 class="display cta-title">Ready to <em>arrive?</em></h2>
+      <p class="cta-sub">Book directly &nbsp;·&nbsp; Instant confirmation</p>
+      <a href="https://wa.me/27829537641" target="_blank" rel="noopener"
+         class="btn-whatsapp"
+         aria-label="Call Greystone Guesthouse on WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926a7.9 7.9 0 0 0 1.056 3.956L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.116.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.589-.525-.985-1.175-1.103-1.372-.116-.197-.012-.304.087-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.325-.336-.445-.342-.116-.007-.248-.007-.38-.007a.729.729 0 0 0-.529.248c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.13 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.116-.943-.05-.084-.182-.133-.38-.232z"/></svg>WhatsApp Call</a>
+      <a href="https://book.nightsbridge.com/20319"
+         target="_blank" rel="noopener"
+         class="btn-gold"
+         aria-label="Book Greystone Guesthouse direct">Book Now</a>
+    </div>
+  </section>
+
+  <!-- ── FAQ ────────────────────────────────────────────────────────── -->
+  <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+    <div class="faq-inner">
+      <p class="eyebrow">Common Questions</p>
+      <h2 class="display" id="faq-heading">Frequently <em>Asked</em></h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">How far is Greystone Guesthouse from Supertubes beach?</summary>
+          <p class="faq-answer">Greystone Guesthouse is just 260 metres (about a 3-minute walk) from the beach and 300 metres from Supertubes, one of the world's most famous surf breaks. We're located in the Wavecrest area of Jeffreys Bay, with restaurants and shops within 100 metres.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What accommodation options are available?</summary>
+          <p class="faq-answer">We offer 8 en-suite rooms across three tiers: Deluxe Sea View rooms (Rooms 1–4) with balconies and sea views from ZAR 1,275/night, Standard Queen rooms (Rooms 5–6) from ZAR 1,105/night, and Budget Annex rooms (Rooms 7–8) with private entrances and kitchenettes from ZAR 1,105/night. Single occupancy rates start from ZAR 638/night.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Is Greystone a hotel or a guest house?</summary>
+          <p class="faq-answer">Greystone is a 3-star graded B&amp;B guest house rather than a hotel. You get what you'd expect from a Jeffreys Bay hotel (en-suite rooms, daily housekeeping, free WiFi and secure parking) with a host on site who looks after every guest personally.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Do you have affordable accommodation in Jeffreys Bay?</summary>
+          <p class="faq-answer">Yes. Our Standard Queen and Budget Annex rooms start at ZAR 1,105 per night for two people, and single occupancy starts at ZAR 638 per night. Every room is en-suite with free WiFi and parking, and power stays on during load shedding.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Where should surfers stay in Jeffreys Bay?</summary>
+          <p class="faq-answer">Wavecrest, the area right behind Supertubes and The Point, puts you closest to the best waves. Greystone is 300 metres from Supertubes, so you can check the surf from the balcony and be in the water in minutes.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How far is Greystone from Humansdorp?</summary>
+          <p class="faq-answer">Humansdorp is about 15 minutes' drive from Greystone. If you're working in Humansdorp or the Kouga area, you can stay by the sea in Jeffreys Bay, with free parking, fast WiFi and solar backup.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Is breakfast included at Greystone Guesthouse?</summary>
+          <p class="faq-answer">Rates are room-only, with a full cooked South African breakfast available to order each morning — eggs, bacon, sausages, toast, fresh coffee and tea. Enjoy it in the dining room or on the balcony with sea views.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Do you have free parking and WiFi?</summary>
+          <p class="faq-answer">Yes — Greystone Guesthouse offers free private on-site parking (no reservation needed) and free WiFi throughout the property, including in all guest rooms.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What happens during load shedding?</summary>
+          <p class="faq-answer">Nothing changes for our guests. Greystone Guesthouse has a full solar power system with inverter and battery backup, so your lights, WiFi, and hot water stay on through Eskom power outages. You can continue working, streaming and using your devices without interruption.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What are the check-in and check-out times?</summary>
+          <p class="faq-answer">Check-in is from 14:00 to 20:00 (please let us know your arrival time in advance). Check-out is between 07:00 and 10:00.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What activities are available near Jeffreys Bay?</summary>
+          <p class="faq-answer">Jeffreys Bay offers world-class surfing at Supertubes (300m away), beach horse riding, skydiving over the Indian Ocean, ADDO Elephant Park day trips, lion sanctuary visits, snorkelling, diving, fishing, windsurfing, golf, and hiking. Restaurants and a supermarket are within 100 metres of the guesthouse.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How do I get to Greystone from the airport?</summary>
+          <p class="faq-answer">We're 64 km (about an hour's drive) from Chief Dawid Stuurman International Airport in Port Elizabeth (Gqeberha). A shuttle service is available at an additional charge — contact us via WhatsApp to arrange.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" aria-label="Greystone Guesthouse">Greystone</a>
+        <p>A boutique B&amp;B guest house in Wavecrest, Jeffreys Bay, 300m from Supertubes, where every stay feels like coming home to the coast.</p>
+        <div class="footer-rating" aria-label="Rated 8.4 Very Good on Booking.com">
+          <span>8.4</span>
+          <span style="color:var(--muted)">·</span>
+          <span>Very Good · Booking.com</span>
+        </div>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <p class="footer-heading">Navigate</p>
+        <ul class="footer-links" role="list">
+          <li><a href="#rooms">Rooms &amp; Rates</a></li>
+          <li><a href="#breakfast">Breakfast</a></li>
+          <li><a href="#location">J-Bay &amp; Activities</a></li>
+          <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">Book Now</a></li>
+          <li><a href="reviews.html">Guest Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="footer-heading">Find Us</p>
+        <address>
+          11 Mimosa Street<br>
+          Wavecrest, Jeffreys Bay<br>
+          Eastern Cape, 6330<br>
+          South Africa<br>
+          <br>
+          Check-in: 14:00 – 20:00<br>
+          Check-out: by 10:00<br>
+          <br>
+          Languages: Afrikaans &amp; English
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Greystone Guesthouse. All rights reserved.</p>
+      <p>Jeffreys Bay &nbsp;·&nbsp; Eastern Cape &nbsp;·&nbsp; South Africa</p>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ───────────────────────────────────────────────────── -->
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 80);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Hero Ken Burns entrance
+    window.addEventListener('load', () => {
+      document.getElementById('heroBg').classList.add('loaded');
+    });
+
+    // Scroll reveal via IntersectionObserver
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      revealEls.forEach(el => observer.observe(el));
+    } else {
+      // Fallback: show all immediately
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        if (!id) return;
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+  <!-- Conversion tracking -->
+  <script>
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('a[href]');
+      if (!link) return;
+      var href = link.href;
+      var label = link.getAttribute('aria-label') || link.textContent.trim();
+      if (href.indexOf('book.nightsbridge.com') !== -1) {
+        gtag('event', 'begin_booking', {
+          event_category: 'conversion',
+          event_label: label,
+          link_url: href
+        });
+      } else if (href.indexOf('wa.me') !== -1) {
+        gtag('event', 'contact_whatsapp', {
+          event_category: 'conversion',
+          event_label: label,
+          link_url: href
+        });
+      } else if (href.indexOf('reviews.html') !== -1) {
+        gtag('event', 'view_reviews', {
+          event_category: 'engagement',
+          event_label: label
+        });
+      } else if (href.indexOf('booking.com') !== -1) {
+        gtag('event', 'click_booking_com', {
+          event_category: 'outbound',
+          event_label: label,
+          link_url: href
+        });
+      } else if (href.indexOf('tripadvisor') !== -1) {
+        gtag('event', 'click_tripadvisor', {
+          event_category: 'outbound',
+          event_label: label,
+          link_url: href
+        });
+      } else if (href.indexOf('#') !== -1 && href.indexOf('#') === href.indexOf('#')) {
+        var section = href.split('#')[1];
+        if (section) {
+          gtag('event', 'navigate_section', {
+            event_category: 'engagement',
+            event_label: section
+          });
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

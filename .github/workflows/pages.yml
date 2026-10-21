@@ -1,0 +1,53 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      # Publish only site file types from website/; skip hidden folders (.claude/, .playwright-mcp/)
+      # and anything else, such as *.md notes. Keep this list in step with the pre-commit hook.
+      - name: Copy site files only
+        run: |
+          rsync -a --prune-empty-dirs \
+            --exclude='.*/' --include='*/' \
+            --include='CNAME' \
+            --include='*.html' --include='*.css' --include='*.js' \
+            --include='*.xml' --include='*.txt' \
+            --include='*.jpg' --include='*.jpeg' --include='*.png' --include='*.webp' \
+            --include='*.avif' --include='*.gif' --include='*.svg' --include='*.ico' \
+            --include='*.woff2' \
+            --exclude='*' \
+            website/ _site/
+          find _site -type f | sort
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_site'
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

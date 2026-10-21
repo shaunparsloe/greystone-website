@@ -1,0 +1,7 @@
+analytics-data/
+__pycache__/
+business-data/
+.claude/settings.local.json
+SEO/
+.claude/skills/seo-weekly/
+.claude/skills/seo-monthly/

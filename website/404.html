@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Greystone Guesthouse Jeffreys Bay</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
+  <script>
+    (function(){
+      var m = location.search.match(/[?&]notrack=([01])(&|$)/), off = !!m && m[1] === '1';
+      try {
+        if (m) { if (off) localStorage.setItem('notrack', '1'); else localStorage.removeItem('notrack'); }
+        else off = localStorage.getItem('notrack') === '1';
+      } catch (e) {}
+      // Bot filter (19 Oct 2026): a bot wave logged as Singapore/China loads the home page with fake Google
+      // click parameters (?sa=X&ved=...) and no referrer. Skip GA4 + Clarity for these; ?notrack=0 overrides.
+      var bot = false;
+      try {
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (/^Asia\/(Singapore|Shanghai|Chongqing|Harbin|Urumqi)$/.test(tz)) bot = true;
+      } catch (e) {}
+      if (/[?&]sa=X(&|$)/.test(location.search) && /[?&]ved=/.test(location.search) && !document.referrer) bot = true;
+      if (bot && !(m && m[1] === '0')) { off = true; console.info('Tracking skipped (bot filter)'); }
+      window.ggNoTrack = off;
+      if (off) { window['ga-disable-G-LHN8DCK50B'] = true; console.info('Tracking off on this device'); }
+    })();
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    if (!window.ggNoTrack) (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yzbe0qilo7");
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #080808;
+      color: #F5F0E8;
+      font-family: Georgia, 'Times New Roman', serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    .eyebrow { font-family: system-ui, sans-serif; font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; color: #C9A96E; margin-bottom: 1.2rem; }
+    h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 300; margin-bottom: 1rem; }
+    p { color: rgba(245,240,232,0.6); margin-bottom: 2.4rem; font-size: 1.05rem; }
+    nav { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    a { font-family: system-ui, sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2rem; border: 1px solid rgba(245,240,232,0.28); color: #F5F0E8; }
+    a.primary { background: #C9A96E; border-color: #C9A96E; color: #080808; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Greystone Guesthouse · Jeffreys Bay</p>
+    <h1>This page has drifted out to sea</h1>
+    <p>The page you were looking for doesn't exist. Try one of these instead.</p>
+    <nav aria-label="Helpful links">
+      <a href="/" class="primary">Home</a>
+      <a href="/#rooms">Rooms</a>
+      <a href="/reviews.html">Guest Reviews</a>
+      <a href="https://book.nightsbridge.com/20319" rel="noopener">Book Now</a>
+    </nav>
+  </main>
+</body>
+</html>
