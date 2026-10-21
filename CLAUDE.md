@@ -8,8 +8,11 @@
 - **Host:** Monique — 30+ years of business and customer care experience; known for attention to detail, anticipating guest needs, and exceptional hospitality
 - **Languages spoken:** Afrikaans, English
 - **Location highlight:** 260m from the beach; situated in Wavecrest (behind Spar); 300m from Supertubes (world-famous surf spot)
-- **Airport:** Port Elizabeth Airport (now Gqeberha) — 64 km away
+- **Airport:** Port Elizabeth (Gqeberha), Chief Dawid Stuurman International Airport — 64 km away
 - **Nearby:** Supermarket and restaurant within 100 metres
+
+## Naming
+- Write **Port Elizabeth (Gqeberha)** for the city and its airport, on the site, in listings and in docs. Most guests know it as Port Elizabeth; the official name is Gqeberha.
 
 ## Git workflow
 - **Never commit directly to `main`** in any repo (website, `analytics-data/`, `business-data/`). Branch, push, open a PR with `gh pr create`; Shaun merges. Local pre-commit hooks block commits on `main`. The website repo is also protected on GitHub; the private repos aren't (needs GitHub Pro).
@@ -97,7 +100,7 @@
 
 ### Transport
 - Jeffreys Bay train station — 2.6 mi
-- Chief Dawid Stuurman International Airport (Port Elizabeth/Gqeberha) — 53 mi
+- Port Elizabeth (Gqeberha), Chief Dawid Stuurman International Airport — 53 mi
 
 ## House Rules / Character
 - **Check-in:** 14:00–20:00 (advance notice of arrival time required)
