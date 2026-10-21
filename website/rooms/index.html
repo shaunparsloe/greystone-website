@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
+  <script>
+    (function(){
+      var m = location.search.match(/[?&]notrack=([01])(&|$)/), off = !!m && m[1] === '1';
+      try {
+        if (m) { if (off) localStorage.setItem('notrack', '1'); else localStorage.removeItem('notrack'); }
+        else off = localStorage.getItem('notrack') === '1';
+      } catch (e) {}
+      // Bot filter (19 Oct 2026): a bot wave logged as Singapore/China loads the home page with fake Google
+      // click parameters (?sa=X&ved=...) and no referrer. Skip GA4 + Clarity for these; ?notrack=0 overrides.
+      var bot = false;
+      try {
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (/^Asia\/(Singapore|Shanghai|Chongqing|Harbin|Urumqi)$/.test(tz)) bot = true;
+      } catch (e) {}
+      if (/[?&]sa=X(&|$)/.test(location.search) && /[?&]ved=/.test(location.search) && !document.referrer) bot = true;
+      if (bot && !(m && m[1] === '0')) { off = true; console.info('Tracking skipped (bot filter)'); }
+      window.ggNoTrack = off;
+      if (off) { window['ga-disable-G-LHN8DCK50B'] = true; console.info('Tracking off on this device'); }
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window.ggNoTrack) {
+      var gt = document.createElement('script');
+      gt.async = true; gt.src = 'https://www.googletagmanager.com/gtag/js?id=G-LHN8DCK50B';
+      document.head.appendChild(gt);
+      gtag('js', new Date());
+      gtag('config', 'G-LHN8DCK50B');
+    }
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    if (!window.ggNoTrack) (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yzbe0qilo7");
+  </script>
+  <title>Rooms &amp; Rates | Jeffreys Bay Accommodation | Greystone</title>
+  <meta name="description" content="B&amp;B guest house rooms in Jeffreys Bay from R650 a night: sea-view deluxe rooms with balconies, queen rooms and outside annex rooms, all en-suite.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://greystoneguesthouse.co.za/rooms/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rooms &amp; Rates at Greystone Guesthouse, Jeffreys Bay">
+  <meta property="og:description" content="B&amp;B guest house rooms in Jeffreys Bay from R650 a night: sea-view deluxe rooms with balconies, queen rooms and outside annex rooms, all en-suite.">
+  <meta property="og:url" content="https://greystoneguesthouse.co.za/rooms/">
+  <meta property="og:image" content="https://greystoneguesthouse.co.za/images/deluxe-seaview.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="461">
+  <meta property="og:image:alt" content="Deluxe sea-view room with a balcony at Greystone Guesthouse, Jeffreys Bay">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:site_name" content="Greystone Guesthouse">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rooms &amp; Rates at Greystone Guesthouse, Jeffreys Bay">
+  <meta name="twitter:description" content="B&amp;B guest house rooms in Jeffreys Bay from R650 a night: sea-view deluxe rooms with balconies, queen rooms and outside annex rooms, all en-suite.">
+  <meta name="twitter:image" content="https://greystoneguesthouse.co.za/images/deluxe-seaview.jpg">
+  <meta name="twitter:image:alt" content="Deluxe sea-view room with a balcony at Greystone Guesthouse, Jeffreys Bay">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="/css/chrome.css">
+  <link rel="stylesheet" href="/css/site.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://greystoneguesthouse.co.za/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Rooms & rates",
+      "item": "https://greystoneguesthouse.co.za/rooms/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Rooms at Greystone Guesthouse, Jeffreys Bay",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "HotelRoom",
+        "name": "Deluxe Sea View room (rooms 1–4)",
+        "description": "Upstairs en-suite room with a balcony and partial sea view. King, double or (room 3, the family room) double plus single bed.",
+        "bed": "King or double bed; room 3 has a double and a single bed",
+        "occupancy": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 3
+        },
+        "floorSize": {
+          "@type": "QuantitativeValue",
+          "value": 258,
+          "unitCode": "FTK"
+        },
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Balcony",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Partial sea view",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "En-suite bathroom",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Flat-screen TV",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Free WiFi",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Tea and coffee maker",
+            "value": true
+          }
+        ],
+        "containedInPlace": {
+          "@id": "https://greystoneguesthouse.co.za/#lodging"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1200",
+          "priceCurrency": "ZAR",
+          "url": "https://book.nightsbridge.com/20319",
+          "description": "From R1,200 a night for 2 guests, R700 for 1 guest. Room only."
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "HotelRoom",
+        "name": "Queen room (rooms 5–6)",
+        "description": "En-suite room with no view. Room 5 has a queen bed and room 6 has twin beds.",
+        "bed": "Queen bed (room 5) or twin beds (room 6)",
+        "occupancy": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 2
+        },
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "En-suite bathroom",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Flat-screen TV",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Free WiFi",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Tea and coffee maker",
+            "value": true
+          }
+        ],
+        "containedInPlace": {
+          "@id": "https://greystoneguesthouse.co.za/#lodging"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1000",
+          "priceCurrency": "ZAR",
+          "url": "https://book.nightsbridge.com/20319",
+          "description": "From R1,000 a night for 2 guests, R650 for 1 guest. Room only."
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "HotelRoom",
+        "name": "Outside room (rooms 7–8)",
+        "description": "Ground-floor en-suite room in the annex with its own entrance, microwave, fridge, kettle and coffee machine.",
+        "bed": "Twin beds (room 7) or double bed (room 8)",
+        "occupancy": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 2
+        },
+        "floorSize": {
+          "@type": "QuantitativeValue",
+          "value": 161,
+          "unitCode": "FTK"
+        },
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Private entrance",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Ground floor",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "En-suite bathroom",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Flat-screen TV",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Free WiFi",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Microwave",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Fridge",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Electric kettle",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Coffee machine",
+            "value": true
+          }
+        ],
+        "containedInPlace": {
+          "@id": "https://greystoneguesthouse.co.za/#lodging"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1000",
+          "priceCurrency": "ZAR",
+          "url": "https://book.nightsbridge.com/20319",
+          "description": "From R1,000 a night for 2 guests, R650 for 1 guest. Room only."
+        }
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Greystone a hotel or a guest house?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Greystone is a 3-star graded B&B guest house, not a hotel. You get what you'd look for in a Jeffreys Bay hotel (en-suite rooms, daily housekeeping, free WiFi and secure parking) with a host on site who looks after every guest personally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have affordable rooms in Jeffreys Bay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The queen rooms (5–6) and the outside rooms (7–8) start from R1,000 a night for two people, and from R650 for one. Every room is en-suite, with free WiFi and parking, and the power stays on during load shedding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which rooms have a sea view?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The four deluxe rooms (1–4) are upstairs, with a balcony and a partial sea view. The queen rooms and the outside rooms have no sea view."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have single rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. One guest pays from R700 a night in a deluxe room and from R650 in the other rooms. Check live availability for your dates, as rates change with the season."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have twin rooms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Room 6 has twin beds, and outside room 7 is listed as a twin room. Book them by room name on our booking page, or WhatsApp us if you're not sure which room suits you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there ground-floor rooms with no stairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The two outside rooms (7–8) are on the ground floor, with their own entrance, so there are no stairs to climb."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+
+<body>
+
+  <nav id="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
+  <ul class="nav-links" id="nav-menu" role="list">
+    <li><a href="/rooms/" aria-current="page">Rooms</a></li>
+    <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+    <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+    <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+    <li><a href="/reviews.html">Reviews</a></li>
+    <li><a href="/af/" hreflang="af" lang="af">AF</a></li>
+    <li><a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="nav-whatsapp">WhatsApp</a></li>
+  </ul>
+  <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="nav-book">Book Now</a>
+  <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span></button>
+</nav>
+
+  <main id="main">
+    <header class="page-hero" style="background-image: url('/images/deluxe-seaview.jpg'); background-image: image-set(url('/images/deluxe-seaview.webp') type('image/webp'), url('/images/deluxe-seaview.jpg') type('image/jpeg'));">
+      <div class="page-hero-inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Rooms &amp; rates</li></ol></nav>
+        <p class="eyebrow">8 en-suite rooms · Wavecrest, Jeffreys Bay</p>
+        <h1 class="display">Rooms &amp; rates at Greystone, Jeffreys Bay</h1>
+        <p class="lead">Eight en-suite rooms 260 m from the beach and 300 m from Supertubes: four deluxe rooms with balconies and sea views, two queen rooms and two outside rooms with their own entrance. Live rates and availability are one tap away.</p>
+      </div>
+    </header>
+
+    <section class="content" aria-labelledby="deluxe">
+      <div class="article-wide">
+        <div class="room-tier">
+          <div class="room-photos">
+            <picture><source srcset="/images/deluxe-seaview.webp" type="image/webp"><img src="/images/deluxe-seaview.jpg" alt="Deluxe sea-view room with a king bed and balcony door at Greystone Guesthouse, Jeffreys Bay" width="1024" height="461" fetchpriority="high" decoding="async"></picture>
+          </div>
+          <div>
+            <p class="eyebrow">Rooms 1–4 · Upstairs</p>
+            <h2 id="deluxe">Deluxe Sea View rooms</h2>
+            <p class="room-price">From R1,200 <small>a night for 2 guests · from R700 for 1</small></p>
+            <p>Our four deluxe rooms are upstairs, each with a balcony and a partial view of the sea over Wavecrest. Mornings start with coffee on the balcony and a look at the surf.</p>
+            <ul>
+              <li><strong>Beds:</strong> deluxe king (extra-large double), deluxe double (large double), deluxe room with patio, and room 3, the family room, with a double and a single bed</li>
+              <li><strong>Size:</strong> about 24 m² (258 ft²)</li>
+              <li><strong>In the room:</strong> en-suite bathroom, flat-screen TV, free WiFi, tea and coffee maker</li>
+              <li><strong>Best for:</strong> couples, and anyone who wants the sea view</li>
+            </ul>
+            <div class="btn-row"><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="btn-gold" aria-label="Book a Deluxe Sea View room">Check availability &amp; book</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="queen">
+      <div class="article-wide">
+        <div class="room-tier">
+          <div class="room-photos">
+            <picture><source srcset="/images/standard-queen-1.webp" type="image/webp"><img src="/images/standard-queen-1.jpg" alt="Queen en-suite room at Greystone Guesthouse, Jeffreys Bay" width="1024" height="461" loading="lazy" decoding="async"></picture>
+            <picture><source srcset="/images/standard-queen-2.webp" type="image/webp"><img src="/images/standard-queen-2.jpg" alt="Second view of a queen room at Greystone Guesthouse, Jeffreys Bay" width="1024" height="683" loading="lazy" decoding="async"></picture>
+          </div>
+          <div>
+            <p class="eyebrow">Rooms 5–6 · No view</p>
+            <h2 id="queen">Queen rooms</h2>
+            <p class="room-price">From R1,000 <small>a night for 2 guests · from R650 for 1</small></p>
+            <p>Comfortable, quiet en-suite rooms in the main house for guests who'd rather spend the money on the sea than on a view of it. Supertubes is still a five-minute walk away.</p>
+            <ul>
+              <li><strong>Beds:</strong> room 5 has a queen bed; room 6 has twin beds</li>
+              <li><strong>In the room:</strong> en-suite bathroom, flat-screen TV, free WiFi, tea and coffee maker</li>
+              <li><strong>Best for:</strong> surfers, friends sharing (room 6) and business stays</li>
+            </ul>
+            <div class="btn-row"><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="btn-gold" aria-label="Book a Queen room">Check availability &amp; book</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="outside">
+      <div class="article-wide">
+        <div class="room-tier">
+          <div class="room-photos">
+            <picture><source srcset="/images/budget-double-1.webp" type="image/webp"><img src="/images/budget-double-1.jpg" alt="Outside annex room with a private entrance at Greystone Guesthouse, Jeffreys Bay" width="1024" height="461" loading="lazy" decoding="async"></picture>
+            <picture><source srcset="/images/budget-double-2.webp" type="image/webp"><img src="/images/budget-double-2.jpg" alt="Inside an outside annex room at Greystone Guesthouse, Jeffreys Bay" width="1024" height="461" loading="lazy" decoding="async"></picture>
+          </div>
+          <div>
+            <p class="eyebrow">Rooms 7–8 · Ground floor annex</p>
+            <h2 id="outside">Outside rooms with their own entrance</h2>
+            <p class="room-price">From R1,000 <small>a night for 2 guests · from R650 for 1</small></p>
+            <p>Two ground-floor rooms in the annex, each with a private entrance and a small kitchenette, so you can come and go for the dawn session or keep your own hours.</p>
+            <ul>
+              <li><strong>Beds:</strong> room 7 is a twin room and room 8 a double room</li>
+              <li><strong>Size:</strong> about 15 m² (161 ft²)</li>
+              <li><strong>In the room:</strong> en-suite bathroom, flat-screen TV, free WiFi, microwave, fridge, electric kettle and coffee machine</li>
+              <li><strong>Best for:</strong> longer stays, independent travellers and anyone who'd rather avoid stairs</li>
+            </ul>
+            <div class="btn-row"><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="btn-gold" aria-label="Book an outside room">Check availability &amp; book</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="compare">
+      <div class="article-wide">
+        <h2 id="compare">Compare the rooms</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Room</th><th scope="col">2 guests</th><th scope="col">1 guest</th><th scope="col">View</th><th scope="col">Beds</th><th scope="col">Extras</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Deluxe Sea View (1–4)</th><td>from R1,200</td><td>from R700</td><td>Partial sea view</td><td>King, double, or double + single</td><td>Balcony, upstairs</td></tr>
+              <tr><th scope="row">Queen (5–6)</th><td>from R1,000</td><td>from R650</td><td>No view</td><td>Queen (5) or twin (6)</td><td>In the main house</td></tr>
+              <tr><th scope="row">Outside (7–8)</th><td>from R1,000</td><td>from R650</td><td>No view</td><td>Twin (7) or double (8)</td><td>Private entrance, kitchenette, ground floor</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Rates are per room per night, room only, and change with the season. Live prices and availability are on our <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">booking page</a>.</p>
+      </div>
+    </section>
+
+    <section class="content" aria-labelledby="every-room">
+      <div class="article">
+        <h2 id="every-room">What every room has</h2>
+        <ul>
+          <li>En-suite bathroom, with free toiletries, towels and linen</li>
+          <li>Flat-screen TV and free WiFi</li>
+          <li>Tea and coffee maker</li>
+          <li>Daily housekeeping</li>
+          <li>Free private parking on site, with no need to reserve</li>
+          <li>Solar power with battery backup, so your lights and WiFi stay on during load shedding</li>
+        </ul>
+        <p>Around the house you'll find a shared lounge with TV, a games room with a billiards table and darts, board games and puzzles, an outdoor fireplace and braai area, and a safety deposit box. There's no fence or locked gate: it's a relaxed, open house.</p>
+
+        <h2 id="breakfast" style="margin-top:3.5rem">Breakfast</h2>
+        <p>Rates are room-only. A full cooked South African breakfast is available to order each morning: eggs, bacon, sausages, toast with preserves, and fresh coffee and tea. Have it in the dining room or out on the balcony.</p>
+
+        <h2 id="house-rules" style="margin-top:3.5rem">House rules</h2>
+        <ul>
+          <li><strong>Check-in:</strong> 14:00–20:00. Please let us know your arrival time in advance.</li>
+          <li><strong>Check-out:</strong> 07:00–10:00</li>
+          <li><strong>Quiet hours:</strong> 21:00–09:00</li>
+          <li><strong>Age:</strong> guests under 18 must be with a parent or guardian</li>
+          <li>No pets, no smoking and no parties</li>
+          <li><strong>Payment:</strong> by bank transfer before arrival. We accept Visa, Mastercard and Bankcard, but not cash.</li>
+          <li><strong>Groups:</strong> different policies apply when you book more than 2 rooms</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content faq" aria-labelledby="rooms-faq">
+      <div class="article">
+        <h2 id="rooms-faq">Questions about the rooms</h2>
+        <details><summary>Is Greystone a hotel or a guest house?</summary><p>Greystone is a 3-star graded B&B guest house, not a hotel. You get what you'd look for in a Jeffreys Bay hotel (en-suite rooms, daily housekeeping, free WiFi and secure parking) with a host on site who looks after every guest personally.</p></details>
+        <details><summary>Do you have affordable rooms in Jeffreys Bay?</summary><p>Yes. The queen rooms (5–6) and the outside rooms (7–8) start from R1,000 a night for two people, and from R650 for one. Every room is en-suite, with free WiFi and parking, and the power stays on during load shedding.</p></details>
+        <details><summary>Which rooms have a sea view?</summary><p>The four deluxe rooms (1–4) are upstairs, with a balcony and a partial sea view. The queen rooms and the outside rooms have no sea view.</p></details>
+        <details><summary>Do you have single rates?</summary><p>Yes. One guest pays from R700 a night in a deluxe room and from R650 in the other rooms. Check live availability for your dates, as rates change with the season.</p></details>
+        <details><summary>Do you have twin rooms?</summary><p>Room 6 has twin beds, and outside room 7 is listed as a twin room. Book them by room name on our booking page, or WhatsApp us if you're not sure which room suits you.</p></details>
+        <details><summary>Are there ground-floor rooms with no stairs?</summary><p>Yes. The two outside rooms (7–8) are on the ground floor, with their own entrance, so there are no stairs to climb.</p></details>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="rooms-cta">
+      <h2 class="display" id="rooms-cta">Pick your room, <em>book direct</em></h2>
+      <p>Live rates and availability for all eight rooms are on our booking page. Questions first? Monique is on WhatsApp.</p>
+      <div class="btn-row">
+        <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="btn-gold">Book Now</a>
+        <a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="btn-whatsapp">WhatsApp us</a>
+      </div>
+      <p class="note" style="margin-top:1.5rem">Planning your trip? Read our <a href="/things-to-do-jeffreys-bay/">guide to things to do in Jeffreys Bay</a> and <a href="/surf-accommodation-supertubes/">surfing at Supertubes</a>.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" aria-label="Greystone Guesthouse">Greystone</a>
+        <p>A boutique B&amp;B guest house in Wavecrest, Jeffreys Bay, 300m from Supertubes, where every stay feels like coming home to the coast.</p>
+        <div class="footer-rating" aria-label="Rated 8.4 Very Good on Booking.com">
+          <span>8.4 · Very Good · Booking.com</span>
+        </div>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/rooms/">Rooms &amp; rates</a></li>
+          <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+          <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+          <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+          <li><a href="/business-travel/">Business travel</a></li>
+          <li><a href="/reviews.html">Guest reviews</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/af/" hreflang="af" lang="af">Afrikaans</a></li>
+          <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">Book Now</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="footer-heading">Find Us</p>
+        <address>
+          11 Mimosa Street<br>
+          Wavecrest, Jeffreys Bay<br>
+          Eastern Cape, 6330<br>
+          South Africa<br>
+          <br>
+          Check-in: 14:00 – 20:00<br>
+          Check-out: 07:00 – 10:00<br>
+          <br>
+          Languages: Afrikaans &amp; English
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Greystone Guesthouse. All rights reserved.</p>
+      <p>Jeffreys Bay &nbsp;·&nbsp; Eastern Cape &nbsp;·&nbsp; South Africa</p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

@@ -79,6 +79,15 @@ PAGES = {
         "help_topics": [],
         "hreflang": {},
     },
+    "/rooms/": {
+        "file": "rooms/index.html",
+        "title": "Rooms & Rates | Jeffreys Bay Accommodation | Greystone",
+        "h1": "Rooms & rates at Greystone, Jeffreys Bay",
+        "lang": "en-ZA",
+        "schema_types": {"BreadcrumbList", "ItemList", "HotelRoom", "Offer", "FAQPage"},
+        "help_topics": [],
+        "hreflang": {},
+    },
 }
 # Pages that existed before the restructure. New pages must reference the lodging,
 # never redefine it; these two keep their own schema.
