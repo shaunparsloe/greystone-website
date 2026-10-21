@@ -33,6 +33,10 @@
     menu.addEventListener('click', function (e) {
       if (e.target.closest('a') && nav.classList.contains('open')) setOpen(false, false);
     });
+    // Tabbing out of the bar closes the menu, so the focused link isn't hidden under the panel.
+    nav.addEventListener('focusout', function (e) {
+      if (nav.classList.contains('open') && e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false, false);
+    });
     window.addEventListener('resize', function () {
       if (nav.classList.contains('open') && getComputedStyle(toggle).display === 'none') setOpen(false, false);
     });
