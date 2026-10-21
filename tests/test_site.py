@@ -88,6 +88,15 @@ PAGES = {
         "help_topics": [],
         "hreflang": {},
     },
+    "/things-to-do-jeffreys-bay/": {
+        "file": "things-to-do-jeffreys-bay/index.html",
+        "title": "Things to Do in Jeffreys Bay: A Local Guide | Greystone",
+        "h1": "Things to do in Jeffreys Bay",
+        "lang": "en-ZA",
+        "schema_types": {"Article", "ItemList", "TouristAttraction", "BreadcrumbList"},
+        "help_topics": ["surf", "restaurants", "shuttle"],
+        "hreflang": {},
+    },
 }
 # Pages that existed before the restructure. New pages must reference the lodging,
 # never redefine it; these two keep their own schema.
@@ -457,6 +466,17 @@ class SiteTests(unittest.TestCase):
                      "click_tripadvisor", "navigate_section", "help_topic", "data-help-topic",
                      "aria-expanded", "Escape", "typeof gtag"):
             self.assertIn(name, js)
+
+
+    def test_guide_length(self):
+        path = "/things-to-do-jeffreys-bay/"
+        main = load(path).split("<main", 1)[1].split("</main>", 1)[0]
+        main = re.sub(r"<script.*?</script>|<style.*?</style>", " ", main, flags=re.S)
+        words = len(re.sub(r"<[^>]+>", " ", main).split())
+        self.assertTrue(1200 <= words <= 2000, f"guide has {words} words")
+        hrefs = [a.get("href") for a in parse(path).anchors]
+        self.assertIn("/restaurants-jeffreys-bay/", hrefs)
+        self.assertIn("/surf-accommodation-supertubes/", hrefs)
 
 
 if __name__ == "__main__":
