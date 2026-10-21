@@ -529,5 +529,17 @@ class SiteTests(unittest.TestCase):
         self.assertIn("/things-to-do-jeffreys-bay/", [a.get("href") for a in parse(path).anchors])
 
 
+    def test_unconfirmed_claims_absent(self):
+        # Not confirmed by Greystone: which floor the deluxe rooms are on, board storage,
+        # and claims about what other guests enjoy. They stay off the site until Monique confirms.
+        phrases = ["upstairs", "each with a balcony", "Kamers 1–4 · Bo", "where to keep your boards",
+                   "where to keep and rinse them", "highlight for many guests", "guests have enjoyed"]
+        for path, p in self.pages():
+            with self.subTest(page=path):
+                text = (p.text + " " + " ".join(p.jsonld)).lower()
+                for phrase in phrases:
+                    self.assertFalse(phrase.lower() in text, f"found '{phrase}'")
+
+
 if __name__ == "__main__":
     unittest.main()
