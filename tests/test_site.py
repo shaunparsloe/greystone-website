@@ -59,7 +59,7 @@ PAGES = {
         "lang": "en-ZA",
         "schema_types": {"BedAndBreakfast", "FAQPage"},
         "help_topics": [],
-        "hreflang": {},
+        "hreflang": AF_HREFLANG,
     },
     "/reviews.html": {
         "file": "reviews.html",
@@ -447,8 +447,10 @@ class SiteTests(unittest.TestCase):
             with self.subTest(page=path):
                 # Guests' own words (blockquotes, reviewBody) aren't Greystone's claims.
                 text = p.text + " " + " ".join(json.dumps(strip_reviews(json.loads(b))) for b in p.jsonld)
+                # Asking "Is breakfast included?" (answered "room-only") is fine; claiming it isn't.
+                lowered = text.lower().replace("is breakfast included", "")
                 for phrase in BANNED:
-                    self.assertNotIn(phrase.lower(), text.lower(), f"found '{phrase}'")
+                    self.assertFalse(phrase.lower() in lowered, f"found '{phrase}'")
                 if "port elizabeth" in text.lower():
                     self.assertIn("gqeberha", text.lower())
 
