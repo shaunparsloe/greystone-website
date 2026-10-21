@@ -127,8 +127,13 @@
 2. Set up marketing
 
 ## Website
-- Static HTML in `website/`, published by GitHub Pages from `main` to https://greystoneguesthouse.co.za (`.github/workflows/pages.yml`; `website/.claude/` and any `*.md` are left out of the upload).
-- **Restructure in progress (Oct 2026):** done in a separate Claude Code session started in `website/`, where Superpowers and Playwright are enabled (`website/.claude/settings.json`). **Brief: `analytics-data/SEO/website-restructure-plan.md`**. Read it in full before any website work. Keep plans and notes in `analytics-data/SEO/`, never in `website/` (public).
+- Static HTML in `website/`, published by GitHub Pages from `main` to https://greystoneguesthouse.co.za (`.github/workflows/pages.yml`).
+- **`website/` is public twice over:** the repo is public on GitHub, and the site is published from it. Only site files go there.
+  - The Pages workflow publishes only listed site file types (html, css, js, xml, txt, images, woff2, `CNAME`) and skips hidden folders.
+  - The local pre-commit hook blocks any other file type under `website/`, including any `*.md`. `website/.gitignore` ignores `*.md`, `docs/` and `.playwright-mcp/`. If a new file type is needed, add it to both the hook and the workflow.
+- **Restructure in progress (Oct 2026):** done in a separate Claude Code session started in `website/`, where Superpowers and Playwright are enabled (`website/.claude/settings.json`). **Brief: `analytics-data/SEO/website-restructure-plan.md`**. Read it in full before any website work.
+  - Save Superpowers specs and plans (which default to `docs/superpowers/`) and any notes in `analytics-data/SEO/`, never in `website/`.
+  - Save Playwright screenshots in the session scratchpad, not `website/`.
 
 ## Marketing
 - TODO: Confirm channels (Google, social media, local listings)

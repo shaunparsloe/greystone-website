@@ -1,0 +1,8 @@
+# Only site files belong here: this repo is public and website/ is published.
+# Plans, specs and notes go in analytics-data/SEO/; screenshots in the session scratchpad.
+*.md
+docs/
+.playwright-mcp/
+screenshots/
+*.log
+.claude/settings.local.json

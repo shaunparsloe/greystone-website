@@ -21,9 +21,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      # Publish website/ without the Claude Code session files and working docs kept there.
-      - name: Copy site without session files
-        run: rsync -a --exclude='.claude/' --exclude='*.md' website/ _site/
+      # Publish only site file types from website/; skip hidden folders (.claude/, .playwright-mcp/)
+      # and anything else, such as *.md notes. Keep this list in step with the pre-commit hook.
+      - name: Copy site files only
+        run: |
+          rsync -a --prune-empty-dirs \
+            --exclude='.*/' --include='*/' \
+            --include='CNAME' \
+            --include='*.html' --include='*.css' --include='*.js' \
+            --include='*.xml' --include='*.txt' \
+            --include='*.jpg' --include='*.jpeg' --include='*.png' --include='*.webp' \
+            --include='*.avif' --include='*.gif' --include='*.svg' --include='*.ico' \
+            --include='*.woff2' \
+            --exclude='*' \
+            website/ _site/
+          find _site -type f | sort
       - uses: actions/upload-pages-artifact@v3
         with:
           path: './_site'
