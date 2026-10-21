@@ -127,10 +127,8 @@
 2. Set up marketing
 
 ## Website
-- TODO: Confirm tech stack preference
-- TODO: Confirm domain name
-- TODO: Add room types and descriptions
-- TODO: Add photos / image assets
+- Static HTML in `website/`, published by GitHub Pages from `main` to https://greystoneguesthouse.co.za (`.github/workflows/pages.yml`; `website/.claude/` and any `*.md` are left out of the upload).
+- **Restructure in progress (Oct 2026):** done in a separate Claude Code session started in `website/`, where Superpowers and Playwright are enabled (`website/.claude/settings.json`). **Brief: `analytics-data/SEO/website-restructure-plan.md`**. Read it in full before any website work. Keep plans and notes in `analytics-data/SEO/`, never in `website/` (public).
 
 ## Marketing
 - TODO: Confirm channels (Google, social media, local listings)
