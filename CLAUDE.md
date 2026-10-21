@@ -11,6 +11,9 @@
 - **Airport:** Port Elizabeth Airport (now Gqeberha) — 64 km away
 - **Nearby:** Supermarket and restaurant within 100 metres
 
+## Naming
+- When mentioning the city or its airport on the site, in listings or in docs, use both names: **Port Elizabeth**, which most guests know, and **Gqeberha**, the official name. The wording can vary as long as it reads naturally.
+
 ## Git workflow
 - **Never commit directly to `main`** in any repo (website, `analytics-data/`, `business-data/`). Branch, push, open a PR with `gh pr create`; Shaun merges. Local pre-commit hooks block commits on `main`. The website repo is also protected on GitHub; the private repos aren't (needs GitHub Pro).
 
