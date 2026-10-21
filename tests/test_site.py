@@ -106,6 +106,15 @@ PAGES = {
         "help_topics": ["restaurants"],
         "hreflang": {},
     },
+    "/surf-accommodation-supertubes/": {
+        "file": "surf-accommodation-supertubes/index.html",
+        "title": "Surf Accommodation near Supertubes, Jeffreys Bay | Greystone",
+        "h1": "Surf accommodation 300 m from Supertubes",
+        "lang": "en-ZA",
+        "schema_types": {"Article", "FAQPage", "BreadcrumbList"},
+        "help_topics": ["surf", "shuttle"],
+        "hreflang": {},
+    },
 }
 # Pages that existed before the restructure. New pages must reference the lodging,
 # never redefine it; these two keep their own schema.
