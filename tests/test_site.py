@@ -115,6 +115,24 @@ PAGES = {
         "help_topics": ["surf", "shuttle"],
         "hreflang": {},
     },
+    "/business-travel/": {
+        "file": "business-travel/index.html",
+        "title": "Business Accommodation in Jeffreys Bay | Greystone",
+        "h1": "Business stays in Jeffreys Bay",
+        "lang": "en-ZA",
+        "schema_types": {"WebPage", "FAQPage", "BreadcrumbList"},
+        "help_topics": ["shuttle"],
+        "hreflang": {},
+    },
+    "/af/": {
+        "file": "af/index.html",
+        "title": "Verblyf in Jeffreysbaai | Greystone Gastehuis B&B",
+        "h1": "Greystone Gastehuis, B&B-verblyf in Jeffreysbaai",
+        "lang": "af",
+        "schema_types": {"WebPage", "BreadcrumbList"},
+        "help_topics": [],
+        "hreflang": AF_HREFLANG,
+    },
 }
 # Pages that existed before the restructure. New pages must reference the lodging,
 # never redefine it; these two keep their own schema.
