@@ -531,9 +531,10 @@ class SiteTests(unittest.TestCase):
         main = re.sub(r"<script.*?</script>", " ", load(path).split("<main", 1)[1].split("</main>", 1)[0], flags=re.S)
         text = " ".join(re.sub(r"<[^>]+>", " ", main).split()).replace("&#x27;", "'").replace("&amp;", "&")
         walking = text.split("Within walking distance", 1)[1]
-        positions = [walking.find(n) for n in ("Hyper Cafe", "Nina's Real Food", "Quitschy's Pizza")]
-        self.assertNotIn(-1, positions)
-        self.assertEqual(positions, sorted(positions))
+        self.assertIn("Nina's Real Food", walking)
+        # Hyper Cafe (unverifiable), Quitschy's (in Walmer, Gqeberha) the 60's Diner (permanently closed) and Jolly Dolphin (a party venue, not a listed restaurant) stay off the page.
+        for name in ("Hyper Cafe", "Quitschy", "60's Diner", "Jolly Dolphin"):
+            self.assertNotIn(name, text)
         self.assertIsNone(re.search(r"\b\d{1,2}[:h]\d{2}\b", text), "looks like opening hours")
         self.assertIn("/things-to-do-jeffreys-bay/", [a.get("href") for a in parse(path).anchors])
 
