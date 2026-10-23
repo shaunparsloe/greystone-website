@@ -193,6 +193,13 @@ footer.site-footer { border-top: 1px solid var(--border-faint); }
   line-height: 1.85;
   color: var(--muted);
 }
+.site-footer address a {
+  display: inline-block;
+  padding: 0.35rem 0;
+  color: var(--gold-light);
+  text-decoration: none;
+}
+.site-footer address a:hover { color: var(--cream); }
 
 .footer-bottom {
   border-top: 1px solid var(--border-faint);
