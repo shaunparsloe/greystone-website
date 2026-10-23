@@ -115,6 +115,15 @@ PAGES = {
         "help_topics": ["surf", "shuttle"],
         "hreflang": {},
     },
+    "/scuba-diving-jeffreys-bay/": {
+        "file": "scuba-diving-jeffreys-bay/index.html",
+        "title": "Scuba Diving in Jeffreys Bay | Greystone Guesthouse",
+        "h1": "Scuba diving in Jeffreys Bay",
+        "lang": "en-ZA",
+        "schema_types": {"Article", "LocalBusiness", "BreadcrumbList"},
+        "help_topics": [],
+        "hreflang": {},
+    },
     "/business-travel/": {
         "file": "business-travel/index.html",
         "title": "Business Accommodation in Jeffreys Bay | Greystone",
