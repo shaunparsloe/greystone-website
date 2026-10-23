@@ -287,12 +287,10 @@ def parse(path):
 
 @functools.lru_cache(maxsize=None)
 def tracking_block():
-    """The tracking head block from main's index.html, found by its markers."""
-    src = subprocess.run(
-        ["git", "show", "main:website/index.html"], cwd=ROOT, capture_output=True, text=True, check=True
-    ).stdout
+    """The tracking head block from index.html, found by its markers. Every tracked page carries it verbatim."""
+    src = (SITE / "index.html").read_text(encoding="utf-8")
     start = src.index("  <!-- Tracking opt-out")
-    end = src.index("</script>", src.index('"yzbe0qilo7");')) + len("</script>")
+    end = src.index("</script>", src.index("clarity.ms/tag/yzbe0qilo7")) + len("</script>")
     return src[start:end]
 
 
@@ -591,6 +589,35 @@ class SiteTests(unittest.TestCase):
                 address = footer.split("<address>", 1)[1].split("</address>", 1)[0]
                 after = address.split("South Africa<br>", 1)[1]
                 self.assertRegex(after.lstrip(), r'^<a href="tel:\+27829537641"[^>]*>\+27 82 953 7641</a>')
+
+
+    def test_tracking_loads_after_page(self):
+        # GA4 and Clarity add ~0.3s to LCP on a mid-range phone if they load with the page,
+        # so their scripts are only added once the page has loaded. Hits queue until then.
+        block = tracking_block()
+        load_at = block.index("addEventListener('load'")
+        self.assertGreater(block.index("googletagmanager.com/gtag/js"), load_at)
+        self.assertGreater(block.index("clarity.ms/tag/"), load_at)
+        self.assertLess(block.index("gtag('config', 'G-LHN8DCK50B')"), load_at)  # page_view still queued at once
+        for path in PAGES:
+            with self.subTest(page=path):
+                head = load(path).split("</head>")[0]
+                self.assertEqual(head.count("googletagmanager.com/gtag/js"), 0 if path == "/404.html" else 1)
+
+    def test_fonts_self_hosted(self):
+        # Fonts come from /fonts/ on our own site: no Google Fonts connections.
+        for path in PAGES:
+            with self.subTest(page=path):
+                html = load(path)
+                self.assertNotIn("fonts.googleapis.com", html)
+                self.assertNotIn("fonts.gstatic.com", html)
+        css = (SITE / "css/chrome.css").read_text(encoding="utf-8")
+        urls = re.findall(r"url\((/fonts/[^)]+\.woff2)\)", css)
+        self.assertEqual(len(urls), 3, urls)
+        for u in urls:
+            self.assertTrue(site_file(u).is_file(), u)
+        for family in ("Cormorant Garamond", "Inter"):
+            self.assertIn(f"font-family: '{family}'", css)
 
 
 if __name__ == "__main__":
