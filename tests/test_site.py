@@ -628,5 +628,14 @@ class SiteTests(unittest.TestCase):
         self.assertIn("'tel:'", js)
 
 
+    def test_aria_labels_have_a_role(self):
+        # aria-label isn't allowed on a plain div/span/p, so screen readers and AI agents may
+        # ignore it (Lighthouse "Elements must only use permitted ARIA attributes").
+        for path in PAGES:
+            with self.subTest(page=path):
+                for tag, attrs in re.findall(r'<(div|span|p)\b([^>]*\baria-label="[^"]*"[^>]*)>', load(path)):
+                    self.assertIn("role=", attrs, f"<{tag}{attrs}> has aria-label but no role")
+
+
 if __name__ == "__main__":
     unittest.main()
