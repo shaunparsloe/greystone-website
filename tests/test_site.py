@@ -532,8 +532,8 @@ class SiteTests(unittest.TestCase):
         text = " ".join(re.sub(r"<[^>]+>", " ", main).split()).replace("&#x27;", "'").replace("&amp;", "&")
         walking = text.split("Within walking distance", 1)[1]
         self.assertIn("Nina's Real Food", walking)
-        # Hyper Cafe (unverifiable) and Quitschy's (in Walmer, Gqeberha) are not within walking distance.
-        for name in ("Hyper Cafe", "Quitschy"):
+        # Hyper Cafe (unverifiable), Quitschy's (in Walmer, Gqeberha) and the 60's Diner (permanently closed) stay off the page.
+        for name in ("Hyper Cafe", "Quitschy", "60's Diner"):
             self.assertNotIn(name, text)
         self.assertIsNone(re.search(r"\b\d{1,2}[:h]\d{2}\b", text), "looks like opening hours")
         self.assertIn("/things-to-do-jeffreys-bay/", [a.get("href") for a in parse(path).anchors])
