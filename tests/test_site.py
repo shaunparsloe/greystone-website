@@ -568,5 +568,13 @@ class SiteTests(unittest.TestCase):
                         self.assertIn('lang="en"', tag)
 
 
+    def test_home_clips_sideways_overflow(self):
+        # The home page's slide-in (.reveal-right) and Ken Burns animations start up to 44px
+        # off-screen. Phone browsers widen the page to fit them unless <html> clips it, which
+        # pushes the menu button off the right edge.
+        css = load("/").split("<style>", 1)[1].split("</style>", 1)[0]
+        self.assertRegex(css, r"html\s*\{[^}]*overflow-x:\s*clip")
+
+
 if __name__ == "__main__":
     unittest.main()
