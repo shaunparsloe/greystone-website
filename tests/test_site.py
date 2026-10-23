@@ -620,5 +620,13 @@ class SiteTests(unittest.TestCase):
             self.assertIn(f"font-family: '{family}'", css)
 
 
+    def test_phone_taps_tracked(self):
+        # Taps on the footer's tel: link are as valuable as WhatsApp messages, so they get
+        # their own conversion event (GA4 adds the page automatically).
+        js = (SITE / "js/site.js").read_text(encoding="utf-8")
+        self.assertIn("'contact_phone'", js)
+        self.assertIn("'tel:'", js)
+
+
 if __name__ == "__main__":
     unittest.main()
