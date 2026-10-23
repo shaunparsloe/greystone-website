@@ -574,6 +574,15 @@ class SiteTests(unittest.TestCase):
         # pushes the menu button off the right edge.
         css = load("/").split("<style>", 1)[1].split("</style>", 1)[0]
         self.assertRegex(css, r"html\s*\{[^}]*overflow-x:\s*clip")
+    def test_footer_phone(self):
+        # Guests phone (117 calls from the Google profile), so every footer's Find Us block
+        # gives the number as a tap-to-call link, straight after the address.
+        for path in PAGES:
+            with self.subTest(page=path):
+                footer = load(path).split('<footer class="site-footer">', 1)[1].split("</footer>", 1)[0]
+                address = footer.split("<address>", 1)[1].split("</address>", 1)[0]
+                after = address.split("South Africa<br>", 1)[1]
+                self.assertRegex(after.lstrip(), r'^<a href="tel:\+27829537641"[^>]*>\+27 82 953 7641</a>')
 
 
 if __name__ == "__main__":
