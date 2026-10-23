@@ -81,6 +81,13 @@
       var topic = link.getAttribute('data-help-topic');
       if (topic) params.help_topic = topic;
       gtag('event', 'contact_whatsapp', params);
+    } else if (href.indexOf('tel:') === 0) {
+      // Tap-to-call in the footer: a call is as valuable as a WhatsApp message.
+      gtag('event', 'contact_phone', {
+        event_category: 'conversion',
+        event_label: label,
+        link_url: href
+      });
     } else if (href.indexOf('reviews.html') !== -1) {
       gtag('event', 'view_reviews', {
         event_category: 'engagement',
