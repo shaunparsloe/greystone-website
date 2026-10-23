@@ -66,7 +66,7 @@ PAGES = {
         "title": "Guest Reviews | Greystone Guesthouse B&B Jeffreys Bay",
         "h1": None,
         "lang": "en-ZA",
-        "schema_types": {"BreadcrumbList", "Review"},
+        "schema_types": {"BreadcrumbList", "BedAndBreakfast"},
         "help_topics": [],
         "hreflang": {},
     },
@@ -538,6 +538,13 @@ class SiteTests(unittest.TestCase):
         self.assertIsNone(re.search(r"\b\d{1,2}[:h]\d{2}\b", text), "looks like opening hours")
         self.assertIn("/things-to-do-jeffreys-bay/", [a.get("href") for a in parse(path).anchors])
 
+
+    def test_no_third_party_rating_markup(self):
+        # Ratings and reviews come from Booking.com, so they're shown as text, never marked up as the site's own.
+        for path, p in self.pages():
+            with self.subTest(page=path):
+                found = schema_types([json.loads(b) for b in p.jsonld])
+                self.assertFalse({"AggregateRating", "Review"} & found)
 
     def test_unconfirmed_claims_absent(self):
         # Not confirmed by Greystone: which floor the deluxe rooms are on, board storage,
