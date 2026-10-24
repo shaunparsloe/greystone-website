@@ -36,6 +36,10 @@ jobs:
             --exclude='*' \
             website/ _site/
           find _site -type f | sort
+      # Write the CSS files into each published page, so the first paint doesn't wait for a stylesheet
+      # download. Source pages keep their <link> tags; see tools/inline_css.py.
+      - name: Inline CSS into pages
+        run: python3 tools/inline_css.py _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: './_site'
