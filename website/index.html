@@ -373,8 +373,11 @@
     /* ─── HERO ──────────────────────────────────────────────────── */
     .hero {
       position: relative;
-      height: 100vh;
-      min-height: 680px;
+      /* At least one screen tall, but grows with its content on short phones; the padding keeps the
+         text clear of the fixed menu bar (top) and the scroll hint (bottom). */
+      min-height: 100vh;
+      min-height: 100svh;
+      padding: 7rem 0 7.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1361,6 +1364,16 @@
       .hero-eyebrow, .hero-title, .hero-sub, .hero-ctas { animation: none; }
       .hero-bg { transition: none; }
       .scroll-line { animation: none; }
+    }
+
+    /* Short screens (small phones, 768px-high laptops): fit the hero, down to "Book your stay", on the
+       first screen. The heading scales with the screen height; the divider and scroll hint are dropped. */
+    @media (max-height: 820px) {
+      .hero { padding: 6rem 0 2.5rem; }
+      .hero-divider, .hero-scroll-indicator { display: none; }
+      .hero-eyebrow { margin-bottom: 1rem; }
+      .hero-title { font-size: clamp(2.4rem, min(11vw, 9vh), 6rem); margin-bottom: 1.2rem; }
+      .hero-sub { margin-bottom: 1.6rem; }
     }
   </style>
   <link rel="stylesheet" href="/css/chrome.css">
