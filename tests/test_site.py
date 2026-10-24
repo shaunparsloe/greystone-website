@@ -725,5 +725,16 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(len(re.findall(r"<main\b", load(path))), 1)
 
 
+    def test_hero_clears_menu_bar_and_can_grow(self):
+        # The hero's content (~690px) is taller than short phones. A fixed 100vh height with
+        # centring pushed it under the menu bar and clipped the buttons; instead the hero is at
+        # least the screen's height, grows with its content, and is padded below the bar.
+        css = load("/").split("<style>", 1)[1].split("</style>", 1)[0]
+        block = re.search(r"\n    \.hero \{([^}]*)\}", css).group(1)
+        self.assertNotRegex(block, r"(?<!-)height:\s*100vh")
+        self.assertRegex(block, r"min-height:\s*100svh")
+        self.assertRegex(block, r"padding:\s*[\d.]+rem")
+
+
 if __name__ == "__main__":
     unittest.main()
