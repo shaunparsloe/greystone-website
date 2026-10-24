@@ -6,7 +6,7 @@
   if (nav) {
     var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 80); };
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    requestAnimationFrame(onScroll); // first check waits a frame, so it doesn't force layout at start-up
   }
 
   // Mobile menu: the toggle opens the full list; Esc or a link click closes it.
