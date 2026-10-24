@@ -637,5 +637,20 @@ class SiteTests(unittest.TestCase):
                     self.assertIn("role=", attrs, f"<{tag}{attrs}> has aria-label but no role")
 
 
+    def test_hero_text_visible_from_first_paint(self):
+        # Google's LCP waits until the hero heading is visible. Starting it at opacity 0 with a
+        # delayed fade pushed mobile LCP to ~5 s in PageSpeed, so the hero text may slide in,
+        # but must be visible from the first paint and start without a delay.
+        css = load("/").split("<style>", 1)[1].split("</style>", 1)[0]
+        for sel in (".hero-eyebrow", ".hero-title", ".hero-sub", ".hero-ctas"):
+            with self.subTest(selector=sel):
+                block = re.search(re.escape(sel) + r"\s*\{([^}]*)\}", css).group(1)
+                self.assertNotRegex(block, r"opacity:\s*0\s*;")
+                anim = re.search(r"animation:\s*([^;]+);", block)
+                if anim:
+                    times = re.findall(r"\b\d*\.?\d+m?s\b", anim.group(1))
+                    self.assertLessEqual(len(times), 1, f"{sel} animation has a delay: {anim.group(1)}")
+
+
 if __name__ == "__main__":
     unittest.main()
