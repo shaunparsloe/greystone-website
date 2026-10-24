@@ -718,5 +718,12 @@ class SiteTests(unittest.TestCase):
         self.assertNotRegex(js, r"\n\s*onScroll\(\);")
 
 
+    def test_one_main_landmark(self):
+        # Screen readers jump to <main> to skip the nav; each page needs exactly one.
+        for path in PAGES:
+            with self.subTest(page=path):
+                self.assertEqual(len(re.findall(r"<main\b", load(path))), 1)
+
+
 if __name__ == "__main__":
     unittest.main()
