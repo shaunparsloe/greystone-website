@@ -495,7 +495,7 @@ class SiteTests(unittest.TestCase):
         chrome = (SITE / "css/chrome.css").read_text(encoding="utf-8")
         site = (SITE / "css/site.css").read_text(encoding="utf-8")
         for token in ("--ink: #080808", "--surface: #111", "--surface-2: #181818", "--gold: #C9A96E",
-                      "--gold-light: #E8D5B0", "--cream: #F5F0E8", "--muted: #7A7567"):
+                      "--gold-light: #E8D5B0", "--cream: #F5F0E8", "--muted: #837D6E"):
             self.assertIn(token, chrome)
         self.assertIn("@media (max-width: 768px)", chrome)
         self.assertIn(".nav-toggle", chrome)
@@ -665,6 +665,57 @@ class SiteTests(unittest.TestCase):
                 head = load(path).split("</head>")[0]
                 for f in ("cormorant-garamond-latin", "cormorant-garamond-italic-latin"):
                     self.assertRegex(head, r'<link rel="preload" href="/fonts/' + f + r'\.woff2" as="font" type="font/woff2" crossorigin>')
+
+
+    def test_text_contrast(self):
+        # WCAG AA: small text needs 4.5:1. Muted grey sits on the page (#080808) and on cards (#111);
+        # WhatsApp buttons keep WhatsApp's bright green with near-black text.
+        def lum(h):
+            c = [int(h[i:i + 2], 16) / 255 for i in (1, 3, 5)]
+            c = [x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4 for x in c]
+            return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]
+        def ratio(a, b):
+            hi, lo = sorted([lum(a), lum(b)], reverse=True)
+            return (hi + 0.05) / (lo + 0.05)
+        chrome = (SITE / "css/chrome.css").read_text(encoding="utf-8")
+        site = (SITE / "css/site.css").read_text(encoding="utf-8")
+        muted = re.search(r"--muted:\s*(#[0-9A-Fa-f]{6})", chrome).group(1)
+        for bg in ("#080808", "#111111"):
+            self.assertGreaterEqual(ratio(muted, bg), 4.5, f"--muted on {bg}")
+        self.assertNotIn("rgba(122,117,103", chrome)  # faded footer line
+        for path in ("/", "/reviews.html"):
+            inline = load(path).split("<style>", 1)[1].split("</style>", 1)[0]
+            self.assertNotIn("#7A7567", inline)
+        rules = [(".btn-whatsapp", site), (".nav-links .nav-whatsapp", chrome),
+                 (".btn-whatsapp", load("/").split("<style>", 1)[1].split("</style>", 1)[0])]
+        for sel, css in rules:
+            with self.subTest(selector=sel):
+                for block in re.findall(re.escape(sel) + r"(?::hover)?\s*\{([^}]*)\}", css):
+                    bg = re.search(r"background:\s*(#[0-9A-Fa-f]{6})", block)
+                    fg = re.search(r"(?<!-)color:\s*(#[0-9A-Fa-f]{6}|var\(--ink\))", block)
+                    if bg and fg:
+                        fgv = "#080808" if "ink" in fg.group(1) else fg.group(1)
+                        self.assertGreaterEqual(ratio(fgv, bg.group(1)), 4.5, f"{sel}: {fgv} on {bg.group(1)}")
+                    if bg and not fg:
+                        self.fail(f"{sel} sets a background without a text colour: {block.strip()[:80]}")
+
+    def test_home_below_fold_images(self):
+        # Below-the-fold photos on the home page are low priority and well compressed, so they
+        # don't compete with the hero heading and photo for bandwidth.
+        imgs = [i for i in parse("/").imgs if i.get("loading") == "lazy"]
+        self.assertTrue(imgs)
+        for img in imgs:
+            with self.subTest(img=img.get("src")):
+                self.assertEqual(img.get("fetchpriority"), "low")
+        for f in (SITE / "images").glob("*.webp"):
+            with self.subTest(file=f.name):
+                self.assertLessEqual(f.stat().st_size, 55 * 1024, f"{f.name} is {f.stat().st_size // 1024} KB")
+
+    def test_sitejs_no_forced_reflow(self):
+        # The first nav-scroll check waits for a frame, so it doesn't force layout during start-up.
+        js = (SITE / "js/site.js").read_text(encoding="utf-8")
+        self.assertIn("requestAnimationFrame(onScroll)", js)
+        self.assertNotRegex(js, r"\n\s*onScroll\(\);")
 
 
 if __name__ == "__main__":

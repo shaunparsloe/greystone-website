@@ -37,7 +37,7 @@
   --gold-light: #E8D5B0;
   --gold-dim: rgba(201,169,110,0.15);
   --cream: #F5F0E8;
-  --muted: #7A7567;
+  --muted: #837D6E; /* 4.6:1 on #111, 4.9:1 on the page */
   --border: rgba(201,169,110,0.12);
   --border-faint: rgba(255,255,255,0.07);
 }
@@ -104,11 +104,11 @@
 
 .nav-links .nav-whatsapp {
   background: #25D366;
-  color: #fff;
+  color: #080808; /* dark text: white on this green is only 2:1 */
   font-weight: 500;
   padding: 0.6rem 1.5rem;
 }
-.nav-links .nav-whatsapp:hover { background: #1ebe57; color: #fff; }
+.nav-links .nav-whatsapp:hover { background: #1ebe57; color: #080808; }
 
 .nav-book {
   font-size: 0.7rem;
@@ -241,7 +241,7 @@ footer.site-footer { border-top: 1px solid var(--border-faint); }
 }
 .footer-bottom p {
   font-size: 0.72rem;
-  color: rgba(122,117,103,0.6);
+  color: var(--muted);
   letter-spacing: 0.05em;
 }
 

@@ -69,8 +69,8 @@ a:hover { color: var(--cream); }
 .btn-gold:hover { background: var(--gold-light); color: var(--ink); transform: translateY(-2px); }
 .btn-outline { border: 1px solid rgba(245,240,232,0.28); color: var(--cream); font-weight: 400; }
 .btn-outline:hover { border-color: var(--cream); color: var(--cream); transform: translateY(-2px); }
-.btn-whatsapp { background: #25D366; color: #fff; }
-.btn-whatsapp:hover { background: #1ebe57; color: #fff; transform: translateY(-2px); }
+.btn-whatsapp { background: #25D366; color: #080808; } /* dark text: white on this green is only 2:1 */
+.btn-whatsapp:hover { background: #1ebe57; color: #080808; transform: translateY(-2px); }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
 
