@@ -652,5 +652,20 @@ class SiteTests(unittest.TestCase):
                     self.assertLessEqual(len(times), 1, f"{sel} animation has a delay: {anim.group(1)}")
 
 
+    def test_heading_font_ready_before_display(self):
+        # Headings use Cormorant Garamond. Showing them in a stand-in font and then swapping is a
+        # visible jump, so the Cormorant files are preloaded on every page and use font-display:
+        # block (text waits briefly for the real font; Inter keeps swap).
+        css = (SITE / "css/chrome.css").read_text(encoding="utf-8")
+        for face in re.findall(r"@font-face\s*\{([^}]*)\}", css):
+            expected = "block" if "Cormorant Garamond" in face else "swap"
+            self.assertIn(f"font-display: {expected};", face)
+        for path in PAGES:
+            with self.subTest(page=path):
+                head = load(path).split("</head>")[0]
+                for f in ("cormorant-garamond-latin", "cormorant-garamond-italic-latin"):
+                    self.assertRegex(head, r'<link rel="preload" href="/fonts/' + f + r'\.woff2" as="font" type="font/woff2" crossorigin>')
+
+
 if __name__ == "__main__":
     unittest.main()
