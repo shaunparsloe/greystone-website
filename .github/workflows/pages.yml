@@ -5,6 +5,8 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
+  # Manual run: send every sitemap page to IndexNow (Bing and others); nothing is deployed.
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -55,3 +57,28 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tell Bing (via IndexNow) which pages changed in this push, once the new site is live.
+  indexnow:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Submit changed pages
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          git diff --name-only "$BEFORE" "$AFTER" -- website/ > changed.txt || git ls-files website/ > changed.txt
+          python3 tools/indexnow_submit.py $(cat changed.txt)
+
+  indexnow-all:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Submit every sitemap page
+        run: python3 tools/indexnow_submit.py --all
