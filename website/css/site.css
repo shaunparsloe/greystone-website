@@ -168,6 +168,8 @@ a:hover { color: var(--cream); }
 .article-wide strong { font-weight: 500; color: var(--cream); }
 
 .note { font-size: 0.85rem; color: var(--muted); }
+.article code { font-size: 0.9em; color: var(--gold-light); }
+.article a[href^="tel:"], .article-wide a[href^="tel:"] { white-space: nowrap; }
 
 /* ─── CARDS ─────────────────────────────────────────────────── */
 .cards {
