@@ -826,12 +826,10 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn("font-size: 16px", page_css)
 
     def test_privacy_notice(self):
-        # GA4 and Clarity run on every page, so every footer links to the privacy notice, which
-        # names both services, their cookies and the ?notrack opt-out that the head script honours.
+        # Every footer links to the privacy notice, which covers bookings and POPIA rights.
         text = parse("/privacy/").text
-        for phrase in ("Google Analytics", "Microsoft Clarity", "_ga", "_clck", "?notrack=1", "POPIA", "Information Regulator"):
+        for phrase in ("NightsBridge", "Booking.com", "POPIA", "Information Regulator"):
             self.assertIn(phrase, text)
-        self.assertIn("notrack=([01])", tracking_block())
 
 
 if __name__ == "__main__":
