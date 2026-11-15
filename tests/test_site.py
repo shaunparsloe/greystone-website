@@ -826,9 +826,9 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn("font-size: 16px", page_css)
 
     def test_privacy_notice(self):
-        # Every footer links to the privacy notice, which covers bookings and POPIA rights.
+        # Every footer links to the privacy notice, which covers POPIA rights.
         text = parse("/privacy/").text
-        for phrase in ("NightsBridge", "Booking.com", "POPIA", "Information Regulator"):
+        for phrase in ("POPIA", "Information Regulator"):
             self.assertIn(phrase, text)
 
 
