@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
+  <script>
+    (function(){
+      var m = location.search.match(/[?&]notrack=([01])(&|$)/), off = !!m && m[1] === '1';
+      try {
+        if (m) { if (off) localStorage.setItem('notrack', '1'); else localStorage.removeItem('notrack'); }
+        else off = localStorage.getItem('notrack') === '1';
+      } catch (e) {}
+      // Bot filter (19 Oct 2026): a bot wave logged as Singapore/China loads the home page with fake Google
+      // click parameters (?sa=X&ved=...) and no referrer. Skip GA4 + Clarity for these; ?notrack=0 overrides.
+      var bot = false;
+      try {
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        if (/^Asia\/(Singapore|Shanghai|Chongqing|Harbin|Urumqi)$/.test(tz)) bot = true;
+      } catch (e) {}
+      if (/[?&]sa=X(&|$)/.test(location.search) && /[?&]ved=/.test(location.search) && !document.referrer) bot = true;
+      if (bot && !(m && m[1] === '0')) { off = true; console.info('Tracking skipped (bot filter)'); }
+      window.ggNoTrack = off;
+      if (off) { window['ga-disable-G-LHN8DCK50B'] = true; console.info('Tracking off on this device'); }
+    })();
+  </script>
+  <!-- Google tag (gtag.js) and Microsoft Clarity. The page view and any clicks are queued at once;
+       the two scripts load after the page has finished loading, so they don't slow it down on phones. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    if (!window.ggNoTrack) {
+      gtag('js', new Date());
+      gtag('config', 'G-LHN8DCK50B');
+      window.clarity = window.clarity || function(){(window.clarity.q = window.clarity.q || []).push(arguments);};
+      window.addEventListener('load', function () {
+        var add = function (src) { var s = document.createElement('script'); s.async = true; s.src = src; document.head.appendChild(s); };
+        var go = function () {
+          add('https://www.googletagmanager.com/gtag/js?id=G-LHN8DCK50B');
+          add('https://www.clarity.ms/tag/yzbe0qilo7');
+        };
+        if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 2000 }); else setTimeout(go, 1);
+      });
+    }
+  </script>
+  <title>Privacy Notice | Greystone Guesthouse, Jeffreys Bay</title>
+  <meta name="description" content="How the Greystone Guesthouse website in Jeffreys Bay uses Google Analytics and Microsoft Clarity, the cookies they set, and how to opt out of them.">
+  <meta name="robots" content="index, follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://greystoneguesthouse.co.za/privacy/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy Notice | Greystone Guesthouse">
+  <meta property="og:description" content="How the Greystone Guesthouse website in Jeffreys Bay uses Google Analytics and Microsoft Clarity, the cookies they set, and how to opt out of them.">
+  <meta property="og:url" content="https://greystoneguesthouse.co.za/privacy/">
+  <meta property="og:image" content="https://greystoneguesthouse.co.za/images/553368676.jpg">
+  <meta property="og:image:alt" content="Sunset over Jeffreys Bay from Greystone Guesthouse">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:site_name" content="Greystone Guesthouse">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Privacy Notice | Greystone Guesthouse">
+  <meta name="twitter:description" content="How the Greystone Guesthouse website in Jeffreys Bay uses Google Analytics and Microsoft Clarity, the cookies they set, and how to opt out of them.">
+
+  <link rel="stylesheet" href="/css/chrome.css">
+  <link rel="stylesheet" href="/css/site.css">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://greystoneguesthouse.co.za/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Privacy",
+      "item": "https://greystoneguesthouse.co.za/privacy/"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy notice",
+  "url": "https://greystoneguesthouse.co.za/privacy/",
+  "description": "How the Greystone Guesthouse website in Jeffreys Bay uses Google Analytics and Microsoft Clarity, the cookies they set, and how to opt out of them.",
+  "dateModified": "2026-11-15",
+  "about": {
+    "@id": "https://greystoneguesthouse.co.za/#lodging"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://greystoneguesthouse.co.za/"
+  }
+}
+  </script>
+  <!-- Speculation rules: Chrome, Edge and Samsung Internet fetch a same-site page when the visitor hovers
+       or starts to tap its link, so it opens almost at once. Prefetch only (no prerender), so analytics
+       never counts a page nobody saw. Other browsers ignore this. -->
+  <script type="speculationrules">
+  {"prefetch": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav id="nav" aria-label="Main">
+  <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
+  <ul class="nav-links" id="nav-menu" role="list">
+    <li><a href="/rooms/">Rooms</a></li>
+    <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+    <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+    <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+    <li><a href="/reviews.html">Reviews</a></li>
+    <li><a href="/af/" hreflang="af" lang="af">AF</a></li>
+    <li><a href="https://wa.me/27829537641" target="_blank" rel="noopener" class="nav-whatsapp">WhatsApp</a></li>
+  </ul>
+  <a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener" class="nav-book">Book Now</a>
+  <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span></button>
+</nav>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Privacy</li></ol></nav>
+        <p class="eyebrow">Last updated 15 November 2026</p>
+        <h1 class="display">Privacy notice</h1>
+        <p class="lead">This website has no forms and no logins, and it never asks you to type in personal details. It does use two analytics services to see how visitors use the site. This page explains what they collect and how to switch them off.</p>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="article">
+        <h2 id="who">Who we are</h2>
+        <p>Greystone Guesthouse, 11 Mimosa Street, Wavecrest, Jeffreys Bay, 6330, South Africa, is responsible for this website. For anything on this page, WhatsApp or call us on <a href="tel:+27829537641">+27 82 953 7641</a>.</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="article">
+        <h2 id="analytics">What the website collects</h2>
+        <p>On every page we use:</p>
+        <ul>
+          <li><strong>Google Analytics 4</strong> (Google). It counts which pages are visited, how visitors arrived (for example from a Google search), their device, browser and approximate location (country and city), and clicks on the Book Now, WhatsApp and phone links. It sets cookies named <code>_ga</code> and <code>_ga_…</code> to tell repeat visits apart.</li>
+          <li><strong>Microsoft Clarity</strong> (Microsoft). It records how pages are used (clicks, taps, scrolling and mouse movement), as session recordings and heatmaps, so we can see where the site is hard to use. It sets cookies named <code>_clck</code> and <code>_clsk</code>.</li>
+        </ul>
+        <p>We use this only to understand and improve the website. We see reports and recordings of visits, not your name or contact details. Both scripts load after the page has finished loading.</p>
+        <p>Google and Microsoft process this data for us under their own terms: see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>, <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses data from sites that use its services</a>, and the <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Microsoft privacy statement</a>.</p>
+        <p>Our fonts and photos come from this website itself, so no font or image service sees your visit.</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="article">
+        <h2 id="opt-out">How to switch analytics off</h2>
+        <ul>
+          <li>Open any page with <a href="/?notrack=1"><code>?notrack=1</code></a> at the end of the address. Google Analytics and Clarity then stay off on that browser and device. Use <a href="/?notrack=0"><code>?notrack=0</code></a> to turn them back on. The setting is saved in your browser, so clearing your browser's site data resets it.</li>
+          <li>You can also block or delete cookies in your browser settings, or use a content blocker. The website works the same without them.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="article">
+        <h2 id="booking">Bookings and messages</h2>
+        <p>Bookings made with the Book Now button are handled by NightsBridge, our booking system, and bookings on Booking.com by Booking.com. If you message us on WhatsApp or call us, WhatsApp and your phone provider handle that conversation. Each has its own privacy policy. The details you give when you book or get in touch are used to arrange your stay and answer your questions.</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="article">
+        <h2 id="rights">Your rights</h2>
+        <p>Under South Africa's Protection of Personal Information Act (POPIA), you can ask us what personal information we hold about you, and ask us to correct or delete it. To do that, WhatsApp or call us on <a href="tel:+27829537641">+27 82 953 7641</a>. If you're not happy with our answer, you can complain to the <a href="https://inforegulator.org.za/" target="_blank" rel="noopener">Information Regulator</a>.</p>
+        <p>If this notice changes, we'll update the date at the top of the page.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" aria-label="Greystone Guesthouse">Greystone</a>
+        <p>A boutique B&amp;B guest house in Wavecrest, Jeffreys Bay, 300m from Supertubes, where every stay feels like coming home to the coast.</p>
+        <div class="footer-rating" role="img" aria-label="Rated 8.4 Very Good on Booking.com">
+          <span>8.4 · Very Good · Booking.com</span>
+        </div>
+      </div>
+
+      <nav aria-label="Footer">
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/rooms/">Rooms &amp; rates</a></li>
+          <li><a href="/surf-accommodation-supertubes/">Surf</a></li>
+          <li><a href="/things-to-do-jeffreys-bay/">Things to do</a></li>
+          <li><a href="/restaurants-jeffreys-bay/">Restaurants</a></li>
+          <li><a href="/business-travel/">Business travel</a></li>
+          <li><a href="/reviews.html">Guest reviews</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/af/" hreflang="af" lang="af">Afrikaans</a></li>
+          <li><a href="https://book.nightsbridge.com/20319" target="_blank" rel="noopener">Book Now</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="footer-heading">Find Us</p>
+        <address>
+          11 Mimosa Street<br>
+          Wavecrest, Jeffreys Bay<br>
+          Eastern Cape, 6330<br>
+          South Africa<br>
+          <a href="tel:+27829537641" aria-label="Call Greystone Guesthouse on +27 82 953 7641">+27 82 953 7641</a><br>
+          <br>
+          Check-in: 14:00 – 20:00<br>
+          Check-out: 07:00 – 10:00<br>
+          <br>
+          Languages: Afrikaans &amp; English
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Greystone Guesthouse. All rights reserved. &nbsp;·&nbsp; <a href="/privacy/">Privacy</a></p>
+      <p>Jeffreys Bay &nbsp;·&nbsp; Eastern Cape &nbsp;·&nbsp; South Africa</p>
+    </div>
+  </footer>
+
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

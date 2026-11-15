@@ -34,6 +34,7 @@ NAV_ITEM_PAGES = {
 FOOTER_HREFS = [
     "/", "/rooms/", "/surf-accommodation-supertubes/", "/things-to-do-jeffreys-bay/",
     "/restaurants-jeffreys-bay/", "/business-travel/", "/reviews.html", "/#faq", "/af/", BOOK,
+    "/privacy/",
 ]
 HELP_MESSAGES = {
     "surf": "Hi Monique, I'm staying at Greystone and would like help arranging surf lessons or board and wetsuit hire.",
@@ -131,6 +132,15 @@ PAGES = {
         "lang": "en-ZA",
         "schema_types": {"WebPage", "FAQPage", "BreadcrumbList"},
         "help_topics": ["shuttle"],
+        "hreflang": {},
+    },
+    "/privacy/": {
+        "file": "privacy/index.html",
+        "title": "Privacy Notice | Greystone Guesthouse, Jeffreys Bay",
+        "h1": "Privacy notice",
+        "lang": "en-ZA",
+        "schema_types": {"WebPage", "BreadcrumbList"},
+        "help_topics": [],
         "hreflang": {},
     },
     "/af/": {
@@ -565,7 +575,7 @@ class SiteTests(unittest.TestCase):
         english = {"/": {"Home", "EN"}, "/rooms/": {"Rooms", "Rooms &amp; rates"},
                    "/surf-accommodation-supertubes/": {"Surf"}, "/things-to-do-jeffreys-bay/": {"Things to do"},
                    "/restaurants-jeffreys-bay/": {"Restaurants"}, "/business-travel/": {"Business travel"},
-                   "/reviews.html": {"Reviews", "Guest reviews"}, "/#faq": {"FAQ"}}
+                   "/reviews.html": {"Reviews", "Guest reviews"}, "/#faq": {"FAQ"}, "/privacy/": {"Privacy"}}
         for part in parts:
             for tag, href, label in re.findall(r'(<a href="([^"]+)"[^>]*>)([^<]*)</a>', part):
                 if href in english and "nav-logo" not in tag:
@@ -814,6 +824,14 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(page_css.count("scroll-behavior: smooth"),
                              len(re.findall(r"no-preference\) \{\s*html \{ scroll-behavior: smooth", page_css)))
             self.assertNotIn("font-size: 16px", page_css)
+
+    def test_privacy_notice(self):
+        # GA4 and Clarity run on every page, so every footer links to the privacy notice, which
+        # names both services, their cookies and the ?notrack opt-out that the head script honours.
+        text = parse("/privacy/").text
+        for phrase in ("Google Analytics", "Microsoft Clarity", "_ga", "_clck", "?notrack=1", "POPIA", "Information Regulator"):
+            self.assertIn(phrase, text)
+        self.assertIn("notrack=([01])", tracking_block())
 
 
 if __name__ == "__main__":
