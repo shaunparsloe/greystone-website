@@ -18,13 +18,32 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # The site's checks (tests/): links, titles, facts, nav, sitemap, contrast and more.
+  # Stdlib only, about a second. Deploy waits for them, so a failing page never goes live.
+  tests:
+    name: Site tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest tests.test_site tests.test_indexnow tests.test_inline_css -v
+
+  # website/ is public: only site file types may be tracked there (same rule as the local
+  # pre-commit hook, which doesn't run for github.com edits, other machines or --no-verify).
+  public-files:
+    name: Site files only
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -I tools/check_public_files.py
+
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
       # Publish only site file types from website/; skip hidden folders (.claude/, .playwright-mcp/)
-      # and anything else, such as *.md notes. Keep this list in step with the pre-commit hook.
+      # and anything else, such as *.md notes. Keep this list in step with the pre-commit hook
+      # and tools/check_public_files.py.
       - name: Copy site files only
         run: |
           rsync -a --prune-empty-dirs \
@@ -48,7 +67,7 @@ jobs:
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: build
+    needs: [build, tests, public-files]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
