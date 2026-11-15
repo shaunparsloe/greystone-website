@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- The hero photo is a CSS background, so the browser would only find it after the CSS: fetch it now. -->
+  <link rel="preload" as="image" href="/images/standard-queen-2.webp" type="image/webp" fetchpriority="high">
   <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
   <script>
     (function(){
@@ -50,6 +51,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://greystoneguesthouse.co.za/business-travel/">
 
@@ -159,11 +161,18 @@
   ]
 }
   </script>
+  <!-- Speculation rules: Chrome, Edge and Samsung Internet fetch a same-site page when the visitor hovers
+       or starts to tap its link, so it opens almost at once. Prefetch only (no prerender), so analytics
+       never counts a page nobody saw. Other browsers ignore this. -->
+  <script type="speculationrules">
+  {"prefetch": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav id="nav" aria-label="Main navigation">
+  <nav id="nav" aria-label="Main">
   <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
   <ul class="nav-links" id="nav-menu" role="list">
     <li><a href="/rooms/">Rooms</a></li>
@@ -188,7 +197,7 @@
       </div>
     </header>
 
-    <section class="content" aria-labelledby="work">
+    <section class="content">
       <div class="article">
         <h2 id="work">Built for a working stay</h2>
         <ul>
@@ -203,7 +212,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="rates">
+    <section class="content">
       <div class="article">
         <h2 id="rates">Single-occupancy rates</h2>
         <p>Travelling alone? You pay a single rate: from <strong>R650 a night</strong> in the queen rooms (5–6) and the outside rooms (7–8), and from <strong>R700</strong> in the deluxe sea-view rooms (1–4). The outside rooms have their own entrance and a small kitchenette with a microwave, fridge and kettle, which suits longer stays.</p>
@@ -215,7 +224,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="paperwork">
+    <section class="content">
       <div class="article">
         <h2 id="paperwork">Payment and paperwork</h2>
         <p>Payment is by bank transfer before arrival. We accept Visa, Mastercard and Bankcard, but not cash. If your company needs an invoice or other paperwork, please ask Monique when you book.</p>
@@ -224,7 +233,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="location">
+    <section class="content">
       <div class="article">
         <h2 id="location">Getting here and getting around</h2>
         <ul>
@@ -239,7 +248,7 @@
       </div>
     </section>
 
-    <section class="content faq" aria-labelledby="business-faq">
+    <section class="content faq">
       <div class="article">
         <h2 id="business-faq">Questions from business guests</h2>
         <details><summary>Does the WiFi work during load shedding?</summary><p>Yes. Greystone runs on solar power with an inverter and battery backup, so the lights and WiFi stay on through Eskom power cuts, and you can keep working.</p></details>
@@ -250,7 +259,7 @@
       </div>
     </section>
 
-    <section class="cta-band" aria-labelledby="business-cta">
+    <section class="cta-band">
       <h2 class="display" id="business-cta">Work by day, <em>the sea by evening</em></h2>
       <p>Quiet en-suite rooms in Wavecrest, Jeffreys Bay, from R650 a night for one guest.</p>
       <div class="btn-row">
@@ -271,7 +280,7 @@
         </div>
       </div>
 
-      <nav aria-label="Footer navigation">
+      <nav aria-label="Footer">
         <p class="footer-heading">Explore</p>
         <ul class="footer-links" role="list">
           <li><a href="/">Home</a></li>

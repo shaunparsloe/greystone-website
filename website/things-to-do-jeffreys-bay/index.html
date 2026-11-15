@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- The hero photo is a CSS background, so the browser would only find it after the CSS: fetch it now. -->
+  <link rel="preload" as="image" href="/images/553368676.webp" type="image/webp" fetchpriority="high">
   <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
   <script>
     (function(){
@@ -50,6 +51,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://greystoneguesthouse.co.za/things-to-do-jeffreys-bay/">
 
@@ -222,11 +224,18 @@
   ]
 }
   </script>
+  <!-- Speculation rules: Chrome, Edge and Samsung Internet fetch a same-site page when the visitor hovers
+       or starts to tap its link, so it opens almost at once. Prefetch only (no prerender), so analytics
+       never counts a page nobody saw. Other browsers ignore this. -->
+  <script type="speculationrules">
+  {"prefetch": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav id="nav" aria-label="Main navigation">
+  <nav id="nav" aria-label="Main">
   <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
   <ul class="nav-links" id="nav-menu" role="list">
     <li><a href="/rooms/">Rooms</a></li>
@@ -271,7 +280,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="beaches">
+    <section class="content">
       <div class="article">
         <p class="eyebrow">From 250 m</p>
         <h2 id="beaches">Beaches near Greystone</h2>
@@ -286,7 +295,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="surfing">
+    <section class="content">
       <div class="article">
         <p class="eyebrow">300 m from Greystone</p>
         <h2 id="surfing">Surfing</h2>
@@ -301,7 +310,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="nature">
+    <section class="content">
       <div class="article">
         <p class="eyebrow">5–8 km</p>
         <h2 id="nature">Nature reserves and walks</h2>
@@ -314,7 +323,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="day-trips">
+    <section class="content">
       <div class="article">
         <p class="eyebrow">1–1½ hours away</p>
         <h2 id="day-trips">Wildlife and day trips</h2>
@@ -329,7 +338,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="adventure">
+    <section class="content">
       <div class="article">
         <h2 id="adventure">Adventure</h2>
         <p>If you'd like your heart rate up, J-Bay has plenty to offer:</p>
@@ -345,7 +354,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="rainy-day">
+    <section class="content">
       <div class="article">
         <h2 id="rainy-day">Rainy-day and family ideas</h2>
         <ul>
@@ -357,7 +366,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="when">
+    <section class="content">
       <div class="article">
         <h2 id="when">When to visit</h2>
         <ul>
@@ -370,7 +379,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="eat">
+    <section class="content">
       <div class="article">
         <p class="eyebrow">Across the road</p>
         <h2 id="eat">Where to eat</h2>
@@ -382,7 +391,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="getting-here">
+    <section class="content">
       <div class="article">
         <h2 id="getting-here">Getting here</h2>
         <ul>
@@ -398,7 +407,7 @@
       </div>
     </section>
 
-    <section class="cta-band" aria-labelledby="stay">
+    <section class="cta-band">
       <h2 class="display" id="stay">Where to <em>stay</em></h2>
       <p>Greystone Guesthouse is a B&amp;B in Wavecrest, 250 m from the beach and 300 m from Supertubes, with eight en-suite rooms from R650 a night, free WiFi and parking, and solar backup through load shedding.</p>
       <div class="btn-row">
@@ -419,7 +428,7 @@
         </div>
       </div>
 
-      <nav aria-label="Footer navigation">
+      <nav aria-label="Footer">
         <p class="footer-heading">Explore</p>
         <ul class="footer-links" role="list">
           <li><a href="/">Home</a></li>

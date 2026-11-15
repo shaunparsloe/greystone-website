@@ -660,11 +660,18 @@ class SiteTests(unittest.TestCase):
         for face in re.findall(r"@font-face\s*\{([^}]*)\}", css):
             expected = "block" if "Cormorant Garamond" in face else "swap"
             self.assertIn(f"font-display: {expected};", face)
+        # The italic is only preloaded where it shows above the fold (home and reviews headings);
+        # elsewhere the preload would compete with the hero photo.
+        italic_above_fold = {"/", "/reviews.html"}
         for path in PAGES:
             with self.subTest(page=path):
                 head = load(path).split("</head>")[0]
                 for f in ("cormorant-garamond-latin", "cormorant-garamond-italic-latin"):
-                    self.assertRegex(head, r'<link rel="preload" href="/fonts/' + f + r'\.woff2" as="font" type="font/woff2" crossorigin>')
+                    tag = r'<link rel="preload" href="/fonts/' + f + r'\.woff2" as="font" type="font/woff2" crossorigin>'
+                    if "italic" in f and path not in italic_above_fold:
+                        self.assertNotRegex(head, tag)
+                    else:
+                        self.assertRegex(head, tag)
 
 
     def test_text_contrast(self):
@@ -700,13 +707,13 @@ class SiteTests(unittest.TestCase):
                         self.fail(f"{sel} sets a background without a text colour: {block.strip()[:80]}")
 
     def test_home_below_fold_images(self):
-        # Below-the-fold photos on the home page are low priority and well compressed, so they
-        # don't compete with the hero heading and photo for bandwidth.
+        # Below-the-fold photos on the home page are lazy-loaded and well compressed. They must not
+        # also be fetchpriority="low": that makes them load late even once scrolled into view.
         imgs = [i for i in parse("/").imgs if i.get("loading") == "lazy"]
         self.assertTrue(imgs)
         for img in imgs:
             with self.subTest(img=img.get("src")):
-                self.assertEqual(img.get("fetchpriority"), "low")
+                self.assertIsNone(img.get("fetchpriority"))
         for f in (SITE / "images").glob("*.webp"):
             with self.subTest(file=f.name):
                 self.assertLessEqual(f.stat().st_size, 55 * 1024, f"{f.name} is {f.stat().st_size // 1024} KB")
@@ -734,6 +741,79 @@ class SiteTests(unittest.TestCase):
         self.assertNotRegex(block, r"(?<!-)height:\s*100vh")
         self.assertRegex(block, r"min-height:\s*100svh")
         self.assertRegex(block, r"padding:\s*[\d.]+rem")
+
+
+    # ── Modern Web Guidance audit, 15 Nov 2026 (analytics-data/SEO/modern-web-guidance-audit-2026-11-15.md) ──
+
+    def test_skip_link_first(self):
+        # Keyboard users skip the nine nav links: the first thing in <body> jumps to <main id="main">.
+        for path in PAGES:
+            with self.subTest(page=path):
+                body = load(path).split("<body>", 1)[1].lstrip()
+                self.assertRegex(body, r'^<a class="skip-link" href="#main">')
+                self.assertIn('<main id="main"', load(path))
+
+    def test_landmarks_not_repeated(self):
+        # Labelled <section>s each become a landmark; nav names don't repeat the role.
+        for path in PAGES:
+            with self.subTest(page=path):
+                html = load(path)
+                self.assertNotRegex(html, r"<section\b[^>]*aria-label")
+                self.assertNotIn("navigation\"", html)
+
+    def test_dark_color_scheme(self):
+        chrome = (SITE / "css/chrome.css").read_text(encoding="utf-8")
+        self.assertRegex(chrome, r":root\s*\{[^}]*color-scheme: dark")
+        self.assertRegex(chrome, r"scroll-padding-top:")
+        self.assertIn("forced-colors: active", chrome)
+        for path in PAGES:
+            with self.subTest(page=path):
+                self.assertIn('<meta name="color-scheme" content="dark">', load(path).split("</head>")[0])
+
+    def test_speculation_rules_prefetch_only(self):
+        # Prefetch on hover/press; never prerender, which would run analytics for unseen pages.
+        for path in PAGES:
+            with self.subTest(page=path):
+                head = load(path).split("</head>")[0]
+                block = re.search(r'<script type="speculationrules">(.*?)</script>', head, re.S)
+                self.assertTrue(block)
+                rules = json.loads(block.group(1))
+                self.assertEqual(set(rules), {"prefetch"})
+                self.assertEqual(rules["prefetch"][0]["eagerness"], "moderate")
+
+    def test_page_hero_preloaded(self):
+        # Content-page heroes are CSS backgrounds, found late unless preloaded (LCP).
+        for path in PAGES:
+            html = load(path)
+            m = re.search(r'<header class="page-hero" style="[^"]*image-set\(url\(\'(/images/[\w-]+\.webp)\'\)', html)
+            if not m:
+                continue
+            with self.subTest(page=path):
+                self.assertIn(f'<link rel="preload" as="image" href="{m.group(1)}" type="image/webp" fetchpriority="high">',
+                              html.split("</head>")[0])
+
+    def test_rooms_table_keyboard_scrollable(self):
+        html = load("/rooms/")
+        self.assertRegex(html, r'<div class="table-wrap" tabindex="0" role="region" aria-labelledby="compare-caption">')
+        self.assertIn('<caption id="compare-caption"', html)
+
+    def test_home_motion_and_reveals(self):
+        # Reveals hide content only once scripts run, and come back if site.js never does;
+        # smooth scrolling is CSS-only and respects reduced motion; the scroll hint stops.
+        html = load("/")
+        css = html.split("<style>", 1)[1].split("</style>", 1)[0]
+        self.assertNotIn("scrollIntoView", html)
+        self.assertNotRegex(css, r"(?m)^\s*\.reveal\s*\{")
+        self.assertIn(".js .reveal {", css)
+        self.assertIn("classList.add('js')", html.split("</head>")[0])
+        self.assertIn("window.ggSiteJs = true", (SITE / "js/site.js").read_text(encoding="utf-8"))
+        self.assertNotRegex(css, r"scrollPulse[^;]*infinite")
+        self.assertNotIn("background-attachment: fixed", css)
+        self.assertNotRegex(re.search(r"\.cta-section \{([^}]*)\}", css).group(1), r"(?<!-)height:")
+        for page_css in (css, (SITE / "css/site.css").read_text(encoding="utf-8")):
+            self.assertEqual(page_css.count("scroll-behavior: smooth"),
+                             len(re.findall(r"no-preference\) \{\s*html \{ scroll-behavior: smooth", page_css)))
+            self.assertNotIn("font-size: 16px", page_css)
 
 
 if __name__ == "__main__":

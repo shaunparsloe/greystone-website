@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
   <title>Page Not Found | Greystone Guesthouse Jeffreys Bay</title>
   <meta name="robots" content="noindex, follow">
+  <meta name="color-scheme" content="dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
   <script>
@@ -45,6 +45,7 @@
       background: #080808;
       color: #F5F0E8;
       font-family: Georgia, 'Times New Roman', serif;
+      font-size-adjust: none;
     }
     .lost {
       min-height: 80vh;
@@ -56,16 +57,23 @@
       padding: 8rem 1rem 4rem;
     }
     .lost .eyebrow { font-family: system-ui, sans-serif; font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; color: #C9A96E; margin-bottom: 1.2rem; }
-    .lost h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 300; margin-bottom: 1rem; }
+    .lost h1 { font-size: clamp(2.4rem, 1.26rem + 5.6vw, 4rem); font-weight: 300; margin-bottom: 1rem; }
     .lost p { color: rgba(245,240,232,0.6); margin-bottom: 2.4rem; font-size: 1.05rem; }
     .lost ul { list-style: none; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; max-width: 760px; }
     .lost a { display: inline-block; font-family: system-ui, sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding: 0.9rem 2rem; border: 1px solid rgba(245,240,232,0.28); color: #F5F0E8; }
     .lost a.primary { background: #C9A96E; border-color: #C9A96E; color: #080808; }
   </style>
   <link rel="stylesheet" href="/css/chrome.css">
+  <!-- Speculation rules: Chrome, Edge and Samsung Internet fetch a same-site page when the visitor hovers
+       or starts to tap its link, so it opens almost at once. Prefetch only (no prerender), so analytics
+       never counts a page nobody saw. Other browsers ignore this. -->
+  <script type="speculationrules">
+  {"prefetch": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 <body>
-  <nav id="nav" aria-label="Main navigation">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav id="nav" aria-label="Main">
   <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
   <ul class="nav-links" id="nav-menu" role="list">
     <li><a href="/rooms/">Rooms</a></li>
@@ -80,7 +88,7 @@
   <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span></button>
 </nav>
 
-  <main class="lost">
+  <main id="main" class="lost">
     <p class="eyebrow">Greystone Guesthouse · Jeffreys Bay</p>
     <h1>This page has drifted out to sea</h1>
     <p>The page you were looking for doesn't exist. Try one of these instead.</p>
@@ -109,7 +117,7 @@
         </div>
       </div>
 
-      <nav aria-label="Footer navigation">
+      <nav aria-label="Footer">
         <p class="footer-heading">Explore</p>
         <ul class="footer-links" role="list">
           <li><a href="/">Home</a></li>
