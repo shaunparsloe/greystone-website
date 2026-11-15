@@ -831,6 +831,15 @@ class SiteTests(unittest.TestCase):
         for phrase in ("POPIA", "Information Regulator"):
             self.assertIn(phrase, text)
 
+    def test_no_font_size_adjust(self):
+        # font-size-adjust on body text made Chrome's style recalculation 3-5x slower (home page
+        # +120 ms to first paint on a throttled phone, measured 15 Nov 2026), to avoid a small shift
+        # when Inter swaps in. Not worth it: keep it out.
+        files = [SITE / "css/chrome.css", SITE / "css/site.css"] + [SITE / spec["file"] for spec in PAGES.values()]
+        for f in files:
+            with self.subTest(file=f.name):
+                self.assertNotIn("font-size-adjust", f.read_text(encoding="utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()

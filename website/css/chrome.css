@@ -46,11 +46,6 @@
 /* Anchor links and Tab focus stop below the fixed menu bar (about 80px tall), not under it. */
 html { scroll-padding-top: 6rem; }
 
-/* Inter's x-height is 0.546 of its size. Until it loads, the stand-in font is scaled to match, so text
-   doesn't jump when Inter swaps in. Every Cormorant rule resets it (its x-height is much smaller).
-   :where() keeps it weaker than a page's own body rule (the 404 page sets Georgia). */
-:where(body) { font-size-adjust: 0.546; }
-
 /* Balanced headings, no single-word last lines in paragraphs. Ignored where unsupported. */
 h1, h2, h3, .display { text-wrap: balance; }
 p, li, blockquote { text-wrap: pretty; }
@@ -109,7 +104,6 @@ p, li, blockquote { text-wrap: pretty; }
 
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size-adjust: none;
   font-size: 1.45rem;
   font-weight: 400;
   letter-spacing: 0.14em;
