@@ -3,14 +3,15 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 body {
   background: var(--ink);
   color: var(--cream);
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -23,12 +24,13 @@ a:hover { color: var(--cream); }
 :focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
 
 /* ─── SCROLL REVEAL ─────────────────────────────────────────── */
-.reveal {
+/* Only hidden while scripts run (the page sets .js on <html>), so content still shows if site.js fails. */
+.js .reveal {
   opacity: 0;
   transform: translateY(44px);
   transition: opacity 0.85s cubic-bezier(.22,.6,.36,1), transform 0.85s cubic-bezier(.22,.6,.36,1);
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ─── TYPOGRAPHY ────────────────────────────────────────────── */
 .eyebrow {
@@ -44,6 +46,7 @@ a:hover { color: var(--cream); }
 
 .display {
   font-family: 'Cormorant Garamond', serif;
+  font-size-adjust: none;
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.01em;
@@ -92,7 +95,7 @@ a:hover { color: var(--cream); }
   background: linear-gradient(175deg, rgba(8,8,8,0.45) 0%, rgba(8,8,8,0.55) 55%, rgba(8,8,8,0.96) 100%);
 }
 .page-hero-inner { position: relative; max-width: 1100px; width: 100%; margin: 0 auto; }
-.page-hero h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); margin-bottom: 1.2rem; }
+.page-hero h1 { font-size: clamp(2.6rem, 1.08rem + 4.8vw, 4.8rem); margin-bottom: 1.2rem; }
 .page-hero .lead {
   max-width: 62ch;
   font-size: 1.05rem;
@@ -112,7 +115,7 @@ a:hover { color: var(--cream); }
   color: rgba(245,240,232,0.55);
   margin-bottom: 1.5rem;
 }
-.breadcrumbs li + li::before { content: '/'; margin-right: 0.5rem; color: var(--gold); }
+.breadcrumbs li + li::before { content: '/'; content: '/' / ''; margin-right: 0.5rem; color: var(--gold); }
 .breadcrumbs a { color: rgba(245,240,232,0.7); text-decoration: none; }
 .breadcrumbs a:hover { color: var(--cream); }
 
@@ -132,14 +135,16 @@ a:hover { color: var(--cream); }
 .article h2,
 .article-wide h2 {
   font-family: 'Cormorant Garamond', serif;
+  font-size-adjust: none;
   font-weight: 300;
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(2rem, 0.72rem + 3.2vw, 2.8rem);
   line-height: 1.1;
   margin-bottom: 1.4rem;
 }
 .article h3,
 .article-wide h3 {
   font-family: 'Cormorant Garamond', serif;
+  font-size-adjust: none;
   font-weight: 400;
   font-size: 1.5rem;
   margin: 2rem 0 0.8rem;
@@ -196,6 +201,7 @@ a:hover { color: var(--cream); }
 .room-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .room-price {
   font-family: 'Cormorant Garamond', serif;
+  font-size-adjust: none;
   font-size: 2rem;
   color: var(--gold-light);
   margin: 0.5rem 0 1rem;
@@ -204,6 +210,7 @@ a:hover { color: var(--cream); }
 
 /* ─── TABLES ────────────────────────────────────────────────── */
 .table-wrap { overflow-x: auto; margin: 1.5rem 0; -webkit-overflow-scrolling: touch; }
+.table-wrap:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
 .table-wrap table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.9rem; }
 .table-wrap th,
 .table-wrap td {
@@ -238,10 +245,12 @@ a:hover { color: var(--cream); }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
   content: '+';
+  content: '+' / ''; /* decorative: screen readers skip it */
   position: absolute;
   right: 0;
   top: 1rem;
   font-family: 'Cormorant Garamond', serif;
+  font-size-adjust: none;
   font-size: 1.5rem;
   color: var(--gold);
   transition: transform 0.3s;
@@ -265,7 +274,7 @@ a:hover { color: var(--cream); }
   padding: 5rem 3.5rem;
   text-align: center;
 }
-.cta-band h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 1rem; }
+.cta-band h2 { font-size: clamp(2.2rem, 0.9rem + 4vw, 3.4rem); margin-bottom: 1rem; }
 .cta-band p { color: rgba(245,240,232,0.7); max-width: 56ch; margin: 0 auto; }
 .cta-band .btn-row { justify-content: center; }
 
@@ -285,6 +294,5 @@ a:hover { color: var(--cream); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
 }

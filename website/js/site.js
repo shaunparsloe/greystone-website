@@ -1,5 +1,6 @@
 // Greystone Guesthouse: shared nav, mobile menu, scroll reveal and conversion tracking.
 (function () {
+  window.ggSiteJs = true; // tells the home page's load check that scroll reveals will run
   var nav = document.getElementById('nav');
 
   // Nav scroll effect

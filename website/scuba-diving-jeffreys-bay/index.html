@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/cormorant-garamond-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- The hero photo is a CSS background, so the browser would only find it after the CSS: fetch it now. -->
+  <link rel="preload" as="image" href="/images/553368676.webp" type="image/webp" fetchpriority="high">
   <!-- Tracking opt-out: open any page with ?notrack=1 to stop GA4 and Clarity on this device; ?notrack=0 turns them back on. Also skips tracking for a known bot pattern (see comment below). -->
   <script>
     (function(){
@@ -50,6 +51,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://greystoneguesthouse.co.za/scuba-diving-jeffreys-bay/">
 
@@ -197,11 +199,18 @@
   ]
 }
   </script>
+  <!-- Speculation rules: Chrome, Edge and Samsung Internet fetch a same-site page when the visitor hovers
+       or starts to tap its link, so it opens almost at once. Prefetch only (no prerender), so analytics
+       never counts a page nobody saw. Other browsers ignore this. -->
+  <script type="speculationrules">
+  {"prefetch": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav id="nav" aria-label="Main navigation">
+  <nav id="nav" aria-label="Main">
   <a href="/" class="nav-logo" aria-label="Greystone Guesthouse home">Greystone</a>
   <ul class="nav-links" id="nav-menu" role="list">
     <li><a href="/rooms/">Rooms</a></li>
@@ -226,7 +235,7 @@
       </div>
     </header>
 
-    <section class="content" aria-labelledby="reefs">
+    <section class="content">
       <div class="article">
         <p class="eyebrow">Mostly undiscovered</p>
         <h2 id="reefs">What's on the reefs</h2>
@@ -241,7 +250,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="sites">
+    <section class="content">
       <div class="article-wide">
         <h2 id="sites">Dive sites to know</h2>
         <p>J-Bay SCUBA has around twenty named sites off Jeffreys Bay and Cape St Francis, from shallow gullies for a first ocean dive to deep reefs for advanced divers. A few of them:</p>
@@ -259,7 +268,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="dive-day">
+    <section class="content">
       <div class="article">
         <h2 id="dive-day">How a dive day works</h2>
         <p>Diving here is boat diving. The boat surf-launches from <strong>Jeffreys Bay Main Beach</strong>, about 2 km from Greystone, and in season also runs from Port St Francis. It takes up to six divers plus the skipper, and the skippers are experienced, rescue-trained coxswains. You can do a single dive or a double dive with two cylinders on one launch.</p>
@@ -271,7 +280,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="jbay-scuba">
+    <section class="content">
       <div class="article">
         <p class="eyebrow">The local dive centre</p>
         <h2 id="jbay-scuba">Diving with J-Bay SCUBA</h2>
@@ -288,7 +297,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="plan">
+    <section class="content">
       <div class="article">
         <h2 id="plan">Planning your dive trip</h2>
         <ul>
@@ -300,7 +309,7 @@
       </div>
     </section>
 
-    <section class="content" aria-labelledby="stay">
+    <section class="content">
       <div class="article">
         <h2 id="stay">Staying at Greystone on a dive trip</h2>
         <p>Greystone is a B&amp;B guest house in Wavecrest, 250 m from the beach and about 2 km from the Main Beach launch, roughly five minutes by car.</p>
@@ -319,7 +328,7 @@
       </div>
     </section>
 
-    <section class="content faq" aria-labelledby="dive-faq">
+    <section class="content faq">
       <div class="article">
         <h2 id="dive-faq">Diving questions</h2>
         <details><summary>Can you scuba dive in Jeffreys Bay?</summary><p>Yes. The local dive centre, J-Bay SCUBA, runs boat dives on the reefs off Jeffreys Bay, surf-launching from Main Beach, and seasonally from Port St Francis. They also run RAID courses, from a first Try Dive to Open Water and beyond.</p></details>
@@ -331,7 +340,7 @@
       </div>
     </section>
 
-    <section class="cta-band" aria-labelledby="dive-cta">
+    <section class="cta-band">
       <h2 class="display" id="dive-cta">Dive the reef, <em>sleep by the sea</em></h2>
       <p>Eight en-suite rooms in Wavecrest, Jeffreys Bay, 2 km from the dive launch, from R650 a night.</p>
       <div class="btn-row">
@@ -352,7 +361,7 @@
         </div>
       </div>
 
-      <nav aria-label="Footer navigation">
+      <nav aria-label="Footer">
         <p class="footer-heading">Explore</p>
         <ul class="footer-links" role="list">
           <li><a href="/">Home</a></li>
