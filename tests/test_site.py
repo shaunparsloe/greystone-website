@@ -125,6 +125,15 @@ PAGES = {
         "help_topics": [],
         "hreflang": {},
     },
+    "/jan-se-gat-waterfall-jeffreys-bay/": {
+        "file": "jan-se-gat-waterfall-jeffreys-bay/index.html",
+        "title": "Jan se Gat Waterfall near Jeffreys Bay | Greystone",
+        "h1": "Jan se Gat Waterfall",
+        "lang": "en-ZA",
+        "schema_types": {"Article", "FAQPage", "BreadcrumbList", "TouristAttraction"},
+        "help_topics": [],
+        "hreflang": {},
+    },
     "/business-travel/": {
         "file": "business-travel/index.html",
         "title": "Business Accommodation in Jeffreys Bay | Greystone",
